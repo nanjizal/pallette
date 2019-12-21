@@ -1,4 +1,5 @@
 package pallette;
+// UNTESTED!!!
 typedef Rectangle = { x: Int, y: Int, width: Int, height: Int };
 // originally used in Divtastic for drawing a colour hexagon. 
 class ColorHexagon {
