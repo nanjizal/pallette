@@ -80,7 +80,7 @@ class ColorWheel24{
             case blueTourmaline:        'blueTourmaline';
             case celestialPlum:         'celestialPlum';
             case freeSpeechBlue:        'freeSpeechBlue';
-            case earlySpringNight:      'earlySpringNight'
+            case earlySpringNight:      'earlySpringNight';
             case blueDepression:        'blueDepression';
             case nebulaFuchsia:         'nebulaFuschsia';
             case fuchsiaFlair:          'fushsiaFlair';
@@ -90,9 +90,9 @@ class ColorWheel24{
     }
     inline public static
     function next( w: Wheel24 ){
-        var w = getWheel();
-        var i = w.indexOf( w );
+        var wheel = getWheel();
+        var i = wheel.indexOf( w );
         var v = ( i < 24 )? i + 1: 0;
-        return w[ v ];
+        return wheel[ v ];
     }
 }
