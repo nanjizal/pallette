@@ -1,0 +1,11 @@
+{
+    "name"         : "pallette",
+    "url"          : "https://github.com/nanjizal/pallette#pallette",
+    "license"      : "MIT",
+    "tags"         : ["cross", "color","colours" ],
+    "description"  : "Pallette is just a Haxe language related resource that groups Hex colours in useful ways.",
+    "version"      : "0.0.1",
+    "releasenote"  : "See https://github.com/nanjizal/pallette/blob/master/CHANGELOG.md",
+    "contributors" : ["Nanjizal"],
+    "dependencies" : {}
+}
