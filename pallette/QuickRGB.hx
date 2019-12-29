@@ -1,6 +1,5 @@
 package pallette;
-@:enum
-abstract QuickRGB( Int ) to Int from Int {
+enum abstract QuickRGB( Int ) to Int from Int {
     var Violet      = 0x9400D3;
     var Indigo      = 0x4b0082;
     var Blue        = 0x0000FF;
