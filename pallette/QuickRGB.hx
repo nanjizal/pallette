@@ -1,7 +1,6 @@
-package pallette;
-#if (kha||heaps) 
+package pallette; 
 @:enum
-abstract QuickColours( Int ) to Int from Int {
+abstract QuickARGB( Int ) to Int from Int {
     var Violet      = 0xFF9400D3;
     var Indigo      = 0xFF4b0082;
     var Blue        = 0xFF0000FF;
@@ -16,9 +15,8 @@ abstract QuickColours( Int ) to Int from Int {
     var NearlyBlack = 0xFF111111;
     var White       = 0xFFFFFFFF;
 }
-#else
 @:enum
-abstract QuickColours( Int ) to Int from Int {
+abstract QuickRGB( Int ) to Int from Int {
     var Violet      = 0x9400D3;
     var Indigo      = 0x4b0082;
     var Blue        = 0x0000FF;
@@ -36,4 +34,3 @@ abstract QuickColours( Int ) to Int from Int {
     var GreenAlpha  = 0x00FF00;
     var RedAlpha    = 0xFF0000;
 }
-#end
