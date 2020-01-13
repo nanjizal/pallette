@@ -41,7 +41,7 @@ enum abstract AllGolds( Int ) to Int from Int {
     var linen = 0xffFAF0E6;
     var cornsilk = 0xffFFF8DC;
     var beige  = 0xffF5F5DC;
-    var lacyOmelette = 0xffFF56GD;
+    //var lacyOmelette = 0xffFF56GD;
     var lemonChiffon = 0xffFFFACD;
     var blond = 0xffFAF0BE;
     var paleGoldenrod = 0xffEEE8AA;
@@ -63,7 +63,7 @@ enum abstract AllGolds( Int ) to Int from Int {
     var tangerineYellow = 0xffFFCC00;
     var saffron = 0xffF4C430;
     var goldenPoppy = 0xffFCC200;
-    var cheezWhiz = 0xff0F5DGH; // ??
+    //var cheezWhiz = 0xff0F5DGH; // ??
     var selectiveYellow = 0xffFFBA00;
     var missouriGold = 0xffF1B82D;
     var macaroniAndCheese = 0xffFFB79B;
