@@ -3,7 +3,7 @@ package pallette;
 // These colors are in sets of 9 from light to dark so you can display just 9 at at time, subset of some colors seen on colorbrewer2.
 // useful for experimentation.
 class PalleteNine {
-    public inline function ARGB(){
+    public static inline function ARGB(){
                 // real rainbow colors + black and white
         return [  0xFF000000 // black
                 , 0xFFFF0000 // red
