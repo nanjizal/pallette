@@ -1,4 +1,5 @@
-package pallette;
+package pallette.general;
+
 abstract enum StrColours( String ) to String from String {
     var AliceBlue:  	        '#F0F8FF';
     var AntiqueWhite:          '#FAEBD7';
