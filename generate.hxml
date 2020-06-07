@@ -1,0 +1,8 @@
+-D doc-gen
+--macro include('pallette')
+-cp src
+-main pallette.upkeep.Doc
+--no-output
+-xml output.xml
+-js foo
+-D dump==pretty

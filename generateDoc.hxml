@@ -1,0 +1,4 @@
+-cmd haxe generate.hxml
+-cmd haxelib run dox -i output.xml --title "pallette API documentation" -D themeColor 0x5DBB63 --toplevel-package pallette
+-cmd cd pages
+-cmd open index.html
