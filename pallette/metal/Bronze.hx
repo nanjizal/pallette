@@ -22,7 +22,7 @@ class Bronze{
     }
     inline public static
     function random(): Bronzes {
-        var all = getBronzes();
+        var all = getColors();
         var rnd: Int = Math.round( Math.random()*5);
         return all[rnd];
     }
