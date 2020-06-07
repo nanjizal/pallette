@@ -155,63 +155,63 @@ class AllGold {
     inline public static 
     function getGolds (): Array<Gold> {
         return  [ 
-            old_Lace
-            linen
-            cornsilk
-            beige
-            lemonChiffon
-            blond
-            paleGoldenrod
-            wheat
-            lightCandlelight
-            maize
-            lemonPeel
-            jasmine
-            jonquil
-            dandelion
-            mustard
-            mediumGoldenrod
-            candlelight
-            goldenYellow
-            schoolBusYellow
-            golden
-            lightCaliforniaGold
-            sunglow
-            tangerineYellow
-            saffron
-            goldenPoppy
-            selectiveYellow
-            missouriGold
-            macaroniAndCheese
-            sandyBrown
-            desertSand
-            paleGold
-            lightBuddhaGold
-            incaGold
-            brightCaliforniaGold
-            earthYellow
-            brass
-            aztecGold
-            californiaGold
-            vegasGold
-            oldGold
-            metalicGold
-            goldenrod
-            satinSheenGold
-            buddhaGold
-            pomonaGold
-            califoniaGold
-            peru
-            roseGold
-            burntSienna
-            ochre
-            pirateGold
-            darkGoldenrod
-            metallicSunburst
-            goldFusion
-            sandyTaupe
-            goldenBrown
-            rawUmber ];
+              old_Lace
+            , linen
+            , cornsilk
+            , beige
+            , lemonChiffon
+            , blond
+            , paleGoldenrod
+            , wheat
+            , lightCandlelight
+            , maize
+            , lemonPeel
+            , jasmine
+            , jonquil
+            , dandelion
+            , mustard
+            , mediumGoldenrod
+            , candlelight
+            , goldenYellow
+            , schoolBusYellow
+            , golden
+            , lightCaliforniaGold
+            , sunglow
+            , tangerineYellow
+            , saffron
+            , goldenPoppy
+            , selectiveYellow
+            , missouriGold
+            , macaroniAndCheese
+            , sandyBrown
+            , desertSand
+            , paleGold
+            , lightBuddhaGold
+            , incaGold
+            , brightCaliforniaGold
+            , earthYellow
+            , brass
+            , aztecGold
+            , californiaGold
+            , vegasGold
+            , oldGold
+            , metalicGold
+            , goldenrod
+            , satinSheenGold
+            , buddhaGold
+            , pomonaGold
+            , califoniaGold
+            , peru
+            , roseGold
+            , burntSienna
+            , ochre
+            , pirateGold
+            , darkGoldenrod
+            , metallicSunburst
+            , goldFusion
+            , sandyTaupe
+            , goldenBrown
+            , rawUmber ];
     }
     inline public static
     function random(): Golds {
