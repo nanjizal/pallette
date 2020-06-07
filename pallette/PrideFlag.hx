@@ -1,4 +1,3 @@
-
 package pallette;
 // Pride flag colors, note Hot pink is not always used
 enum abstract Pride( Int ) to Int from Int {
