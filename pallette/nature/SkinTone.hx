@@ -1,5 +1,6 @@
+package pallette.nature;
+
 // Provide realistic skin shades?
-package pallette;
 enum abstract SkinTones( Int ) to Int from Int {
     // Always G>B ?
     var woodBark        = 0xFF2D221E;
