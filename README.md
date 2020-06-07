@@ -1,6 +1,8 @@
 # Pallette
   
 Pallette resource, grouping Hex colours in useful ways with ColorInt abstract.
+
+[ Dox documentation with color images ](https://nanjizal.github.io/pallette/pages/)
  
 ### Colors
 
