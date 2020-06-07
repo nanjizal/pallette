@@ -1,4 +1,4 @@
-package pallette;
+package pallette.metal;
 
 abstract enum Bronzes( Int ) from Int to Int {
     var bronzeGold     = 0xffC9AE5D;
