@@ -1,6 +1,6 @@
 // Provide realistic skin shades?
 package pallette;
-enum abstract SkinShade( Int ) to Int from Int {
+enum abstract SkinTones( Int ) to Int from Int {
     // Always G>B ?
     var woodBark        = 0xFF2D221E;
     var sambuca         = 0xFF3C2E28;
@@ -23,7 +23,7 @@ enum abstract SkinShade( Int ) to Int from Int {
 }
 class SkinTone{
     inline public static 
-    function getShades (): Array<SkinShade> {
+    function getColors (): Array<SkinTones> {
         return  [ woodBark
                 , sambuca
                 , rebel
@@ -44,10 +44,10 @@ class SkinTone{
                 , bisque ];
     }
     inline public static
-    function random(): SkinShade {
-        var shade = getShades();
+    function random(): SkinTones {
+        var all = getTones();
         var rnd: Int = Math.round( Math.random()*16);
-        return shade[rnd];
+        return all[rnd];
     }
     inline public static
     function getName( s: SkinShade ): String {
