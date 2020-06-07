@@ -1,27 +1,39 @@
 # Pallette
-
-Pallette a Haxe language related resource that groups Hex colours,  
-currently mostly just groupings I've found useful for my tests.  
-Pallette providing colour options to plug into your experiments.  
-
+  
+Pallette resource, grouping Hex colours in useful ways with ColorInt abstract.
  
-### Contributions and ideas welcome
+### Colors
 
-Rather than store your test colour abstract enums in your code repo, consider adding to this resource.
-
-### Applications
-
-Concept is not to provide extensive colour or pixel manipulation tools,  
-since colour tool suites are covered extensively within a range of opensource Haxe libraries.  
-Instead Pallette provide more independant Hex color pallettes, and perhaps some helpers often related to my own use.  
-The concept by isolating the pallettes your can choose if needed to integrate with your choice of colour tools.  
-
-Pallette aimed as a simple helper with finding a visual appealing pallette for your project.  
-
-- for graph and charting tools.
-- for WebGL and GL experiments.
-- for Games. 
-- for UI's.
+Details of the colors and features provided.
+- **general**: BrowserColors and an array of infographic colors in sets of 9 colors - Pallette9, useful for skinning graphs and piecharts.
+- **metal**:
+Bronze  
+![bronze](https://user-images.githubusercontent.com/20134338/83974146-eec22e80-a8e2-11ea-9eda-c2f18f28ef7d.png)  
+Copper    
+![coppers](https://user-images.githubusercontent.com/20134338/83974162-174a2880-a8e3-11ea-9a22-d1dd3504e51e.png)  
+Gold  
+![gold](https://user-images.githubusercontent.com/20134338/83974168-27fa9e80-a8e3-11ea-93d3-2b42526c01c1.png)  
+AllGold  
+**no image**  
+Silver  
+![silver](https://user-images.githubusercontent.com/20134338/83974191-58dad380-a8e3-11ea-8634-e154a0acf9e5.png)  
+- nature 
+SkinTone  
+![skinTone](https://user-images.githubusercontent.com/20134338/83974214-8fb0e980-a8e3-11ea-943f-1c844786d094.png)  
+- random  
+PrideFlag  
+![pride](https://user-images.githubusercontent.com/20134338/83974225-ae16e500-a8e3-11ea-847e-6b0977f3d1ba.png)  
+- simple
+Quick  
+![quick](https://user-images.githubusercontent.com/20134338/83974237-c850c300-a8e3-11ea-8efb-a4351a7ffbb8.png)  
+- Utils, provides ColorInt abstract and some color helpers, just basics to RGB and CYMK and to html strings.  
+- Wheel  
+ColorHexagon  
+![colorHex](https://user-images.githubusercontent.com/20134338/83974263-0fd74f00-a8e4-11ea-9e69-38fa4af58b61.png)  
+ColorWheel24  
+![wheel24](https://user-images.githubusercontent.com/20134338/83974274-28476980-a8e4-11ea-87eb-251c1ce4bb5b.png)  
+MartianColors  
+![martianColors](https://user-images.githubusercontent.com/20134338/83974293-4c0aaf80-a8e4-11ea-8016-e5053970f66f.png)
 
 
 ## Colour related links ( MIT )
