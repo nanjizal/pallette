@@ -1,4 +1,4 @@
-package pallette;
+package pallette.metal;
 
 abstract enum Coppers( Int ) from Int to Int {
    var copperGreen       = 0xff679267;
