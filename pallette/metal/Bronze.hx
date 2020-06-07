@@ -12,7 +12,7 @@ abstract enum Bronzes( Int ) from Int to Int {
 
 class Bronze{
     inline public static 
-    function getBronzes (): Array<Bronzes> {
+    function getColors (): Array<Bronzes> {
         return  [ bronzeGold
                 , bronze
                 , blastOffBronze
@@ -29,12 +29,12 @@ class Bronze{
     inline public static
     function getName( b: Bronzes ): String {
         return switch( b ){
-            case: bronzeGold:       'bronzeGold';
-            case: bronze:           'bronze';
-            case: blastOffBronze:   'blastOffBronze';
-            case: deepBronze:       'deepBronze';
-            case: mediumBronze:     'mediumBronze'; 
-            case: antiqueBronze:    'antiqueBronze';
+            case bronzeGold:       'bronzeGold';
+            case bronze:           'bronze';
+            case blastOffBronze:   'blastOffBronze';
+            case deepBronze:       'deepBronze';
+            case mediumBronze:     'mediumBronze'; 
+            case antiqueBronze:    'antiqueBronze';
         }
     }
 }
