@@ -1,4 +1,4 @@
-package pallette;
+package pallette.metal;
 
 // source of hex numbers https://joekotlan.com/using-gold-color-web/, names found on google.
 enum abstract Golds(Int) to Int from Int {
