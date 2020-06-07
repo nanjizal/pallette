@@ -1,6 +1,6 @@
 package pallette.utils;
 /** 
-   { a, r, g, b }
+   { c, y, m, k, ?a }
 **/
 @:structInit
 class CYMKA {
