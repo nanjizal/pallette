@@ -1,4 +1,4 @@
-package pallette;
+package pallette.wheel;
 import pallette.MartianColours;
 class MartianColours{
     static inline function limitRadian( radian: Float ){
