@@ -17,7 +17,7 @@ AllGold
 **no image**  
 Silver  
 ![silver](https://user-images.githubusercontent.com/20134338/83974191-58dad380-a8e3-11ea-8634-e154a0acf9e5.png)  
-- nature 
+- nature  
 SkinTone  
 ![skinTone](https://user-images.githubusercontent.com/20134338/83974214-8fb0e980-a8e3-11ea-943f-1c844786d094.png)  
 - random  
