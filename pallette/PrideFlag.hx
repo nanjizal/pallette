@@ -31,14 +31,14 @@ class PrideFlag{
     inline public static
     function getName( s: Pride ): String {
         return switch( s ){
-            case hotPink:       'hotPink';
-            case red:           'red';
-            case pizzaz:        'pizzaz';
-            case yellow:        'yellow';
-            case japaneseLaurel:'japaneseLaurel'; 
-            case eggBlue:       'eggBlue';
-            case pigmentIndigo: 'pigmentIndigo';
-            case darkMagenta:   'darkMagenta';
+            case hotPink       'hotPink';
+            case red           'red';
+            case pizzaz        'pizzaz';
+            case yellow        'yellow';
+            case japaneseLaurel'japaneseLaurel'; 
+            case eggBlue       'eggBlue';
+            case pigmentIndigo 'pigmentIndigo';
+            case darkMagenta   'darkMagenta';
         }
     }
 }
