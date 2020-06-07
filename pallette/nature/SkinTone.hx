@@ -46,12 +46,12 @@ class SkinTone{
     }
     inline public static
     function random(): SkinTones {
-        var all = getTones();
+        var all = getColors();
         var rnd: Int = Math.round( Math.random()*16);
         return all[rnd];
     }
     inline public static
-    function getName( s: SkinShade ): String {
+    function getName( s: SkinTone ): String {
         return switch( s ){
             case woodBark:       'woodBark';
             case sambuca:        'sambuca';
