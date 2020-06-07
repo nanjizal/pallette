@@ -1,4 +1,5 @@
-package pallette;
+package pallette.general;
+
 // Originally created for trilateralXtra.color.PalletNine
 // These colors are in sets of 9 from light to dark so you can display just 9 at at time, subset of some colors seen on colorbrewer2.
 // useful for experimentation.
