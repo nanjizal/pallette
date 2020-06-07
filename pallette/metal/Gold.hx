@@ -57,7 +57,7 @@ class Gold {
     }
     inline public static
     function random(): Golds {
-        var all = getGolds();
+        var all = getColors();
         var rnd: Int = Math.round( Math.random()*18);
         return all[rnd];
     }
@@ -215,7 +215,7 @@ class AllGold {
     }
     inline public static
     function random(): Golds {
-        var all = getAllGolds();
+        var all = getColors();
         var rnd: Int = Math.round( Math.random()*56);
         return all[rnd];
     }
