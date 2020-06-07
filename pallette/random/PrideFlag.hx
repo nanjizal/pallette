@@ -12,7 +12,7 @@ enum abstract Pride( Int ) to Int from Int {
 }
 class PrideFlag{
     inline public static 
-    function getPride (): Array<Pride> {
+    function getColors (): Array<Pride> {
         return  [ hotPink
                 , red
                 , pizzaz
@@ -24,9 +24,9 @@ class PrideFlag{
     }
     inline public static
     function random(): Pride {
-        var shade = getPride();
+        var all = getColors();
         var rnd: Int = Math.round( Math.random()*7);
-        return shade[rnd];
+        return all[rnd];
     }
     inline public static
     function getName( s: Pride ): String {
