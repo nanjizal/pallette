@@ -1,4 +1,4 @@
-package pallette;
+package pallette.wheel;
 enum abstract Wheel24( Int ) to Int from Int {
     var redRadish         = 0xffef3c42;
     var orangeSoda        = 0xfff25e40;
