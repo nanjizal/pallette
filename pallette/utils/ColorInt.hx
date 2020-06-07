@@ -178,7 +178,7 @@ abstract ColorInt( Int ) to Int from Int {
         return new ARGB( v.a, r, g, b );
     }
     public inline
-    function luminosityGrey( scale: Float = 1. ){
+    function luminosityGrey( scale: Float = 1. ): Float {
         return alpha*( 0.21*red + 0.72*green + 0.07*blue ) * scale;
     }
     public inline
