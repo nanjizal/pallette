@@ -6572,6 +6572,720 @@
 </f></getName>
 		<haxe_doc>![Silver](../../bootstrap/img/silver.png)</haxe_doc>
 	</class>
+	<abstract path="pallette.nature.HairTones" params="" file="src/pallette/nature/HairTone.hx" module="pallette.nature.HairTone">
+		<from><icast><x path="Int"/></icast></from>
+		<this><x path="Int"/></this>
+		<to><icast><x path="Int"/></icast></to>
+		<meta><m n=":enum"/></meta>
+		<impl><class path="pallette.nature._HairTone.HairTones_Impl_" params="" file="src/pallette/nature/HairTone.hx" private="1" module="pallette.nature.HairTone" extern="1" final="1">
+	<midnightBlack public="1" get="inline" set="null" expr="cast 0xFF090806" line="4" static="1">
+		<x path="pallette.nature.HairTones"/>
+		<meta>
+			<m n=":value"><e>cast 0xFF090806</e></m>
+			<m n=":enum"/>
+			<m n=":impl"/>
+		</meta>
+	</midnightBlack>
+	<offBlack public="1" get="inline" set="null" expr="cast 0xFF2C222B" line="5" static="1">
+		<x path="pallette.nature.HairTones"/>
+		<meta>
+			<m n=":value"><e>cast 0xFF2C222B</e></m>
+			<m n=":enum"/>
+			<m n=":impl"/>
+		</meta>
+	</offBlack>
+	<darkestBrown public="1" get="inline" set="null" expr="cast 0xFF383024" line="6" static="1">
+		<x path="pallette.nature.HairTones"/>
+		<meta>
+			<m n=":value"><e>cast 0xFF383024</e></m>
+			<m n=":enum"/>
+			<m n=":impl"/>
+		</meta>
+	</darkestBrown>
+	<medDarkBrown public="1" get="inline" set="null" expr="cast 0xFF564B4F" line="7" static="1">
+		<x path="pallette.nature.HairTones"/>
+		<meta>
+			<m n=":value"><e>cast 0xFF564B4F</e></m>
+			<m n=":enum"/>
+			<m n=":impl"/>
+		</meta>
+	</medDarkBrown>
+	<chestnutBrown public="1" get="inline" set="null" expr="cast 0xFF504444" line="8" static="1">
+		<x path="pallette.nature.HairTones"/>
+		<meta>
+			<m n=":value"><e>cast 0xFF504444</e></m>
+			<m n=":enum"/>
+			<m n=":impl"/>
+		</meta>
+	</chestnutBrown>
+	<lightChestnutBrown public="1" get="inline" set="null" expr="cast 0xFF6A4E42" line="9" static="1">
+		<x path="pallette.nature.HairTones"/>
+		<meta>
+			<m n=":value"><e>cast 0xFF6A4E42</e></m>
+			<m n=":enum"/>
+			<m n=":impl"/>
+		</meta>
+	</lightChestnutBrown>
+	<darkGoldenBrown public="1" get="inline" set="null" expr="cast 0xFF554838" line="10" static="1">
+		<x path="pallette.nature.HairTones"/>
+		<meta>
+			<m n=":value"><e>cast 0xFF554838</e></m>
+			<m n=":enum"/>
+			<m n=":impl"/>
+		</meta>
+	</darkGoldenBrown>
+	<lightGoldenBrown public="1" get="inline" set="null" expr="cast 0xFFA7856A" line="11" static="1">
+		<x path="pallette.nature.HairTones"/>
+		<meta>
+			<m n=":value"><e>cast 0xFFA7856A</e></m>
+			<m n=":enum"/>
+			<m n=":impl"/>
+		</meta>
+	</lightGoldenBrown>
+	<darkHoneyBlonde public="1" get="inline" set="null" expr="cast 0xFFB89778" line="12" static="1">
+		<x path="pallette.nature.HairTones"/>
+		<meta>
+			<m n=":value"><e>cast 0xFFB89778</e></m>
+			<m n=":enum"/>
+			<m n=":impl"/>
+		</meta>
+	</darkHoneyBlonde>
+	<bleachedBlonde public="1" get="inline" set="null" expr="cast 0xFFDCD0BA" line="13" static="1">
+		<x path="pallette.nature.HairTones"/>
+		<meta>
+			<m n=":value"><e>cast 0xFFDCD0BA</e></m>
+			<m n=":enum"/>
+			<m n=":impl"/>
+		</meta>
+	</bleachedBlonde>
+	<lightAshBlonde public="1" get="inline" set="null" expr="cast 0xFFDEBC99" line="14" static="1">
+		<x path="pallette.nature.HairTones"/>
+		<meta>
+			<m n=":value"><e>cast 0xFFDEBC99</e></m>
+			<m n=":enum"/>
+			<m n=":impl"/>
+		</meta>
+	</lightAshBlonde>
+	<lightAshBrown public="1" get="inline" set="null" expr="cast 0xFF977961" line="15" static="1">
+		<x path="pallette.nature.HairTones"/>
+		<meta>
+			<m n=":value"><e>cast 0xFF977961</e></m>
+			<m n=":enum"/>
+			<m n=":impl"/>
+		</meta>
+	</lightAshBrown>
+	<lightestBlonde public="1" get="inline" set="null" expr="cast 0xFFE6CEA8" line="16" static="1">
+		<x path="pallette.nature.HairTones"/>
+		<meta>
+			<m n=":value"><e>cast 0xFFE6CEA8</e></m>
+			<m n=":enum"/>
+			<m n=":impl"/>
+		</meta>
+	</lightestBlonde>
+	<paleGoldenBlonde public="1" get="inline" set="null" expr="cast 0xFFE5C8A8" line="17" static="1">
+		<x path="pallette.nature.HairTones"/>
+		<meta>
+			<m n=":value"><e>cast 0xFFE5C8A8</e></m>
+			<m n=":enum"/>
+			<m n=":impl"/>
+		</meta>
+	</paleGoldenBlonde>
+	<strawberryBlonde public="1" get="inline" set="null" expr="cast 0xFFA56B46" line="18" static="1">
+		<x path="pallette.nature.HairTones"/>
+		<meta>
+			<m n=":value"><e>cast 0xFFA56B46</e></m>
+			<m n=":enum"/>
+			<m n=":impl"/>
+		</meta>
+	</strawberryBlonde>
+	<lightAuburn public="1" get="inline" set="null" expr="cast 0xFF91553D" line="19" static="1">
+		<x path="pallette.nature.HairTones"/>
+		<meta>
+			<m n=":value"><e>cast 0xFF91553D</e></m>
+			<m n=":enum"/>
+			<m n=":impl"/>
+		</meta>
+	</lightAuburn>
+	<darkAuburn public="1" get="inline" set="null" expr="cast 0xFF533D32" line="20" static="1">
+		<x path="pallette.nature.HairTones"/>
+		<meta>
+			<m n=":value"><e>cast 0xFF533D32</e></m>
+			<m n=":enum"/>
+			<m n=":impl"/>
+		</meta>
+	</darkAuburn>
+	<darkestGrey public="1" get="inline" set="null" expr="cast 0xFF71635A" line="21" static="1">
+		<x path="pallette.nature.HairTones"/>
+		<meta>
+			<m n=":value"><e>cast 0xFF71635A</e></m>
+			<m n=":enum"/>
+			<m n=":impl"/>
+		</meta>
+	</darkestGrey>
+	<mediumGrey public="1" get="inline" set="null" expr="cast 0xFFB7A69E" line="22" static="1">
+		<x path="pallette.nature.HairTones"/>
+		<meta>
+			<m n=":value"><e>cast 0xFFB7A69E</e></m>
+			<m n=":enum"/>
+			<m n=":impl"/>
+		</meta>
+	</mediumGrey>
+	<lightGrey public="1" get="inline" set="null" expr="cast 0xFFD6C4C2" line="23" static="1">
+		<x path="pallette.nature.HairTones"/>
+		<meta>
+			<m n=":value"><e>cast 0xFFD6C4C2</e></m>
+			<m n=":enum"/>
+			<m n=":impl"/>
+		</meta>
+	</lightGrey>
+	<whiteBlonde public="1" get="inline" set="null" expr="cast 0xFFFFF5E1" line="24" static="1">
+		<x path="pallette.nature.HairTones"/>
+		<meta>
+			<m n=":value"><e>cast 0xFFFFF5E1</e></m>
+			<m n=":enum"/>
+			<m n=":impl"/>
+		</meta>
+	</whiteBlonde>
+	<platinumBlonde public="1" get="inline" set="null" expr="cast 0xFFCABFB1" line="25" static="1">
+		<x path="pallette.nature.HairTones"/>
+		<meta>
+			<m n=":value"><e>cast 0xFFCABFB1</e></m>
+			<m n=":enum"/>
+			<m n=":impl"/>
+		</meta>
+	</platinumBlonde>
+	<russetRed public="1" get="inline" set="null" expr="cast 0xFF8D4A43" line="26" static="1">
+		<x path="pallette.nature.HairTones"/>
+		<meta>
+			<m n=":value"><e>cast 0xFF8D4A43</e></m>
+			<m n=":enum"/>
+			<m n=":impl"/>
+		</meta>
+	</russetRed>
+	<teraCutta public="1" get="inline" set="null" expr="cast 0xFFB55239" line="27" static="1">
+		<x path="pallette.nature.HairTones"/>
+		<meta>
+			<m n=":value"><e>cast 0xFFB55239</e></m>
+			<m n=":enum"/>
+			<m n=":impl"/>
+		</meta>
+	</teraCutta>
+	<toastedWheat public="1" get="inline" set="null" expr="cast 0xFFD8C078" line="29" static="1">
+		<x path="pallette.nature.HairTones"/>
+		<meta>
+			<m n=":value"><e>cast 0xFFD8C078</e></m>
+			<m n=":enum"/>
+			<m n=":impl"/>
+		</meta>
+	</toastedWheat>
+	<meltedButter public="1" get="inline" set="null" expr="cast 0xFFe3cc88" line="30" static="1">
+		<x path="pallette.nature.HairTones"/>
+		<meta>
+			<m n=":value"><e>cast 0xFFe3cc88</e></m>
+			<m n=":enum"/>
+			<m n=":impl"/>
+		</meta>
+	</meltedButter>
+	<wheatMilk public="1" get="inline" set="null" expr="cast 0xFFF2DA91" line="31" static="1">
+		<x path="pallette.nature.HairTones"/>
+		<meta>
+			<m n=":value"><e>cast 0xFFF2DA91</e></m>
+			<m n=":enum"/>
+			<m n=":impl"/>
+		</meta>
+	</wheatMilk>
+	<cakeTwo public="1" get="inline" set="null" expr="cast 0xFFF2E1AE" line="32" static="1">
+		<x path="pallette.nature.HairTones"/>
+		<meta>
+			<m n=":value"><e>cast 0xFFF2E1AE</e></m>
+			<m n=":enum"/>
+			<m n=":impl"/>
+		</meta>
+	</cakeTwo>
+	<poorJean public="1" get="inline" set="null" expr="cast 0xFFF2E7C7" line="33" static="1">
+		<x path="pallette.nature.HairTones"/>
+		<meta>
+			<m n=":value"><e>cast 0xFFF2E7C7</e></m>
+			<m n=":enum"/>
+			<m n=":impl"/>
+		</meta>
+	</poorJean>
+	<mudOnShoe public="1" get="inline" set="null" expr="cast 0xFF664F3C" line="35" static="1">
+		<x path="pallette.nature.HairTones"/>
+		<meta>
+			<m n=":value"><e>cast 0xFF664F3C</e></m>
+			<m n=":enum"/>
+			<m n=":impl"/>
+		</meta>
+	</mudOnShoe>
+	<cookie public="1" get="inline" set="null" expr="cast 0xFF8c684a" line="36" static="1">
+		<x path="pallette.nature.HairTones"/>
+		<meta>
+			<m n=":value"><e>cast 0xFF8c684a</e></m>
+			<m n=":enum"/>
+			<m n=":impl"/>
+		</meta>
+	</cookie>
+	<treeBark public="1" get="inline" set="null" expr="cast 0xFF332A22" line="37" static="1">
+		<x path="pallette.nature.HairTones"/>
+		<meta>
+			<m n=":value"><e>cast 0xFF332A22</e></m>
+			<m n=":enum"/>
+			<m n=":impl"/>
+		</meta>
+	</treeBark>
+	<meta><m n=":enum"/></meta>
+</class></impl>
+	</abstract>
+	<class path="pallette.nature._HairTone.HairTones_Impl_" params="" file="src/pallette/nature/HairTone.hx" private="1" module="pallette.nature.HairTone" extern="1" final="1">
+		<midnightBlack public="1" get="inline" set="null" expr="cast 0xFF090806" line="4" static="1">
+			<x path="pallette.nature.HairTones"/>
+			<meta>
+				<m n=":value"><e>cast 0xFF090806</e></m>
+				<m n=":enum"/>
+				<m n=":impl"/>
+			</meta>
+		</midnightBlack>
+		<offBlack public="1" get="inline" set="null" expr="cast 0xFF2C222B" line="5" static="1">
+			<x path="pallette.nature.HairTones"/>
+			<meta>
+				<m n=":value"><e>cast 0xFF2C222B</e></m>
+				<m n=":enum"/>
+				<m n=":impl"/>
+			</meta>
+		</offBlack>
+		<darkestBrown public="1" get="inline" set="null" expr="cast 0xFF383024" line="6" static="1">
+			<x path="pallette.nature.HairTones"/>
+			<meta>
+				<m n=":value"><e>cast 0xFF383024</e></m>
+				<m n=":enum"/>
+				<m n=":impl"/>
+			</meta>
+		</darkestBrown>
+		<medDarkBrown public="1" get="inline" set="null" expr="cast 0xFF564B4F" line="7" static="1">
+			<x path="pallette.nature.HairTones"/>
+			<meta>
+				<m n=":value"><e>cast 0xFF564B4F</e></m>
+				<m n=":enum"/>
+				<m n=":impl"/>
+			</meta>
+		</medDarkBrown>
+		<chestnutBrown public="1" get="inline" set="null" expr="cast 0xFF504444" line="8" static="1">
+			<x path="pallette.nature.HairTones"/>
+			<meta>
+				<m n=":value"><e>cast 0xFF504444</e></m>
+				<m n=":enum"/>
+				<m n=":impl"/>
+			</meta>
+		</chestnutBrown>
+		<lightChestnutBrown public="1" get="inline" set="null" expr="cast 0xFF6A4E42" line="9" static="1">
+			<x path="pallette.nature.HairTones"/>
+			<meta>
+				<m n=":value"><e>cast 0xFF6A4E42</e></m>
+				<m n=":enum"/>
+				<m n=":impl"/>
+			</meta>
+		</lightChestnutBrown>
+		<darkGoldenBrown public="1" get="inline" set="null" expr="cast 0xFF554838" line="10" static="1">
+			<x path="pallette.nature.HairTones"/>
+			<meta>
+				<m n=":value"><e>cast 0xFF554838</e></m>
+				<m n=":enum"/>
+				<m n=":impl"/>
+			</meta>
+		</darkGoldenBrown>
+		<lightGoldenBrown public="1" get="inline" set="null" expr="cast 0xFFA7856A" line="11" static="1">
+			<x path="pallette.nature.HairTones"/>
+			<meta>
+				<m n=":value"><e>cast 0xFFA7856A</e></m>
+				<m n=":enum"/>
+				<m n=":impl"/>
+			</meta>
+		</lightGoldenBrown>
+		<darkHoneyBlonde public="1" get="inline" set="null" expr="cast 0xFFB89778" line="12" static="1">
+			<x path="pallette.nature.HairTones"/>
+			<meta>
+				<m n=":value"><e>cast 0xFFB89778</e></m>
+				<m n=":enum"/>
+				<m n=":impl"/>
+			</meta>
+		</darkHoneyBlonde>
+		<bleachedBlonde public="1" get="inline" set="null" expr="cast 0xFFDCD0BA" line="13" static="1">
+			<x path="pallette.nature.HairTones"/>
+			<meta>
+				<m n=":value"><e>cast 0xFFDCD0BA</e></m>
+				<m n=":enum"/>
+				<m n=":impl"/>
+			</meta>
+		</bleachedBlonde>
+		<lightAshBlonde public="1" get="inline" set="null" expr="cast 0xFFDEBC99" line="14" static="1">
+			<x path="pallette.nature.HairTones"/>
+			<meta>
+				<m n=":value"><e>cast 0xFFDEBC99</e></m>
+				<m n=":enum"/>
+				<m n=":impl"/>
+			</meta>
+		</lightAshBlonde>
+		<lightAshBrown public="1" get="inline" set="null" expr="cast 0xFF977961" line="15" static="1">
+			<x path="pallette.nature.HairTones"/>
+			<meta>
+				<m n=":value"><e>cast 0xFF977961</e></m>
+				<m n=":enum"/>
+				<m n=":impl"/>
+			</meta>
+		</lightAshBrown>
+		<lightestBlonde public="1" get="inline" set="null" expr="cast 0xFFE6CEA8" line="16" static="1">
+			<x path="pallette.nature.HairTones"/>
+			<meta>
+				<m n=":value"><e>cast 0xFFE6CEA8</e></m>
+				<m n=":enum"/>
+				<m n=":impl"/>
+			</meta>
+		</lightestBlonde>
+		<paleGoldenBlonde public="1" get="inline" set="null" expr="cast 0xFFE5C8A8" line="17" static="1">
+			<x path="pallette.nature.HairTones"/>
+			<meta>
+				<m n=":value"><e>cast 0xFFE5C8A8</e></m>
+				<m n=":enum"/>
+				<m n=":impl"/>
+			</meta>
+		</paleGoldenBlonde>
+		<strawberryBlonde public="1" get="inline" set="null" expr="cast 0xFFA56B46" line="18" static="1">
+			<x path="pallette.nature.HairTones"/>
+			<meta>
+				<m n=":value"><e>cast 0xFFA56B46</e></m>
+				<m n=":enum"/>
+				<m n=":impl"/>
+			</meta>
+		</strawberryBlonde>
+		<lightAuburn public="1" get="inline" set="null" expr="cast 0xFF91553D" line="19" static="1">
+			<x path="pallette.nature.HairTones"/>
+			<meta>
+				<m n=":value"><e>cast 0xFF91553D</e></m>
+				<m n=":enum"/>
+				<m n=":impl"/>
+			</meta>
+		</lightAuburn>
+		<darkAuburn public="1" get="inline" set="null" expr="cast 0xFF533D32" line="20" static="1">
+			<x path="pallette.nature.HairTones"/>
+			<meta>
+				<m n=":value"><e>cast 0xFF533D32</e></m>
+				<m n=":enum"/>
+				<m n=":impl"/>
+			</meta>
+		</darkAuburn>
+		<darkestGrey public="1" get="inline" set="null" expr="cast 0xFF71635A" line="21" static="1">
+			<x path="pallette.nature.HairTones"/>
+			<meta>
+				<m n=":value"><e>cast 0xFF71635A</e></m>
+				<m n=":enum"/>
+				<m n=":impl"/>
+			</meta>
+		</darkestGrey>
+		<mediumGrey public="1" get="inline" set="null" expr="cast 0xFFB7A69E" line="22" static="1">
+			<x path="pallette.nature.HairTones"/>
+			<meta>
+				<m n=":value"><e>cast 0xFFB7A69E</e></m>
+				<m n=":enum"/>
+				<m n=":impl"/>
+			</meta>
+		</mediumGrey>
+		<lightGrey public="1" get="inline" set="null" expr="cast 0xFFD6C4C2" line="23" static="1">
+			<x path="pallette.nature.HairTones"/>
+			<meta>
+				<m n=":value"><e>cast 0xFFD6C4C2</e></m>
+				<m n=":enum"/>
+				<m n=":impl"/>
+			</meta>
+		</lightGrey>
+		<whiteBlonde public="1" get="inline" set="null" expr="cast 0xFFFFF5E1" line="24" static="1">
+			<x path="pallette.nature.HairTones"/>
+			<meta>
+				<m n=":value"><e>cast 0xFFFFF5E1</e></m>
+				<m n=":enum"/>
+				<m n=":impl"/>
+			</meta>
+		</whiteBlonde>
+		<platinumBlonde public="1" get="inline" set="null" expr="cast 0xFFCABFB1" line="25" static="1">
+			<x path="pallette.nature.HairTones"/>
+			<meta>
+				<m n=":value"><e>cast 0xFFCABFB1</e></m>
+				<m n=":enum"/>
+				<m n=":impl"/>
+			</meta>
+		</platinumBlonde>
+		<russetRed public="1" get="inline" set="null" expr="cast 0xFF8D4A43" line="26" static="1">
+			<x path="pallette.nature.HairTones"/>
+			<meta>
+				<m n=":value"><e>cast 0xFF8D4A43</e></m>
+				<m n=":enum"/>
+				<m n=":impl"/>
+			</meta>
+		</russetRed>
+		<teraCutta public="1" get="inline" set="null" expr="cast 0xFFB55239" line="27" static="1">
+			<x path="pallette.nature.HairTones"/>
+			<meta>
+				<m n=":value"><e>cast 0xFFB55239</e></m>
+				<m n=":enum"/>
+				<m n=":impl"/>
+			</meta>
+		</teraCutta>
+		<toastedWheat public="1" get="inline" set="null" expr="cast 0xFFD8C078" line="29" static="1">
+			<x path="pallette.nature.HairTones"/>
+			<meta>
+				<m n=":value"><e>cast 0xFFD8C078</e></m>
+				<m n=":enum"/>
+				<m n=":impl"/>
+			</meta>
+		</toastedWheat>
+		<meltedButter public="1" get="inline" set="null" expr="cast 0xFFe3cc88" line="30" static="1">
+			<x path="pallette.nature.HairTones"/>
+			<meta>
+				<m n=":value"><e>cast 0xFFe3cc88</e></m>
+				<m n=":enum"/>
+				<m n=":impl"/>
+			</meta>
+		</meltedButter>
+		<wheatMilk public="1" get="inline" set="null" expr="cast 0xFFF2DA91" line="31" static="1">
+			<x path="pallette.nature.HairTones"/>
+			<meta>
+				<m n=":value"><e>cast 0xFFF2DA91</e></m>
+				<m n=":enum"/>
+				<m n=":impl"/>
+			</meta>
+		</wheatMilk>
+		<cakeTwo public="1" get="inline" set="null" expr="cast 0xFFF2E1AE" line="32" static="1">
+			<x path="pallette.nature.HairTones"/>
+			<meta>
+				<m n=":value"><e>cast 0xFFF2E1AE</e></m>
+				<m n=":enum"/>
+				<m n=":impl"/>
+			</meta>
+		</cakeTwo>
+		<poorJean public="1" get="inline" set="null" expr="cast 0xFFF2E7C7" line="33" static="1">
+			<x path="pallette.nature.HairTones"/>
+			<meta>
+				<m n=":value"><e>cast 0xFFF2E7C7</e></m>
+				<m n=":enum"/>
+				<m n=":impl"/>
+			</meta>
+		</poorJean>
+		<mudOnShoe public="1" get="inline" set="null" expr="cast 0xFF664F3C" line="35" static="1">
+			<x path="pallette.nature.HairTones"/>
+			<meta>
+				<m n=":value"><e>cast 0xFF664F3C</e></m>
+				<m n=":enum"/>
+				<m n=":impl"/>
+			</meta>
+		</mudOnShoe>
+		<cookie public="1" get="inline" set="null" expr="cast 0xFF8c684a" line="36" static="1">
+			<x path="pallette.nature.HairTones"/>
+			<meta>
+				<m n=":value"><e>cast 0xFF8c684a</e></m>
+				<m n=":enum"/>
+				<m n=":impl"/>
+			</meta>
+		</cookie>
+		<treeBark public="1" get="inline" set="null" expr="cast 0xFF332A22" line="37" static="1">
+			<x path="pallette.nature.HairTones"/>
+			<meta>
+				<m n=":value"><e>cast 0xFF332A22</e></m>
+				<m n=":enum"/>
+				<m n=":impl"/>
+			</meta>
+		</treeBark>
+		<meta><m n=":enum"/></meta>
+	</class>
+	<class path="pallette.nature.HairTone" params="" file="src/pallette/nature/HairTone.hx">
+		<getColors public="1" get="inline" set="null" line="43" static="1"><f a=""><c path="Array"><x path="pallette.nature.HairTones"/></c></f></getColors>
+		<random public="1" get="inline" set="null" line="78" static="1"><f a=""><x path="pallette.nature.HairTones"/></f></random>
+		<getName public="1" get="inline" set="null" line="84" static="1"><f a="s">
+	<x path="pallette.nature.HairTones"/>
+	<c path="String"/>
+</f></getName>
+		<haxe_doc>![hairTone](../../bootstrap/img/hairTone.png)</haxe_doc>
+	</class>
+	<abstract path="pallette.nature.PinkTones" params="" file="src/pallette/nature/PinkTone.hx" module="pallette.nature.PinkTone">
+		<from><icast><x path="Int"/></icast></from>
+		<this><x path="Int"/></this>
+		<to><icast><x path="Int"/></icast></to>
+		<meta><m n=":enum"/></meta>
+		<impl><class path="pallette.nature._PinkTone.PinkTones_Impl_" params="" file="src/pallette/nature/PinkTone.hx" private="1" module="pallette.nature.PinkTone" extern="1" final="1">
+	<linen public="1" get="inline" set="null" expr="cast 0xFFFBEAE2" line="4" static="1">
+		<x path="pallette.nature.PinkTones"/>
+		<meta>
+			<m n=":value"><e>cast 0xFFFBEAE2</e></m>
+			<m n=":enum"/>
+			<m n=":impl"/>
+		</meta>
+	</linen>
+	<cinderalla public="1" get="inline" set="null" expr="cast 0xFFFCE1D6" line="5" static="1">
+		<x path="pallette.nature.PinkTones"/>
+		<meta>
+			<m n=":value"><e>cast 0xFFFCE1D6</e></m>
+			<m n=":enum"/>
+			<m n=":impl"/>
+		</meta>
+	</cinderalla>
+	<apricot public="1" get="inline" set="null" expr="cast 0xFFFDD2C2" line="6" static="1">
+		<x path="pallette.nature.PinkTones"/>
+		<meta>
+			<m n=":value"><e>cast 0xFFFDD2C2</e></m>
+			<m n=":enum"/>
+			<m n=":impl"/>
+		</meta>
+	</apricot>
+	<waxFlower public="1" get="inline" set="null" expr="cast 0xFFFFC2AD" line="7" static="1">
+		<x path="pallette.nature.PinkTones"/>
+		<meta>
+			<m n=":value"><e>cast 0xFFFFC2AD</e></m>
+			<m n=":enum"/>
+			<m n=":impl"/>
+		</meta>
+	</waxFlower>
+	<manhattan public="1" get="inline" set="null" expr="cast 0xFFF5B399" line="8" static="1">
+		<x path="pallette.nature.PinkTones"/>
+		<meta>
+			<m n=":value"><e>cast 0xFFF5B399</e></m>
+			<m n=":enum"/>
+			<m n=":impl"/>
+		</meta>
+	</manhattan>
+	<tonyPink public="1" get="inline" set="null" expr="cast 0xFFE39D7E" line="9" static="1">
+		<x path="pallette.nature.PinkTones"/>
+		<meta>
+			<m n=":value"><e>cast 0xFFE39D7E</e></m>
+			<m n=":enum"/>
+			<m n=":impl"/>
+		</meta>
+	</tonyPink>
+	<copper public="1" get="inline" set="null" expr="cast 0xFFDB9073" line="10" static="1">
+		<x path="pallette.nature.PinkTones"/>
+		<meta>
+			<m n=":value"><e>cast 0xFFDB9073</e></m>
+			<m n=":enum"/>
+			<m n=":impl"/>
+		</meta>
+	</copper>
+	<rawSienna public="1" get="inline" set="null" expr="cast 0xFFCE7A58" line="11" static="1">
+		<x path="pallette.nature.PinkTones"/>
+		<meta>
+			<m n=":value"><e>cast 0xFFCE7A58</e></m>
+			<m n=":enum"/>
+			<m n=":impl"/>
+		</meta>
+	</rawSienna>
+	<brown public="1" get="inline" set="null" expr="cast 0xFFB1674A" line="12" static="1">
+		<x path="pallette.nature.PinkTones"/>
+		<meta>
+			<m n=":value"><e>cast 0xFFB1674A</e></m>
+			<m n=":enum"/>
+			<m n=":impl"/>
+		</meta>
+	</brown>
+	<ironStone public="1" get="inline" set="null" expr="cast 0xFF7F4C3B" line="13" static="1">
+		<x path="pallette.nature.PinkTones"/>
+		<meta>
+			<m n=":value"><e>cast 0xFF7F4C3B</e></m>
+			<m n=":enum"/>
+			<m n=":impl"/>
+		</meta>
+	</ironStone>
+	<meta><m n=":enum"/></meta>
+</class></impl>
+	</abstract>
+	<class path="pallette.nature._PinkTone.PinkTones_Impl_" params="" file="src/pallette/nature/PinkTone.hx" private="1" module="pallette.nature.PinkTone" extern="1" final="1">
+		<linen public="1" get="inline" set="null" expr="cast 0xFFFBEAE2" line="4" static="1">
+			<x path="pallette.nature.PinkTones"/>
+			<meta>
+				<m n=":value"><e>cast 0xFFFBEAE2</e></m>
+				<m n=":enum"/>
+				<m n=":impl"/>
+			</meta>
+		</linen>
+		<cinderalla public="1" get="inline" set="null" expr="cast 0xFFFCE1D6" line="5" static="1">
+			<x path="pallette.nature.PinkTones"/>
+			<meta>
+				<m n=":value"><e>cast 0xFFFCE1D6</e></m>
+				<m n=":enum"/>
+				<m n=":impl"/>
+			</meta>
+		</cinderalla>
+		<apricot public="1" get="inline" set="null" expr="cast 0xFFFDD2C2" line="6" static="1">
+			<x path="pallette.nature.PinkTones"/>
+			<meta>
+				<m n=":value"><e>cast 0xFFFDD2C2</e></m>
+				<m n=":enum"/>
+				<m n=":impl"/>
+			</meta>
+		</apricot>
+		<waxFlower public="1" get="inline" set="null" expr="cast 0xFFFFC2AD" line="7" static="1">
+			<x path="pallette.nature.PinkTones"/>
+			<meta>
+				<m n=":value"><e>cast 0xFFFFC2AD</e></m>
+				<m n=":enum"/>
+				<m n=":impl"/>
+			</meta>
+		</waxFlower>
+		<manhattan public="1" get="inline" set="null" expr="cast 0xFFF5B399" line="8" static="1">
+			<x path="pallette.nature.PinkTones"/>
+			<meta>
+				<m n=":value"><e>cast 0xFFF5B399</e></m>
+				<m n=":enum"/>
+				<m n=":impl"/>
+			</meta>
+		</manhattan>
+		<tonyPink public="1" get="inline" set="null" expr="cast 0xFFE39D7E" line="9" static="1">
+			<x path="pallette.nature.PinkTones"/>
+			<meta>
+				<m n=":value"><e>cast 0xFFE39D7E</e></m>
+				<m n=":enum"/>
+				<m n=":impl"/>
+			</meta>
+		</tonyPink>
+		<copper public="1" get="inline" set="null" expr="cast 0xFFDB9073" line="10" static="1">
+			<x path="pallette.nature.PinkTones"/>
+			<meta>
+				<m n=":value"><e>cast 0xFFDB9073</e></m>
+				<m n=":enum"/>
+				<m n=":impl"/>
+			</meta>
+		</copper>
+		<rawSienna public="1" get="inline" set="null" expr="cast 0xFFCE7A58" line="11" static="1">
+			<x path="pallette.nature.PinkTones"/>
+			<meta>
+				<m n=":value"><e>cast 0xFFCE7A58</e></m>
+				<m n=":enum"/>
+				<m n=":impl"/>
+			</meta>
+		</rawSienna>
+		<brown public="1" get="inline" set="null" expr="cast 0xFFB1674A" line="12" static="1">
+			<x path="pallette.nature.PinkTones"/>
+			<meta>
+				<m n=":value"><e>cast 0xFFB1674A</e></m>
+				<m n=":enum"/>
+				<m n=":impl"/>
+			</meta>
+		</brown>
+		<ironStone public="1" get="inline" set="null" expr="cast 0xFF7F4C3B" line="13" static="1">
+			<x path="pallette.nature.PinkTones"/>
+			<meta>
+				<m n=":value"><e>cast 0xFF7F4C3B</e></m>
+				<m n=":enum"/>
+				<m n=":impl"/>
+			</meta>
+		</ironStone>
+		<meta><m n=":enum"/></meta>
+	</class>
+	<class path="pallette.nature.PinkTone" params="" file="src/pallette/nature/PinkTone.hx">
+		<getColors public="1" get="inline" set="null" line="19" static="1"><f a=""><c path="Array"><x path="pallette.nature.PinkTones"/></c></f></getColors>
+		<random public="1" get="inline" set="null" line="32" static="1"><f a=""><x path="pallette.nature.PinkTones"/></f></random>
+		<getName public="1" get="inline" set="null" line="38" static="1"><f a="s">
+	<x path="pallette.nature.PinkTones"/>
+	<c path="String"/>
+</f></getName>
+		<haxe_doc>![pinkTone](../../bootstrap/img/pinkTone.png)</haxe_doc>
+	</class>
 	<abstract path="pallette.nature.SkinTones" params="" file="src/pallette/nature/SkinTone.hx" module="pallette.nature.SkinTone">
 		<from><icast><x path="Int"/></icast></from>
 		<this><x path="Int"/></this>
@@ -6880,6 +7594,768 @@
 	<c path="String"/>
 </f></getName>
 		<haxe_doc>![skinTone](../../bootstrap/img/skinTone.png)</haxe_doc>
+	</class>
+	<abstract path="pallette.nature.SkinTones2" params="" file="src/pallette/nature/SkinTone2.hx" module="pallette.nature.SkinTone2">
+		<from><icast><x path="Int"/></icast></from>
+		<this><x path="Int"/></this>
+		<to><icast><x path="Int"/></icast></to>
+		<meta><m n=":enum"/></meta>
+		<impl><class path="pallette.nature._SkinTone2.SkinTones2_Impl_" params="" file="src/pallette/nature/SkinTone2.hx" private="1" module="pallette.nature.SkinTone2" extern="1" final="1">
+	<caramel public="1" get="inline" set="null" expr="cast 0xFFFFDCB1" line="4" static="1">
+		<x path="pallette.nature.SkinTones2"/>
+		<meta>
+			<m n=":value"><e>cast 0xFFFFDCB1</e></m>
+			<m n=":enum"/>
+			<m n=":impl"/>
+		</meta>
+	</caramel>
+	<gold public="1" get="inline" set="null" expr="cast 0xFFE5C29B" line="5" static="1">
+		<x path="pallette.nature.SkinTones2"/>
+		<meta>
+			<m n=":value"><e>cast 0xFFE5C29B</e></m>
+			<m n=":enum"/>
+			<m n=":impl"/>
+		</meta>
+	</gold>
+	<goldSand public="1" get="inline" set="null" expr="cast 0xFFE4B98E" line="6" static="1">
+		<x path="pallette.nature.SkinTones2"/>
+		<meta>
+			<m n=":value"><e>cast 0xFFE4B98E</e></m>
+			<m n=":enum"/>
+			<m n=":impl"/>
+		</meta>
+	</goldSand>
+	<calico public="1" get="inline" set="null" expr="cast 0xFFE2B98F" line="7" static="1">
+		<x path="pallette.nature.SkinTones2"/>
+		<meta>
+			<m n=":value"><e>cast 0xFFE2B98F</e></m>
+			<m n=":enum"/>
+			<m n=":impl"/>
+		</meta>
+	</calico>
+	<copper public="1" get="inline" set="null" expr="cast 0xFFE3A173" line="8" static="1">
+		<x path="pallette.nature.SkinTones2"/>
+		<meta>
+			<m n=":value"><e>cast 0xFFE3A173</e></m>
+			<m n=":enum"/>
+			<m n=":impl"/>
+		</meta>
+	</copper>
+	<copperField public="1" get="inline" set="null" expr="cast 0xFFD99164" line="9" static="1">
+		<x path="pallette.nature.SkinTones2"/>
+		<meta>
+			<m n=":value"><e>cast 0xFFD99164</e></m>
+			<m n=":enum"/>
+			<m n=":impl"/>
+		</meta>
+	</copperField>
+	<rawSienna public="1" get="inline" set="null" expr="cast 0xFFCC8443" line="10" static="1">
+		<x path="pallette.nature.SkinTones2"/>
+		<meta>
+			<m n=":value"><e>cast 0xFFCC8443</e></m>
+			<m n=":enum"/>
+			<m n=":impl"/>
+		</meta>
+	</rawSienna>
+	<antiqueBrass public="1" get="inline" set="null" expr="cast 0xFFC77A58" line="11" static="1">
+		<x path="pallette.nature.SkinTones2"/>
+		<meta>
+			<m n=":value"><e>cast 0xFFC77A58</e></m>
+			<m n=":enum"/>
+			<m n=":impl"/>
+		</meta>
+	</antiqueBrass>
+	<fire public="1" get="inline" set="null" expr="cast 0xFFA54900" line="12" static="1">
+		<x path="pallette.nature.SkinTones2"/>
+		<meta>
+			<m n=":value"><e>cast 0xFFA54900</e></m>
+			<m n=":enum"/>
+			<m n=":impl"/>
+		</meta>
+	</fire>
+	<redBerry public="1" get="inline" set="null" expr="cast 0xFF880400" line="13" static="1">
+		<x path="pallette.nature.SkinTones2"/>
+		<meta>
+			<m n=":value"><e>cast 0xFF880400</e></m>
+			<m n=":enum"/>
+			<m n=":impl"/>
+		</meta>
+	</redBerry>
+	<loneStar public="1" get="inline" set="null" expr="cast 0xFF710200" line="14" static="1">
+		<x path="pallette.nature.SkinTones2"/>
+		<meta>
+			<m n=":value"><e>cast 0xFF710200</e></m>
+			<m n=":enum"/>
+			<m n=":impl"/>
+		</meta>
+	</loneStar>
+	<brownPod public="1" get="inline" set="null" expr="cast 0xFF440C00" line="15" static="1">
+		<x path="pallette.nature.SkinTones2"/>
+		<meta>
+			<m n=":value"><e>cast 0xFF440C00</e></m>
+			<m n=":enum"/>
+			<m n=":impl"/>
+		</meta>
+	</brownPod>
+	<negroni public="1" get="inline" set="null" expr="cast 0xFFFFE0C4" line="16" static="1">
+		<x path="pallette.nature.SkinTones2"/>
+		<meta>
+			<m n=":value"><e>cast 0xFFFFE0C4</e></m>
+			<m n=":enum"/>
+			<m n=":impl"/>
+		</meta>
+	</negroni>
+	<desertSand public="1" get="inline" set="null" expr="cast 0xFFEECFB4" line="17" static="1">
+		<x path="pallette.nature.SkinTones2"/>
+		<meta>
+			<m n=":value"><e>cast 0xFFEECFB4</e></m>
+			<m n=":enum"/>
+			<m n=":impl"/>
+		</meta>
+	</desertSand>
+	<tumbleWeed public="1" get="inline" set="null" expr="cast 0xFFDEAB7F" line="18" static="1">
+		<x path="pallette.nature.SkinTones2"/>
+		<meta>
+			<m n=":value"><e>cast 0xFFDEAB7F</e></m>
+			<m n=":enum"/>
+			<m n=":impl"/>
+		</meta>
+	</tumbleWeed>
+	<tumbleWeed2 public="1" get="inline" set="null" expr="cast 0xFFE0B184" line="19" static="1">
+		<x path="pallette.nature.SkinTones2"/>
+		<meta>
+			<m n=":value"><e>cast 0xFFE0B184</e></m>
+			<m n=":enum"/>
+			<m n=":impl"/>
+		</meta>
+	</tumbleWeed2>
+	<tumbleWeed3 public="1" get="inline" set="null" expr="cast 0xFFDFA675" line="20" static="1">
+		<x path="pallette.nature.SkinTones2"/>
+		<meta>
+			<m n=":value"><e>cast 0xFFDFA675</e></m>
+			<m n=":enum"/>
+			<m n=":impl"/>
+		</meta>
+	</tumbleWeed3>
+	<copper2 public="1" get="inline" set="null" expr="cast 0xFFBE723C" line="21" static="1">
+		<x path="pallette.nature.SkinTones2"/>
+		<meta>
+			<m n=":value"><e>cast 0xFFBE723C</e></m>
+			<m n=":enum"/>
+			<m n=":impl"/>
+		</meta>
+	</copper2>
+	<brightRed public="1" get="inline" set="null" expr="cast 0xFFA01900" line="22" static="1">
+		<x path="pallette.nature.SkinTones2"/>
+		<meta>
+			<m n=":value"><e>cast 0xFFA01900</e></m>
+			<m n=":enum"/>
+			<m n=":impl"/>
+		</meta>
+	</brightRed>
+	<rosewood public="1" get="inline" set="null" expr="cast 0xFF580000" line="23" static="1">
+		<x path="pallette.nature.SkinTones2"/>
+		<meta>
+			<m n=":value"><e>cast 0xFF580000</e></m>
+			<m n=":enum"/>
+			<m n=":impl"/>
+		</meta>
+	</rosewood>
+	<black public="1" get="inline" set="null" expr="cast 0xFF000000" line="24" static="1">
+		<x path="pallette.nature.SkinTones2"/>
+		<meta>
+			<m n=":value"><e>cast 0xFF000000</e></m>
+			<m n=":enum"/>
+			<m n=":impl"/>
+		</meta>
+	</black>
+	<parchment public="1" get="inline" set="null" expr="cast 0xFFEDE4C8" line="25" static="1">
+		<x path="pallette.nature.SkinTones2"/>
+		<meta>
+			<m n=":value"><e>cast 0xFFEDE4C8</e></m>
+			<m n=":enum"/>
+			<m n=":impl"/>
+		</meta>
+	</parchment>
+	<desertSand2 public="1" get="inline" set="null" expr="cast 0xFFEFD6BD" line="26" static="1">
+		<x path="pallette.nature.SkinTones2"/>
+		<meta>
+			<m n=":value"><e>cast 0xFFEFD6BD</e></m>
+			<m n=":enum"/>
+			<m n=":impl"/>
+		</meta>
+	</desertSand2>
+	<gold2 public="1" get="inline" set="null" expr="cast 0xFFEABD9D" line="27" static="1">
+		<x path="pallette.nature.SkinTones2"/>
+		<meta>
+			<m n=":value"><e>cast 0xFFEABD9D</e></m>
+			<m n=":enum"/>
+			<m n=":impl"/>
+		</meta>
+	</gold2>
+	<roseFog public="1" get="inline" set="null" expr="cast 0xFFE3C2AE" line="28" static="1">
+		<x path="pallette.nature.SkinTones2"/>
+		<meta>
+			<m n=":value"><e>cast 0xFFE3C2AE</e></m>
+			<m n=":enum"/>
+			<m n=":impl"/>
+		</meta>
+	</roseFog>
+	<calico2 public="1" get="inline" set="null" expr="cast 0xFFDFB997" line="29" static="1">
+		<x path="pallette.nature.SkinTones2"/>
+		<meta>
+			<m n=":value"><e>cast 0xFFDFB997</e></m>
+			<m n=":enum"/>
+			<m n=":impl"/>
+		</meta>
+	</calico2>
+	<wiskey public="1" get="inline" set="null" expr="cast 0xFFD0926E" line="30" static="1">
+		<x path="pallette.nature.SkinTones2"/>
+		<meta>
+			<m n=":value"><e>cast 0xFFD0926E</e></m>
+			<m n=":enum"/>
+			<m n=":impl"/>
+		</meta>
+	</wiskey>
+	<mongoose public="1" get="inline" set="null" expr="cast 0xFFBD9778" line="31" static="1">
+		<x path="pallette.nature.SkinTones2"/>
+		<meta>
+			<m n=":value"><e>cast 0xFFBD9778</e></m>
+			<m n=":enum"/>
+			<m n=":impl"/>
+		</meta>
+	</mongoose>
+	<brown public="1" get="inline" set="null" expr="cast 0xFFBB6D4A" line="32" static="1">
+		<x path="pallette.nature.SkinTones2"/>
+		<meta>
+			<m n=":value"><e>cast 0xFFBB6D4A</e></m>
+			<m n=":enum"/>
+			<m n=":impl"/>
+		</meta>
+	</brown>
+	<redBerry2 public="1" get="inline" set="null" expr="cast 0xFF940A00" line="33" static="1">
+		<x path="pallette.nature.SkinTones2"/>
+		<meta>
+			<m n=":value"><e>cast 0xFF940A00</e></m>
+			<m n=":enum"/>
+			<m n=":impl"/>
+		</meta>
+	</redBerry2>
+	<roseFog2 public="1" get="inline" set="null" expr="cast 0xFFE1ADA4" line="34" static="1">
+		<x path="pallette.nature.SkinTones2"/>
+		<meta>
+			<m n=":value"><e>cast 0xFFE1ADA4</e></m>
+			<m n=":enum"/>
+			<m n=":impl"/>
+		</meta>
+	</roseFog2>
+	<barleyCorn public="1" get="inline" set="null" expr="cast 0xFFA58859" line="35" static="1">
+		<x path="pallette.nature.SkinTones2"/>
+		<meta>
+			<m n=":value"><e>cast 0xFFA58859</e></m>
+			<m n=":enum"/>
+			<m n=":impl"/>
+		</meta>
+	</barleyCorn>
+	<maroon public="1" get="inline" set="null" expr="cast 0xFF7B0000" line="36" static="1">
+		<x path="pallette.nature.SkinTones2"/>
+		<meta>
+			<m n=":value"><e>cast 0xFF7B0000</e></m>
+			<m n=":enum"/>
+			<m n=":impl"/>
+		</meta>
+	</maroon>
+	<loneStar2 public="1" get="inline" set="null" expr="cast 0xFF720000" line="37" static="1">
+		<x path="pallette.nature.SkinTones2"/>
+		<meta>
+			<m n=":value"><e>cast 0xFF720000</e></m>
+			<m n=":enum"/>
+			<m n=":impl"/>
+		</meta>
+	</loneStar2>
+	<rosewood2 public="1" get="inline" set="null" expr="cast 0xFF560000" line="38" static="1">
+		<x path="pallette.nature.SkinTones2"/>
+		<meta>
+			<m n=":value"><e>cast 0xFF560000</e></m>
+			<m n=":enum"/>
+			<m n=":impl"/>
+		</meta>
+	</rosewood2>
+	<meta><m n=":enum"/></meta>
+</class></impl>
+	</abstract>
+	<class path="pallette.nature._SkinTone2.SkinTones2_Impl_" params="" file="src/pallette/nature/SkinTone2.hx" private="1" module="pallette.nature.SkinTone2" extern="1" final="1">
+		<caramel public="1" get="inline" set="null" expr="cast 0xFFFFDCB1" line="4" static="1">
+			<x path="pallette.nature.SkinTones2"/>
+			<meta>
+				<m n=":value"><e>cast 0xFFFFDCB1</e></m>
+				<m n=":enum"/>
+				<m n=":impl"/>
+			</meta>
+		</caramel>
+		<gold public="1" get="inline" set="null" expr="cast 0xFFE5C29B" line="5" static="1">
+			<x path="pallette.nature.SkinTones2"/>
+			<meta>
+				<m n=":value"><e>cast 0xFFE5C29B</e></m>
+				<m n=":enum"/>
+				<m n=":impl"/>
+			</meta>
+		</gold>
+		<goldSand public="1" get="inline" set="null" expr="cast 0xFFE4B98E" line="6" static="1">
+			<x path="pallette.nature.SkinTones2"/>
+			<meta>
+				<m n=":value"><e>cast 0xFFE4B98E</e></m>
+				<m n=":enum"/>
+				<m n=":impl"/>
+			</meta>
+		</goldSand>
+		<calico public="1" get="inline" set="null" expr="cast 0xFFE2B98F" line="7" static="1">
+			<x path="pallette.nature.SkinTones2"/>
+			<meta>
+				<m n=":value"><e>cast 0xFFE2B98F</e></m>
+				<m n=":enum"/>
+				<m n=":impl"/>
+			</meta>
+		</calico>
+		<copper public="1" get="inline" set="null" expr="cast 0xFFE3A173" line="8" static="1">
+			<x path="pallette.nature.SkinTones2"/>
+			<meta>
+				<m n=":value"><e>cast 0xFFE3A173</e></m>
+				<m n=":enum"/>
+				<m n=":impl"/>
+			</meta>
+		</copper>
+		<copperField public="1" get="inline" set="null" expr="cast 0xFFD99164" line="9" static="1">
+			<x path="pallette.nature.SkinTones2"/>
+			<meta>
+				<m n=":value"><e>cast 0xFFD99164</e></m>
+				<m n=":enum"/>
+				<m n=":impl"/>
+			</meta>
+		</copperField>
+		<rawSienna public="1" get="inline" set="null" expr="cast 0xFFCC8443" line="10" static="1">
+			<x path="pallette.nature.SkinTones2"/>
+			<meta>
+				<m n=":value"><e>cast 0xFFCC8443</e></m>
+				<m n=":enum"/>
+				<m n=":impl"/>
+			</meta>
+		</rawSienna>
+		<antiqueBrass public="1" get="inline" set="null" expr="cast 0xFFC77A58" line="11" static="1">
+			<x path="pallette.nature.SkinTones2"/>
+			<meta>
+				<m n=":value"><e>cast 0xFFC77A58</e></m>
+				<m n=":enum"/>
+				<m n=":impl"/>
+			</meta>
+		</antiqueBrass>
+		<fire public="1" get="inline" set="null" expr="cast 0xFFA54900" line="12" static="1">
+			<x path="pallette.nature.SkinTones2"/>
+			<meta>
+				<m n=":value"><e>cast 0xFFA54900</e></m>
+				<m n=":enum"/>
+				<m n=":impl"/>
+			</meta>
+		</fire>
+		<redBerry public="1" get="inline" set="null" expr="cast 0xFF880400" line="13" static="1">
+			<x path="pallette.nature.SkinTones2"/>
+			<meta>
+				<m n=":value"><e>cast 0xFF880400</e></m>
+				<m n=":enum"/>
+				<m n=":impl"/>
+			</meta>
+		</redBerry>
+		<loneStar public="1" get="inline" set="null" expr="cast 0xFF710200" line="14" static="1">
+			<x path="pallette.nature.SkinTones2"/>
+			<meta>
+				<m n=":value"><e>cast 0xFF710200</e></m>
+				<m n=":enum"/>
+				<m n=":impl"/>
+			</meta>
+		</loneStar>
+		<brownPod public="1" get="inline" set="null" expr="cast 0xFF440C00" line="15" static="1">
+			<x path="pallette.nature.SkinTones2"/>
+			<meta>
+				<m n=":value"><e>cast 0xFF440C00</e></m>
+				<m n=":enum"/>
+				<m n=":impl"/>
+			</meta>
+		</brownPod>
+		<negroni public="1" get="inline" set="null" expr="cast 0xFFFFE0C4" line="16" static="1">
+			<x path="pallette.nature.SkinTones2"/>
+			<meta>
+				<m n=":value"><e>cast 0xFFFFE0C4</e></m>
+				<m n=":enum"/>
+				<m n=":impl"/>
+			</meta>
+		</negroni>
+		<desertSand public="1" get="inline" set="null" expr="cast 0xFFEECFB4" line="17" static="1">
+			<x path="pallette.nature.SkinTones2"/>
+			<meta>
+				<m n=":value"><e>cast 0xFFEECFB4</e></m>
+				<m n=":enum"/>
+				<m n=":impl"/>
+			</meta>
+		</desertSand>
+		<tumbleWeed public="1" get="inline" set="null" expr="cast 0xFFDEAB7F" line="18" static="1">
+			<x path="pallette.nature.SkinTones2"/>
+			<meta>
+				<m n=":value"><e>cast 0xFFDEAB7F</e></m>
+				<m n=":enum"/>
+				<m n=":impl"/>
+			</meta>
+		</tumbleWeed>
+		<tumbleWeed2 public="1" get="inline" set="null" expr="cast 0xFFE0B184" line="19" static="1">
+			<x path="pallette.nature.SkinTones2"/>
+			<meta>
+				<m n=":value"><e>cast 0xFFE0B184</e></m>
+				<m n=":enum"/>
+				<m n=":impl"/>
+			</meta>
+		</tumbleWeed2>
+		<tumbleWeed3 public="1" get="inline" set="null" expr="cast 0xFFDFA675" line="20" static="1">
+			<x path="pallette.nature.SkinTones2"/>
+			<meta>
+				<m n=":value"><e>cast 0xFFDFA675</e></m>
+				<m n=":enum"/>
+				<m n=":impl"/>
+			</meta>
+		</tumbleWeed3>
+		<copper2 public="1" get="inline" set="null" expr="cast 0xFFBE723C" line="21" static="1">
+			<x path="pallette.nature.SkinTones2"/>
+			<meta>
+				<m n=":value"><e>cast 0xFFBE723C</e></m>
+				<m n=":enum"/>
+				<m n=":impl"/>
+			</meta>
+		</copper2>
+		<brightRed public="1" get="inline" set="null" expr="cast 0xFFA01900" line="22" static="1">
+			<x path="pallette.nature.SkinTones2"/>
+			<meta>
+				<m n=":value"><e>cast 0xFFA01900</e></m>
+				<m n=":enum"/>
+				<m n=":impl"/>
+			</meta>
+		</brightRed>
+		<rosewood public="1" get="inline" set="null" expr="cast 0xFF580000" line="23" static="1">
+			<x path="pallette.nature.SkinTones2"/>
+			<meta>
+				<m n=":value"><e>cast 0xFF580000</e></m>
+				<m n=":enum"/>
+				<m n=":impl"/>
+			</meta>
+		</rosewood>
+		<black public="1" get="inline" set="null" expr="cast 0xFF000000" line="24" static="1">
+			<x path="pallette.nature.SkinTones2"/>
+			<meta>
+				<m n=":value"><e>cast 0xFF000000</e></m>
+				<m n=":enum"/>
+				<m n=":impl"/>
+			</meta>
+		</black>
+		<parchment public="1" get="inline" set="null" expr="cast 0xFFEDE4C8" line="25" static="1">
+			<x path="pallette.nature.SkinTones2"/>
+			<meta>
+				<m n=":value"><e>cast 0xFFEDE4C8</e></m>
+				<m n=":enum"/>
+				<m n=":impl"/>
+			</meta>
+		</parchment>
+		<desertSand2 public="1" get="inline" set="null" expr="cast 0xFFEFD6BD" line="26" static="1">
+			<x path="pallette.nature.SkinTones2"/>
+			<meta>
+				<m n=":value"><e>cast 0xFFEFD6BD</e></m>
+				<m n=":enum"/>
+				<m n=":impl"/>
+			</meta>
+		</desertSand2>
+		<gold2 public="1" get="inline" set="null" expr="cast 0xFFEABD9D" line="27" static="1">
+			<x path="pallette.nature.SkinTones2"/>
+			<meta>
+				<m n=":value"><e>cast 0xFFEABD9D</e></m>
+				<m n=":enum"/>
+				<m n=":impl"/>
+			</meta>
+		</gold2>
+		<roseFog public="1" get="inline" set="null" expr="cast 0xFFE3C2AE" line="28" static="1">
+			<x path="pallette.nature.SkinTones2"/>
+			<meta>
+				<m n=":value"><e>cast 0xFFE3C2AE</e></m>
+				<m n=":enum"/>
+				<m n=":impl"/>
+			</meta>
+		</roseFog>
+		<calico2 public="1" get="inline" set="null" expr="cast 0xFFDFB997" line="29" static="1">
+			<x path="pallette.nature.SkinTones2"/>
+			<meta>
+				<m n=":value"><e>cast 0xFFDFB997</e></m>
+				<m n=":enum"/>
+				<m n=":impl"/>
+			</meta>
+		</calico2>
+		<wiskey public="1" get="inline" set="null" expr="cast 0xFFD0926E" line="30" static="1">
+			<x path="pallette.nature.SkinTones2"/>
+			<meta>
+				<m n=":value"><e>cast 0xFFD0926E</e></m>
+				<m n=":enum"/>
+				<m n=":impl"/>
+			</meta>
+		</wiskey>
+		<mongoose public="1" get="inline" set="null" expr="cast 0xFFBD9778" line="31" static="1">
+			<x path="pallette.nature.SkinTones2"/>
+			<meta>
+				<m n=":value"><e>cast 0xFFBD9778</e></m>
+				<m n=":enum"/>
+				<m n=":impl"/>
+			</meta>
+		</mongoose>
+		<brown public="1" get="inline" set="null" expr="cast 0xFFBB6D4A" line="32" static="1">
+			<x path="pallette.nature.SkinTones2"/>
+			<meta>
+				<m n=":value"><e>cast 0xFFBB6D4A</e></m>
+				<m n=":enum"/>
+				<m n=":impl"/>
+			</meta>
+		</brown>
+		<redBerry2 public="1" get="inline" set="null" expr="cast 0xFF940A00" line="33" static="1">
+			<x path="pallette.nature.SkinTones2"/>
+			<meta>
+				<m n=":value"><e>cast 0xFF940A00</e></m>
+				<m n=":enum"/>
+				<m n=":impl"/>
+			</meta>
+		</redBerry2>
+		<roseFog2 public="1" get="inline" set="null" expr="cast 0xFFE1ADA4" line="34" static="1">
+			<x path="pallette.nature.SkinTones2"/>
+			<meta>
+				<m n=":value"><e>cast 0xFFE1ADA4</e></m>
+				<m n=":enum"/>
+				<m n=":impl"/>
+			</meta>
+		</roseFog2>
+		<barleyCorn public="1" get="inline" set="null" expr="cast 0xFFA58859" line="35" static="1">
+			<x path="pallette.nature.SkinTones2"/>
+			<meta>
+				<m n=":value"><e>cast 0xFFA58859</e></m>
+				<m n=":enum"/>
+				<m n=":impl"/>
+			</meta>
+		</barleyCorn>
+		<maroon public="1" get="inline" set="null" expr="cast 0xFF7B0000" line="36" static="1">
+			<x path="pallette.nature.SkinTones2"/>
+			<meta>
+				<m n=":value"><e>cast 0xFF7B0000</e></m>
+				<m n=":enum"/>
+				<m n=":impl"/>
+			</meta>
+		</maroon>
+		<loneStar2 public="1" get="inline" set="null" expr="cast 0xFF720000" line="37" static="1">
+			<x path="pallette.nature.SkinTones2"/>
+			<meta>
+				<m n=":value"><e>cast 0xFF720000</e></m>
+				<m n=":enum"/>
+				<m n=":impl"/>
+			</meta>
+		</loneStar2>
+		<rosewood2 public="1" get="inline" set="null" expr="cast 0xFF560000" line="38" static="1">
+			<x path="pallette.nature.SkinTones2"/>
+			<meta>
+				<m n=":value"><e>cast 0xFF560000</e></m>
+				<m n=":enum"/>
+				<m n=":impl"/>
+			</meta>
+		</rosewood2>
+		<meta><m n=":enum"/></meta>
+	</class>
+	<class path="pallette.nature.SkinTone2" params="" file="src/pallette/nature/SkinTone2.hx">
+		<getColors public="1" get="inline" set="null" line="44" static="1"><f a=""><c path="Array"><x path="pallette.nature.SkinTones2"/></c></f></getColors>
+		<random public="1" get="inline" set="null" line="82" static="1"><f a=""><x path="pallette.nature.SkinTones2"/></f></random>
+		<getName public="1" get="inline" set="null" line="88" static="1"><f a="s">
+	<x path="pallette.nature.SkinTones2"/>
+	<c path="String"/>
+</f></getName>
+		<haxe_doc>![skinTone2](../../bootstrap/img/skinTone2.png)</haxe_doc>
+	</class>
+	<abstract path="pallette.nature.YellowTones" params="" file="src/pallette/nature/YellowTone.hx" module="pallette.nature.YellowTone">
+		<from><icast><x path="Int"/></icast></from>
+		<this><x path="Int"/></this>
+		<to><icast><x path="Int"/></icast></to>
+		<meta><m n=":enum"/></meta>
+		<impl><class path="pallette.nature._YellowTone.YellowTones_Impl_" params="" file="src/pallette/nature/YellowTone.hx" private="1" module="pallette.nature.YellowTone" extern="1" final="1">
+	<linen2 public="1" get="inline" set="null" expr="cast 0xFFF8EBDB" line="4" static="1">
+		<x path="pallette.nature.YellowTones"/>
+		<meta>
+			<m n=":value"><e>cast 0xFFF8EBDB</e></m>
+			<m n=":enum"/>
+			<m n=":impl"/>
+		</meta>
+	</linen2>
+	<oasis public="1" get="inline" set="null" expr="cast 0xFFFDE5CD" line="5" static="1">
+		<x path="pallette.nature.YellowTones"/>
+		<meta>
+			<m n=":value"><e>cast 0xFFFDE5CD</e></m>
+			<m n=":enum"/>
+			<m n=":impl"/>
+		</meta>
+	</oasis>
+	<lightApricot public="1" get="inline" set="null" expr="cast 0xFFFDD5B1" line="6" static="1">
+		<x path="pallette.nature.YellowTones"/>
+		<meta>
+			<m n=":value"><e>cast 0xFFFDD5B1</e></m>
+			<m n=":enum"/>
+			<m n=":impl"/>
+		</meta>
+	</lightApricot>
+	<manhatten2 public="1" get="inline" set="null" expr="cast 0xFFF3C79A" line="7" static="1">
+		<x path="pallette.nature.YellowTones"/>
+		<meta>
+			<m n=":value"><e>cast 0xFFF3C79A</e></m>
+			<m n=":enum"/>
+			<m n=":impl"/>
+		</meta>
+	</manhatten2>
+	<tumbleweed public="1" get="inline" set="null" expr="cast 0xFFE2AF82" line="8" static="1">
+		<x path="pallette.nature.YellowTones"/>
+		<meta>
+			<m n=":value"><e>cast 0xFFE2AF82</e></m>
+			<m n=":enum"/>
+			<m n=":impl"/>
+		</meta>
+	</tumbleweed>
+	<wiskey public="1" get="inline" set="null" expr="cast 0xFFD39E69" line="9" static="1">
+		<x path="pallette.nature.YellowTones"/>
+		<meta>
+			<m n=":value"><e>cast 0xFFD39E69</e></m>
+			<m n=":enum"/>
+			<m n=":impl"/>
+		</meta>
+	</wiskey>
+	<muddyWaters public="1" get="inline" set="null" expr="cast 0xFFB88A58" line="10" static="1">
+		<x path="pallette.nature.YellowTones"/>
+		<meta>
+			<m n=":value"><e>cast 0xFFB88A58</e></m>
+			<m n=":enum"/>
+			<m n=":impl"/>
+		</meta>
+	</muddyWaters>
+	<dirt public="1" get="inline" set="null" expr="cast 0xFF997249" line="11" static="1">
+		<x path="pallette.nature.YellowTones"/>
+		<meta>
+			<m n=":value"><e>cast 0xFF997249</e></m>
+			<m n=":enum"/>
+			<m n=":impl"/>
+		</meta>
+	</dirt>
+	<pottersClay public="1" get="inline" set="null" expr="cast 0xFF805737" line="12" static="1">
+		<x path="pallette.nature.YellowTones"/>
+		<meta>
+			<m n=":value"><e>cast 0xFF805737</e></m>
+			<m n=":enum"/>
+			<m n=":impl"/>
+		</meta>
+	</pottersClay>
+	<spice public="1" get="inline" set="null" expr="cast 0xFF68492D" line="13" static="1">
+		<x path="pallette.nature.YellowTones"/>
+		<meta>
+			<m n=":value"><e>cast 0xFF68492D</e></m>
+			<m n=":enum"/>
+			<m n=":impl"/>
+		</meta>
+	</spice>
+	<meta><m n=":enum"/></meta>
+</class></impl>
+	</abstract>
+	<class path="pallette.nature._YellowTone.YellowTones_Impl_" params="" file="src/pallette/nature/YellowTone.hx" private="1" module="pallette.nature.YellowTone" extern="1" final="1">
+		<linen2 public="1" get="inline" set="null" expr="cast 0xFFF8EBDB" line="4" static="1">
+			<x path="pallette.nature.YellowTones"/>
+			<meta>
+				<m n=":value"><e>cast 0xFFF8EBDB</e></m>
+				<m n=":enum"/>
+				<m n=":impl"/>
+			</meta>
+		</linen2>
+		<oasis public="1" get="inline" set="null" expr="cast 0xFFFDE5CD" line="5" static="1">
+			<x path="pallette.nature.YellowTones"/>
+			<meta>
+				<m n=":value"><e>cast 0xFFFDE5CD</e></m>
+				<m n=":enum"/>
+				<m n=":impl"/>
+			</meta>
+		</oasis>
+		<lightApricot public="1" get="inline" set="null" expr="cast 0xFFFDD5B1" line="6" static="1">
+			<x path="pallette.nature.YellowTones"/>
+			<meta>
+				<m n=":value"><e>cast 0xFFFDD5B1</e></m>
+				<m n=":enum"/>
+				<m n=":impl"/>
+			</meta>
+		</lightApricot>
+		<manhatten2 public="1" get="inline" set="null" expr="cast 0xFFF3C79A" line="7" static="1">
+			<x path="pallette.nature.YellowTones"/>
+			<meta>
+				<m n=":value"><e>cast 0xFFF3C79A</e></m>
+				<m n=":enum"/>
+				<m n=":impl"/>
+			</meta>
+		</manhatten2>
+		<tumbleweed public="1" get="inline" set="null" expr="cast 0xFFE2AF82" line="8" static="1">
+			<x path="pallette.nature.YellowTones"/>
+			<meta>
+				<m n=":value"><e>cast 0xFFE2AF82</e></m>
+				<m n=":enum"/>
+				<m n=":impl"/>
+			</meta>
+		</tumbleweed>
+		<wiskey public="1" get="inline" set="null" expr="cast 0xFFD39E69" line="9" static="1">
+			<x path="pallette.nature.YellowTones"/>
+			<meta>
+				<m n=":value"><e>cast 0xFFD39E69</e></m>
+				<m n=":enum"/>
+				<m n=":impl"/>
+			</meta>
+		</wiskey>
+		<muddyWaters public="1" get="inline" set="null" expr="cast 0xFFB88A58" line="10" static="1">
+			<x path="pallette.nature.YellowTones"/>
+			<meta>
+				<m n=":value"><e>cast 0xFFB88A58</e></m>
+				<m n=":enum"/>
+				<m n=":impl"/>
+			</meta>
+		</muddyWaters>
+		<dirt public="1" get="inline" set="null" expr="cast 0xFF997249" line="11" static="1">
+			<x path="pallette.nature.YellowTones"/>
+			<meta>
+				<m n=":value"><e>cast 0xFF997249</e></m>
+				<m n=":enum"/>
+				<m n=":impl"/>
+			</meta>
+		</dirt>
+		<pottersClay public="1" get="inline" set="null" expr="cast 0xFF805737" line="12" static="1">
+			<x path="pallette.nature.YellowTones"/>
+			<meta>
+				<m n=":value"><e>cast 0xFF805737</e></m>
+				<m n=":enum"/>
+				<m n=":impl"/>
+			</meta>
+		</pottersClay>
+		<spice public="1" get="inline" set="null" expr="cast 0xFF68492D" line="13" static="1">
+			<x path="pallette.nature.YellowTones"/>
+			<meta>
+				<m n=":value"><e>cast 0xFF68492D</e></m>
+				<m n=":enum"/>
+				<m n=":impl"/>
+			</meta>
+		</spice>
+		<meta><m n=":enum"/></meta>
+	</class>
+	<class path="pallette.nature.YellowTone" params="" file="src/pallette/nature/YellowTone.hx">
+		<getColors public="1" get="inline" set="null" line="19" static="1"><f a=""><c path="Array"><x path="pallette.nature.YellowTones"/></c></f></getColors>
+		<random public="1" get="inline" set="null" line="32" static="1"><f a=""><x path="pallette.nature.YellowTones"/></f></random>
+		<getName public="1" get="inline" set="null" line="38" static="1"><f a="s">
+	<x path="pallette.nature.YellowTones"/>
+	<c path="String"/>
+</f></getName>
+		<haxe_doc>![yellowTone](../../bootstrap/img/yellowTone.png)</haxe_doc>
 	</class>
 	<abstract path="pallette.random.Pride" params="" file="src/pallette/random/PrideFlag.hx" module="pallette.random.PrideFlag">
 		<from><icast><x path="Int"/></icast></from>
