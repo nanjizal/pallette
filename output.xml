@@ -1535,24 +1535,12 @@
 			<haxe_doc>Create a new `ArrayIterator`.</haxe_doc>
 		</new>
 		<haxe_doc><![CDATA[This iterator is used only when `Array<T>` is passed to `Iterable<T>`]]></haxe_doc>
-		<meta>
-			<m n=":keep"/>
-			<m n=":directlyUsed"/>
-		</meta>
+		<meta><m n=":keep"/></meta>
 	</class>
 	<class path="js.Boot" params="" file="/usr/local/lib/haxe/std/js/Boot.hx">
 		<__string_rec set="method" line="58" static="1">
 			<f a="o:s">
-				<a>
-					<toString set="null"><f a=""><c path="String"/></f></toString>
-					<length set="null"><x path="Int"/></length>
-					<hasOwnProperty set="null"><f a="">
-	<c path="String"/>
-	<x path="Bool"/>
-</f></hasOwnProperty>
-					<_hx_index set="null"><x path="Int"/></_hx_index>
-					<__enum__ set="null"><x path="Bool"/></__enum__>
-				</a>
+				<unknown/>
 				<c path="String"/>
 				<c path="String"/>
 			</f>
@@ -9208,57 +9196,26 @@
 			<meta><m n=":compilerGenerated"/></meta>
 		</new>
 	</class>
-	<class path="pallette.utils._ColorHelper.ColorHelper_Statics_" params="" file="src/pallette/utils/ColorHelper.hx" private="1" module="pallette.utils.ColorHelper" final="1">
-		<blueChannel public="1" get="inline" set="null" line="58" static="1"><f a="int">
-	<x path="Int"/>
-	<x path="Float"/>
-</f></blueChannel>
-		<greenChannel public="1" get="inline" set="null" line="55" static="1"><f a="int">
-	<x path="Int"/>
-	<x path="Float"/>
-</f></greenChannel>
-		<redChannel public="1" get="inline" set="null" line="52" static="1"><f a="int">
-	<x path="Int"/>
-	<x path="Float"/>
-</f></redChannel>
-		<alphaChannel public="1" get="inline" set="null" line="49" static="1"><f a="int">
-	<x path="Int"/>
-	<x path="Float"/>
-</f></alphaChannel>
-		<cymkConvert public="1" get="inline" set="null" line="46" static="1"><f a="color:black">
-	<x path="Float"/>
-	<x path="Float"/>
-	<x path="Float"/>
-</f></cymkConvert>
-		<rgbConvert public="1" get="inline" set="null" line="43" static="1"><f a="color:k">
-	<x path="Float"/>
-	<x path="Float"/>
-	<x path="Float"/>
-</f></rgbConvert>
-		<toHexInt public="1" get="inline" set="null" line="40" static="1"><f a="c">
-	<x path="Float"/>
-	<x path="Int"/>
-</f></toHexInt>
-		<from_rgb public="1" get="inline" set="null" line="35" static="1"><f a="r:g:b">
-	<x path="Float"/>
-	<x path="Float"/>
-	<x path="Float"/>
-	<x path="Int"/>
-</f></from_rgb>
-		<from_argb public="1" get="inline" set="null" line="29" static="1"><f a="a:r:g:b">
+	<class path="pallette.utils._ColorHelper.ColorHelper_Fields_" params="" file="src/pallette/utils/ColorHelper.hx" private="1" module="pallette.utils.ColorHelper" final="1">
+		<htmlRGBA public="1" get="inline" set="null" line="3" static="1"><f a="r_:g_:b_:a_">
 	<x path="Float"/>
 	<x path="Float"/>
 	<x path="Float"/>
 	<x path="Float"/>
-	<x path="Int"/>
-</f></from_argb>
-		<from_cymk public="1" get="inline" set="null" line="24" static="1"><f a="c:y:m:k">
+	<c path="String"/>
+</f></htmlRGBA>
+		<htmlHex public="1" get="inline" set="null" line="11" static="1"><f a="r:g:b">
+	<x path="Float"/>
+	<x path="Float"/>
+	<x path="Float"/>
+	<c path="String"/>
+</f></htmlHex>
+		<getBlack public="1" get="inline" set="null" line="14" static="1"><f a="r:g:b">
 	<x path="Float"/>
 	<x path="Float"/>
 	<x path="Float"/>
 	<x path="Float"/>
-	<x path="Int"/>
-</f></from_cymk>
+</f></getBlack>
 		<from_cymka public="1" get="inline" set="null" line="18" static="1"><f a="c:y:m:k:a">
 	<x path="Float"/>
 	<x path="Float"/>
@@ -9267,25 +9224,56 @@
 	<x path="Float"/>
 	<x path="Int"/>
 </f></from_cymka>
-		<getBlack public="1" get="inline" set="null" line="14" static="1"><f a="r:g:b">
+		<from_cymk public="1" get="inline" set="null" line="24" static="1"><f a="c:y:m:k">
 	<x path="Float"/>
 	<x path="Float"/>
 	<x path="Float"/>
 	<x path="Float"/>
-</f></getBlack>
-		<htmlHex public="1" get="inline" set="null" line="11" static="1"><f a="r:g:b">
-	<x path="Float"/>
-	<x path="Float"/>
-	<x path="Float"/>
-	<c path="String"/>
-</f></htmlHex>
-		<htmlRGBA public="1" get="inline" set="null" line="3" static="1"><f a="r_:g_:b_:a_">
+	<x path="Int"/>
+</f></from_cymk>
+		<from_argb public="1" get="inline" set="null" line="29" static="1"><f a="a:r:g:b">
 	<x path="Float"/>
 	<x path="Float"/>
 	<x path="Float"/>
 	<x path="Float"/>
-	<c path="String"/>
-</f></htmlRGBA>
+	<x path="Int"/>
+</f></from_argb>
+		<from_rgb public="1" get="inline" set="null" line="35" static="1"><f a="r:g:b">
+	<x path="Float"/>
+	<x path="Float"/>
+	<x path="Float"/>
+	<x path="Int"/>
+</f></from_rgb>
+		<toHexInt public="1" get="inline" set="null" line="40" static="1"><f a="c">
+	<x path="Float"/>
+	<x path="Int"/>
+</f></toHexInt>
+		<rgbConvert public="1" get="inline" set="null" line="43" static="1"><f a="color:k">
+	<x path="Float"/>
+	<x path="Float"/>
+	<x path="Float"/>
+</f></rgbConvert>
+		<cymkConvert public="1" get="inline" set="null" line="46" static="1"><f a="color:black">
+	<x path="Float"/>
+	<x path="Float"/>
+	<x path="Float"/>
+</f></cymkConvert>
+		<alphaChannel public="1" get="inline" set="null" line="49" static="1"><f a="int">
+	<x path="Int"/>
+	<x path="Float"/>
+</f></alphaChannel>
+		<redChannel public="1" get="inline" set="null" line="52" static="1"><f a="int">
+	<x path="Int"/>
+	<x path="Float"/>
+</f></redChannel>
+		<greenChannel public="1" get="inline" set="null" line="55" static="1"><f a="int">
+	<x path="Int"/>
+	<x path="Float"/>
+</f></greenChannel>
+		<blueChannel public="1" get="inline" set="null" line="58" static="1"><f a="int">
+	<x path="Int"/>
+	<x path="Float"/>
+</f></blueChannel>
 		<meta><m n=":directlyUsed"/></meta>
 	</class>
 	<abstract path="pallette.utils.ColorInt" params="" file="src/pallette/utils/ColorInt.hx">
@@ -9585,9 +9573,8 @@
 		</meta>
 	</luminosityGrey>
 	<blendARGB public="1" get="inline" set="null" line="194" static="1">
-		<f a="this:colA:colB:t">
+		<f a="this:colB:t">
 			<x path="Int"/>
-			<x path="pallette.utils.ColorInt"/>
 			<x path="pallette.utils.ColorInt"/>
 			<x path="Float"/>
 			<x path="Int"/>
@@ -9595,9 +9582,8 @@
 		<meta><m n=":impl"/></meta>
 	</blendARGB>
 	<blendRGB public="1" get="inline" set="null" line="208" static="1">
-		<f a="this:colA:colB:t">
+		<f a="this:colB:t">
 			<x path="Int"/>
-			<x path="pallette.utils.ColorInt"/>
 			<x path="pallette.utils.ColorInt"/>
 			<x path="Float"/>
 			<x path="Int"/>
@@ -9903,9 +9889,8 @@
 			</meta>
 		</luminosityGrey>
 		<blendARGB public="1" get="inline" set="null" line="194" static="1">
-			<f a="this:colA:colB:t">
+			<f a="this:colB:t">
 				<x path="Int"/>
-				<x path="pallette.utils.ColorInt"/>
 				<x path="pallette.utils.ColorInt"/>
 				<x path="Float"/>
 				<x path="Int"/>
@@ -9913,9 +9898,8 @@
 			<meta><m n=":impl"/></meta>
 		</blendARGB>
 		<blendRGB public="1" get="inline" set="null" line="208" static="1">
-			<f a="this:colA:colB:t">
+			<f a="this:colB:t">
 				<x path="Int"/>
-				<x path="pallette.utils.ColorInt"/>
 				<x path="pallette.utils.ColorInt"/>
 				<x path="Float"/>
 				<x path="Int"/>

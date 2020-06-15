@@ -192,13 +192,13 @@ abstract ColorInt( Int ) to Int from Int {
         return alpha*( 0.21*red + 0.72*green + 0.07*blue ) * scale;
     }
     public inline
-    function blendARGB( colA: ColorInt, colB: ColorInt, t: Float ): Int {
+    function blendARGB( colB: ColorInt, t: Float ): Int {
         // blend each channel colors
         var v = smootherStep( t );
-        var r = blend( colA.red,   colB.red,   v );
-        var g = blend( colA.green, colB.green, v );
-        var b = blend( colA.blue,  colB.blue,  v );
-        var a = blend( colA.alpha, colB.alpha, v );
+        var r = blend( red,   colB.red,   v );
+        var g = blend( green, colB.green, v );
+        var b = blend( blue,  colB.blue,  v );
+        var a = blend( alpha, colB.alpha, v );
         // put together
         var argb: ARGB = { a: a, r: r, g: g, b: b };
         var colInt: ColorInt = argb;
@@ -206,12 +206,12 @@ abstract ColorInt( Int ) to Int from Int {
         return c;
     }
     public inline
-    function blendRGB( colA: ColorInt, colB: ColorInt, t: Float ): Int {
+    function blendRGB( colB: ColorInt, t: Float ): Int {
         // blend each channel colors
         var v = smootherStep( t );
-        var r = blend( colA.red,   colB.red,   v );
-        var g = blend( colA.green, colB.green, v );
-        var b = blend( colA.blue,  colB.blue,  v );
+        var r = blend( red,   colB.red,   v );
+        var g = blend( green, colB.green, v );
+        var b = blend( blue,  colB.blue,  v );
         // put together
         var argb: ARGB = { a: 1., r: r, g: g, b: b };
         var colInt: ColorInt = argb;
