@@ -1494,10 +1494,12 @@
 	<e>filter</e>
 	<e>indexOf</e>
 	<e>iterator</e>
+	<e>keyValueIterator</e>
 	<e>join</e>
 	<e>lastIndexOf</e>
 	<e>map</e>
 	<e>slice</e>
+	<e>contains</e>
 	<e>toString</e>
 </m></meta>
 		<impl><class path="haxe.ds._ReadOnlyArray.ReadOnlyArray_Impl_" params="" file="/usr/local/lib/haxe/std/haxe/ds/ReadOnlyArray.hx" private="1" module="haxe.ds.ReadOnlyArray" final="1"><meta><m n=":keep"/></meta></class></impl>
@@ -9191,7 +9193,121 @@
 			</f>
 			<meta><m n=":value"><e>blueChannel</e></m></meta>
 		</blueChannel_>
-		<new public="1" set="method" line="60">
+		<get_percentHex_ public="1" expr="get_percentHex">
+			<f a=""><c path="Array"><x path="Int"/></c></f>
+			<meta><m n=":value"><e>get_percentHex</e></m></meta>
+		</get_percentHex_>
+		<percentWhite_ public="1" expr="percentWhite">
+			<f a="percent">
+				<x path="Int"/>
+				<x path="Int"/>
+			</f>
+			<meta><m n=":value"><e>percentWhite</e></m></meta>
+		</percentWhite_>
+		<percentBlack_ public="1" expr="percentBlack">
+			<f a="percent">
+				<x path="Int"/>
+				<x path="Int"/>
+			</f>
+			<meta><m n=":value"><e>percentBlack</e></m></meta>
+		</percentBlack_>
+		<rgbPercent_ public="1" expr="rgbPercent">
+			<f a="rPercent:gPercent:bPercent">
+				<x path="Int"/>
+				<x path="Int"/>
+				<x path="Int"/>
+				<x path="Int"/>
+			</f>
+			<meta><m n=":value"><e>rgbPercent</e></m></meta>
+		</rgbPercent_>
+		<percentColor_ public="1" expr="percentColor">
+			<f a="rPercent:gPercent:bPercent">
+				<x path="Int"/>
+				<x path="Int"/>
+				<x path="Int"/>
+				<x path="Int"/>
+			</f>
+			<meta><m n=":value"><e>percentColor</e></m></meta>
+		</percentColor_>
+		<percentDarkColor_ public="1" expr="percentDarkColor">
+			<f a="rPercent:gPercent:bPercent">
+				<x path="Int"/>
+				<x path="Int"/>
+				<x path="Int"/>
+				<x path="Int"/>
+			</f>
+			<meta><m n=":value"><e>percentDarkColor</e></m></meta>
+		</percentDarkColor_>
+		<percentRed_ public="1" expr="percentRed">
+			<f a="rPercent">
+				<x path="Int"/>
+				<x path="Int"/>
+			</f>
+			<meta><m n=":value"><e>percentRed</e></m></meta>
+		</percentRed_>
+		<percentGreen_ public="1" expr="percentGreen">
+			<f a="gPercent">
+				<x path="Int"/>
+				<x path="Int"/>
+			</f>
+			<meta><m n=":value"><e>percentGreen</e></m></meta>
+		</percentGreen_>
+		<percentBlue_ public="1" expr="percentBlue">
+			<f a="bPercent">
+				<x path="Int"/>
+				<x path="Int"/>
+			</f>
+			<meta><m n=":value"><e>percentBlue</e></m></meta>
+		</percentBlue_>
+		<percentRedSoft_ public="1" expr="percentRedSoft">
+			<f a="rPercent:percentSoft">
+				<x path="Int"/>
+				<x path="Int"/>
+				<x path="Int"/>
+			</f>
+			<meta><m n=":value"><e>percentRedSoft</e></m></meta>
+		</percentRedSoft_>
+		<percentGreenSoft_ public="1" expr="percentGreenSoft">
+			<f a="gPercent:percentSoft">
+				<x path="Int"/>
+				<x path="Int"/>
+				<x path="Int"/>
+			</f>
+			<meta><m n=":value"><e>percentGreenSoft</e></m></meta>
+		</percentGreenSoft_>
+		<percentBlueSoft_ public="1" expr="percentBlueSoft">
+			<f a="bPercent:percentSoft">
+				<x path="Int"/>
+				<x path="Int"/>
+				<x path="Int"/>
+			</f>
+			<meta><m n=":value"><e>percentBlueSoft</e></m></meta>
+		</percentBlueSoft_>
+		<percentYellowSoft_ public="1" expr="percentYellowSoft">
+			<f a="bPercent:percentSoft">
+				<x path="Int"/>
+				<x path="Int"/>
+				<x path="Int"/>
+			</f>
+			<meta><m n=":value"><e>percentYellowSoft</e></m></meta>
+		</percentYellowSoft_>
+		<percentMagentaSoft_ public="1" expr="percentMagentaSoft">
+			<f a="bPercent:percentSoft">
+				<x path="Int"/>
+				<x path="Int"/>
+				<x path="Int"/>
+			</f>
+			<meta><m n=":value"><e>percentMagentaSoft</e></m></meta>
+		</percentMagentaSoft_>
+		<percentCyanSoft_ public="1" expr="percentCyanSoft">
+			<f a="bPercent:percentSoft">
+				<x path="Int"/>
+				<x path="Int"/>
+				<x path="Int"/>
+			</f>
+			<meta><m n=":value"><e>percentCyanSoft</e></m></meta>
+		</percentCyanSoft_>
+		<new public="1" set="method" line="146">
 			<f a=""><x path="Void"/></f>
 			<meta><m n=":compilerGenerated"/></meta>
 		</new>
@@ -9274,6 +9390,83 @@
 	<x path="Int"/>
 	<x path="Float"/>
 </f></blueChannel>
+		<argbInt public="1" get="inline" set="null" line="61" static="1"><f a="a:r:g:b">
+	<x path="Int"/>
+	<x path="Int"/>
+	<x path="Int"/>
+	<x path="Int"/>
+	<x path="Int"/>
+</f></argbInt>
+		<percentHex public="1" get="accessor" set="null" static="1"><c path="Array"><x path="Int"/></c></percentHex>
+		<get_percentHex public="1" get="inline" set="null" line="66" static="1"><f a=""><c path="Array"><x path="Int"/></c></f></get_percentHex>
+		<percentWhite public="1" get="inline" set="null" line="80" static="1"><f a="percent">
+	<x path="Int"/>
+	<x path="Int"/>
+</f></percentWhite>
+		<percentBlack public="1" get="inline" set="null" line="85" static="1"><f a="percent">
+	<x path="Int"/>
+	<x path="Int"/>
+</f></percentBlack>
+		<rgbPercent public="1" get="inline" set="null" line="90" static="1"><f a="rPercent:gPercent:bPercent">
+	<x path="Int"/>
+	<x path="Int"/>
+	<x path="Int"/>
+	<x path="Int"/>
+</f></rgbPercent>
+		<percentColor public="1" get="inline" set="null" line="94" static="1"><f a="rPercent:gPercent:bPercent">
+	<x path="Int"/>
+	<x path="Int"/>
+	<x path="Int"/>
+	<x path="Int"/>
+</f></percentColor>
+		<percentDarkColor public="1" get="inline" set="null" line="98" static="1"><f a="rPercent:gPercent:bPercent">
+	<x path="Int"/>
+	<x path="Int"/>
+	<x path="Int"/>
+	<x path="Int"/>
+</f></percentDarkColor>
+		<percentRed public="1" get="inline" set="null" line="102" static="1"><f a="rPercent">
+	<x path="Int"/>
+	<x path="Int"/>
+</f></percentRed>
+		<percentGreen public="1" get="inline" set="null" line="106" static="1"><f a="gPercent">
+	<x path="Int"/>
+	<x path="Int"/>
+</f></percentGreen>
+		<percentBlue public="1" get="inline" set="null" line="110" static="1"><f a="bPercent">
+	<x path="Int"/>
+	<x path="Int"/>
+</f></percentBlue>
+		<percentRedSoft public="1" get="inline" set="null" line="114" static="1"><f a="rPercent:percentSoft">
+	<x path="Int"/>
+	<x path="Int"/>
+	<x path="Int"/>
+</f></percentRedSoft>
+		<percentGreenSoft public="1" get="inline" set="null" line="119" static="1"><f a="gPercent:percentSoft">
+	<x path="Int"/>
+	<x path="Int"/>
+	<x path="Int"/>
+</f></percentGreenSoft>
+		<percentBlueSoft public="1" get="inline" set="null" line="124" static="1"><f a="bPercent:percentSoft">
+	<x path="Int"/>
+	<x path="Int"/>
+	<x path="Int"/>
+</f></percentBlueSoft>
+		<percentYellowSoft public="1" get="inline" set="null" line="129" static="1"><f a="bPercent:percentSoft">
+	<x path="Int"/>
+	<x path="Int"/>
+	<x path="Int"/>
+</f></percentYellowSoft>
+		<percentMagentaSoft public="1" get="inline" set="null" line="135" static="1"><f a="bPercent:percentSoft">
+	<x path="Int"/>
+	<x path="Int"/>
+	<x path="Int"/>
+</f></percentMagentaSoft>
+		<percentCyanSoft public="1" get="inline" set="null" line="141" static="1"><f a="bPercent:percentSoft">
+	<x path="Int"/>
+	<x path="Int"/>
+	<x path="Int"/>
+</f></percentCyanSoft>
 		<meta><m n=":directlyUsed"/></meta>
 	</class>
 	<abstract path="pallette.utils.ColorInt" params="" file="src/pallette/utils/ColorInt.hx">
@@ -9553,15 +9746,31 @@
 		</f>
 		<meta><m n=":value"><e>{ alpha : 1.0 }</e></m></meta>
 	</aiCYMKA>
-	<ARGB_CYMKA public="1" get="inline" set="null" line="173" static="1"><f a="v">
+	<aiARGB public="1" get="inline" set="null" line="172" static="1">
+		<f a="arr:?alpha" v=":1.0">
+			<c path="Array"><c path="String"/></c>
+			<x path="Float"/>
+			<x path="pallette.utils.ColorInt"/>
+		</f>
+		<meta><m n=":value"><e>{ alpha : 1.0 }</e></m></meta>
+	</aiARGB>
+	<aiGreyA public="1" get="inline" set="null" line="180" static="1">
+		<f a="s:?alpha" v=":1.0">
+			<c path="String"/>
+			<x path="Float"/>
+			<x path="pallette.utils.ColorInt"/>
+		</f>
+		<meta><m n=":value"><e>{ alpha : 1.0 }</e></m></meta>
+	</aiGreyA>
+	<ARGB_CYMKA public="1" get="inline" set="null" line="187" static="1"><f a="v">
 	<c path="pallette.utils.ARGB"/>
 	<c path="pallette.utils.CYMKA"/>
 </f></ARGB_CYMKA>
-	<CYMKA_ARGB public="1" get="inline" set="null" line="183" static="1"><f a="v">
+	<CYMKA_ARGB public="1" get="inline" set="null" line="197" static="1"><f a="v">
 	<c path="pallette.utils.CYMKA"/>
 	<c path="pallette.utils.ARGB"/>
 </f></CYMKA_ARGB>
-	<luminosityGrey public="1" get="inline" set="null" line="190" static="1">
+	<luminosityGrey public="1" get="inline" set="null" line="204" static="1">
 		<f a="this:?scale" v=":1.">
 			<x path="Int"/>
 			<x path="Float"/>
@@ -9572,7 +9781,7 @@
 			<m n=":impl"/>
 		</meta>
 	</luminosityGrey>
-	<blendARGB public="1" get="inline" set="null" line="194" static="1">
+	<blendARGB public="1" get="inline" set="null" line="208" static="1">
 		<f a="this:colB:t">
 			<x path="Int"/>
 			<x path="pallette.utils.ColorInt"/>
@@ -9581,7 +9790,7 @@
 		</f>
 		<meta><m n=":impl"/></meta>
 	</blendARGB>
-	<blendRGB public="1" get="inline" set="null" line="208" static="1">
+	<blendRGB public="1" get="inline" set="null" line="222" static="1">
 		<f a="this:colB:t">
 			<x path="Int"/>
 			<x path="pallette.utils.ColorInt"/>
@@ -9590,7 +9799,7 @@
 		</f>
 		<meta><m n=":impl"/></meta>
 	</blendRGB>
-	<blend get="inline" set="null" line="221" static="1">
+	<blend get="inline" set="null" line="235" static="1">
 		<f a="this:a:b:t">
 			<x path="Int"/>
 			<x path="Float"/>
@@ -9600,7 +9809,7 @@
 		</f>
 		<meta><m n=":impl"/></meta>
 	</blend>
-	<smootherStep get="inline" set="null" line="226" static="1">
+	<smootherStep get="inline" set="null" line="240" static="1">
 		<f a="this:t">
 			<x path="Int"/>
 			<x path="Float"/>
@@ -9608,6 +9817,130 @@
 		</f>
 		<meta><m n=":impl"/></meta>
 	</smootherStep>
+	<whitePercent public="1" get="inline" set="null" line="244" static="1"><f a="percent">
+	<x path="Int"/>
+	<x path="pallette.utils.ColorInt"/>
+</f></whitePercent>
+	<whiteRatio public="1" get="inline" set="null" line="248" static="1"><f a="ratio">
+	<x path="Float"/>
+	<x path="pallette.utils.ColorInt"/>
+</f></whiteRatio>
+	<blackPercent public="1" get="inline" set="null" line="252" static="1"><f a="percent">
+	<x path="Int"/>
+	<x path="pallette.utils.ColorInt"/>
+</f></blackPercent>
+	<blackRatio public="1" get="inline" set="null" line="256" static="1"><f a="ratio">
+	<x path="Float"/>
+	<x path="pallette.utils.ColorInt"/>
+</f></blackRatio>
+	<colorPercent public="1" get="inline" set="null" line="260" static="1"><f a="rPercent:gPercent:bPercent">
+	<x path="Int"/>
+	<x path="Int"/>
+	<x path="Int"/>
+	<x path="pallette.utils.ColorInt"/>
+</f></colorPercent>
+	<colorRatio public="1" get="inline" set="null" line="264" static="1"><f a="rRatio:gRatio:bRatio">
+	<x path="Float"/>
+	<x path="Float"/>
+	<x path="Float"/>
+	<x path="pallette.utils.ColorInt"/>
+</f></colorRatio>
+	<darkColorPercent public="1" get="inline" set="null" line="268" static="1"><f a="rPercent:gPercent:bPercent">
+	<x path="Int"/>
+	<x path="Int"/>
+	<x path="Int"/>
+	<x path="pallette.utils.ColorInt"/>
+</f></darkColorPercent>
+	<darkColorRatio public="1" get="inline" set="null" line="272" static="1"><f a="rRatio:gRatio:bRatio">
+	<x path="Float"/>
+	<x path="Float"/>
+	<x path="Float"/>
+	<x path="pallette.utils.ColorInt"/>
+</f></darkColorRatio>
+	<redPercent public="1" get="inline" set="null" line="276" static="1"><f a="percent">
+	<x path="Int"/>
+	<x path="pallette.utils.ColorInt"/>
+</f></redPercent>
+	<redRatio public="1" get="inline" set="null" line="280" static="1"><f a="ratio">
+	<x path="Float"/>
+	<x path="pallette.utils.ColorInt"/>
+</f></redRatio>
+	<greenPercent public="1" get="inline" set="null" line="284" static="1"><f a="percent">
+	<x path="Int"/>
+	<x path="pallette.utils.ColorInt"/>
+</f></greenPercent>
+	<greenRatio public="1" get="inline" set="null" line="288" static="1"><f a="ratio">
+	<x path="Float"/>
+	<x path="pallette.utils.ColorInt"/>
+</f></greenRatio>
+	<bluePercent public="1" get="inline" set="null" line="292" static="1"><f a="percent">
+	<x path="Int"/>
+	<x path="pallette.utils.ColorInt"/>
+</f></bluePercent>
+	<blueRatio public="1" get="inline" set="null" line="296" static="1"><f a="ratio">
+	<x path="Float"/>
+	<x path="pallette.utils.ColorInt"/>
+</f></blueRatio>
+	<redSoftPercent public="1" get="inline" set="null" line="300" static="1"><f a="percent:percentSoft">
+	<x path="Int"/>
+	<x path="Int"/>
+	<x path="pallette.utils.ColorInt"/>
+</f></redSoftPercent>
+	<redSoftRatio public="1" get="inline" set="null" line="304" static="1"><f a="ratio:ratioSoft">
+	<x path="Float"/>
+	<x path="Float"/>
+	<x path="pallette.utils.ColorInt"/>
+</f></redSoftRatio>
+	<greenSoftPercent public="1" get="inline" set="null" line="308" static="1"><f a="percent:percentSoft">
+	<x path="Int"/>
+	<x path="Int"/>
+	<x path="pallette.utils.ColorInt"/>
+</f></greenSoftPercent>
+	<greenSoftRatio public="1" get="inline" set="null" line="312" static="1"><f a="ratio:ratioSoft">
+	<x path="Float"/>
+	<x path="Float"/>
+	<x path="pallette.utils.ColorInt"/>
+</f></greenSoftRatio>
+	<blueSoftPercent public="1" get="inline" set="null" line="316" static="1"><f a="percent:percentSoft">
+	<x path="Int"/>
+	<x path="Int"/>
+	<x path="pallette.utils.ColorInt"/>
+</f></blueSoftPercent>
+	<blueSoftRatio public="1" get="inline" set="null" line="320" static="1"><f a="ratio:ratioSoft">
+	<x path="Float"/>
+	<x path="Float"/>
+	<x path="pallette.utils.ColorInt"/>
+</f></blueSoftRatio>
+	<yellowSoftPercent public="1" get="inline" set="null" line="324" static="1"><f a="percent:percentSoft">
+	<x path="Int"/>
+	<x path="Int"/>
+	<x path="pallette.utils.ColorInt"/>
+</f></yellowSoftPercent>
+	<yellowSoftRatio public="1" get="inline" set="null" line="328" static="1"><f a="ratio:ratioSoft">
+	<x path="Float"/>
+	<x path="Float"/>
+	<x path="pallette.utils.ColorInt"/>
+</f></yellowSoftRatio>
+	<magentaSoftPercent public="1" get="inline" set="null" line="332" static="1"><f a="percent:percentSoft">
+	<x path="Int"/>
+	<x path="Int"/>
+	<x path="pallette.utils.ColorInt"/>
+</f></magentaSoftPercent>
+	<magentaSoftRatio public="1" get="inline" set="null" line="336" static="1"><f a="ratio:ratioSoft">
+	<x path="Float"/>
+	<x path="Float"/>
+	<x path="pallette.utils.ColorInt"/>
+</f></magentaSoftRatio>
+	<cyanSoftPercent public="1" get="inline" set="null" line="340" static="1"><f a="percent:percentSoft">
+	<x path="Int"/>
+	<x path="Int"/>
+	<x path="pallette.utils.ColorInt"/>
+</f></cyanSoftPercent>
+	<cyanSoftRatio public="1" get="inline" set="null" line="344" static="1"><f a="ratio:ratioSoft">
+	<x path="Float"/>
+	<x path="Float"/>
+	<x path="pallette.utils.ColorInt"/>
+</f></cyanSoftRatio>
 </class></impl>
 	</abstract>
 	<class path="pallette.utils._ColorInt.ColorInt_Impl_" params="" file="src/pallette/utils/ColorInt.hx" private="1" module="pallette.utils.ColorInt" final="1">
@@ -9869,15 +10202,31 @@
 			</f>
 			<meta><m n=":value"><e>{ alpha : 1.0 }</e></m></meta>
 		</aiCYMKA>
-		<ARGB_CYMKA public="1" get="inline" set="null" line="173" static="1"><f a="v">
+		<aiARGB public="1" get="inline" set="null" line="172" static="1">
+			<f a="arr:?alpha" v=":1.0">
+				<c path="Array"><c path="String"/></c>
+				<x path="Float"/>
+				<x path="pallette.utils.ColorInt"/>
+			</f>
+			<meta><m n=":value"><e>{ alpha : 1.0 }</e></m></meta>
+		</aiARGB>
+		<aiGreyA public="1" get="inline" set="null" line="180" static="1">
+			<f a="s:?alpha" v=":1.0">
+				<c path="String"/>
+				<x path="Float"/>
+				<x path="pallette.utils.ColorInt"/>
+			</f>
+			<meta><m n=":value"><e>{ alpha : 1.0 }</e></m></meta>
+		</aiGreyA>
+		<ARGB_CYMKA public="1" get="inline" set="null" line="187" static="1"><f a="v">
 	<c path="pallette.utils.ARGB"/>
 	<c path="pallette.utils.CYMKA"/>
 </f></ARGB_CYMKA>
-		<CYMKA_ARGB public="1" get="inline" set="null" line="183" static="1"><f a="v">
+		<CYMKA_ARGB public="1" get="inline" set="null" line="197" static="1"><f a="v">
 	<c path="pallette.utils.CYMKA"/>
 	<c path="pallette.utils.ARGB"/>
 </f></CYMKA_ARGB>
-		<luminosityGrey public="1" get="inline" set="null" line="190" static="1">
+		<luminosityGrey public="1" get="inline" set="null" line="204" static="1">
 			<f a="this:?scale" v=":1.">
 				<x path="Int"/>
 				<x path="Float"/>
@@ -9888,7 +10237,7 @@
 				<m n=":impl"/>
 			</meta>
 		</luminosityGrey>
-		<blendARGB public="1" get="inline" set="null" line="194" static="1">
+		<blendARGB public="1" get="inline" set="null" line="208" static="1">
 			<f a="this:colB:t">
 				<x path="Int"/>
 				<x path="pallette.utils.ColorInt"/>
@@ -9897,7 +10246,7 @@
 			</f>
 			<meta><m n=":impl"/></meta>
 		</blendARGB>
-		<blendRGB public="1" get="inline" set="null" line="208" static="1">
+		<blendRGB public="1" get="inline" set="null" line="222" static="1">
 			<f a="this:colB:t">
 				<x path="Int"/>
 				<x path="pallette.utils.ColorInt"/>
@@ -9906,7 +10255,7 @@
 			</f>
 			<meta><m n=":impl"/></meta>
 		</blendRGB>
-		<blend get="inline" set="null" line="221" static="1">
+		<blend get="inline" set="null" line="235" static="1">
 			<f a="this:a:b:t">
 				<x path="Int"/>
 				<x path="Float"/>
@@ -9916,7 +10265,7 @@
 			</f>
 			<meta><m n=":impl"/></meta>
 		</blend>
-		<smootherStep get="inline" set="null" line="226" static="1">
+		<smootherStep get="inline" set="null" line="240" static="1">
 			<f a="this:t">
 				<x path="Int"/>
 				<x path="Float"/>
@@ -9924,6 +10273,130 @@
 			</f>
 			<meta><m n=":impl"/></meta>
 		</smootherStep>
+		<whitePercent public="1" get="inline" set="null" line="244" static="1"><f a="percent">
+	<x path="Int"/>
+	<x path="pallette.utils.ColorInt"/>
+</f></whitePercent>
+		<whiteRatio public="1" get="inline" set="null" line="248" static="1"><f a="ratio">
+	<x path="Float"/>
+	<x path="pallette.utils.ColorInt"/>
+</f></whiteRatio>
+		<blackPercent public="1" get="inline" set="null" line="252" static="1"><f a="percent">
+	<x path="Int"/>
+	<x path="pallette.utils.ColorInt"/>
+</f></blackPercent>
+		<blackRatio public="1" get="inline" set="null" line="256" static="1"><f a="ratio">
+	<x path="Float"/>
+	<x path="pallette.utils.ColorInt"/>
+</f></blackRatio>
+		<colorPercent public="1" get="inline" set="null" line="260" static="1"><f a="rPercent:gPercent:bPercent">
+	<x path="Int"/>
+	<x path="Int"/>
+	<x path="Int"/>
+	<x path="pallette.utils.ColorInt"/>
+</f></colorPercent>
+		<colorRatio public="1" get="inline" set="null" line="264" static="1"><f a="rRatio:gRatio:bRatio">
+	<x path="Float"/>
+	<x path="Float"/>
+	<x path="Float"/>
+	<x path="pallette.utils.ColorInt"/>
+</f></colorRatio>
+		<darkColorPercent public="1" get="inline" set="null" line="268" static="1"><f a="rPercent:gPercent:bPercent">
+	<x path="Int"/>
+	<x path="Int"/>
+	<x path="Int"/>
+	<x path="pallette.utils.ColorInt"/>
+</f></darkColorPercent>
+		<darkColorRatio public="1" get="inline" set="null" line="272" static="1"><f a="rRatio:gRatio:bRatio">
+	<x path="Float"/>
+	<x path="Float"/>
+	<x path="Float"/>
+	<x path="pallette.utils.ColorInt"/>
+</f></darkColorRatio>
+		<redPercent public="1" get="inline" set="null" line="276" static="1"><f a="percent">
+	<x path="Int"/>
+	<x path="pallette.utils.ColorInt"/>
+</f></redPercent>
+		<redRatio public="1" get="inline" set="null" line="280" static="1"><f a="ratio">
+	<x path="Float"/>
+	<x path="pallette.utils.ColorInt"/>
+</f></redRatio>
+		<greenPercent public="1" get="inline" set="null" line="284" static="1"><f a="percent">
+	<x path="Int"/>
+	<x path="pallette.utils.ColorInt"/>
+</f></greenPercent>
+		<greenRatio public="1" get="inline" set="null" line="288" static="1"><f a="ratio">
+	<x path="Float"/>
+	<x path="pallette.utils.ColorInt"/>
+</f></greenRatio>
+		<bluePercent public="1" get="inline" set="null" line="292" static="1"><f a="percent">
+	<x path="Int"/>
+	<x path="pallette.utils.ColorInt"/>
+</f></bluePercent>
+		<blueRatio public="1" get="inline" set="null" line="296" static="1"><f a="ratio">
+	<x path="Float"/>
+	<x path="pallette.utils.ColorInt"/>
+</f></blueRatio>
+		<redSoftPercent public="1" get="inline" set="null" line="300" static="1"><f a="percent:percentSoft">
+	<x path="Int"/>
+	<x path="Int"/>
+	<x path="pallette.utils.ColorInt"/>
+</f></redSoftPercent>
+		<redSoftRatio public="1" get="inline" set="null" line="304" static="1"><f a="ratio:ratioSoft">
+	<x path="Float"/>
+	<x path="Float"/>
+	<x path="pallette.utils.ColorInt"/>
+</f></redSoftRatio>
+		<greenSoftPercent public="1" get="inline" set="null" line="308" static="1"><f a="percent:percentSoft">
+	<x path="Int"/>
+	<x path="Int"/>
+	<x path="pallette.utils.ColorInt"/>
+</f></greenSoftPercent>
+		<greenSoftRatio public="1" get="inline" set="null" line="312" static="1"><f a="ratio:ratioSoft">
+	<x path="Float"/>
+	<x path="Float"/>
+	<x path="pallette.utils.ColorInt"/>
+</f></greenSoftRatio>
+		<blueSoftPercent public="1" get="inline" set="null" line="316" static="1"><f a="percent:percentSoft">
+	<x path="Int"/>
+	<x path="Int"/>
+	<x path="pallette.utils.ColorInt"/>
+</f></blueSoftPercent>
+		<blueSoftRatio public="1" get="inline" set="null" line="320" static="1"><f a="ratio:ratioSoft">
+	<x path="Float"/>
+	<x path="Float"/>
+	<x path="pallette.utils.ColorInt"/>
+</f></blueSoftRatio>
+		<yellowSoftPercent public="1" get="inline" set="null" line="324" static="1"><f a="percent:percentSoft">
+	<x path="Int"/>
+	<x path="Int"/>
+	<x path="pallette.utils.ColorInt"/>
+</f></yellowSoftPercent>
+		<yellowSoftRatio public="1" get="inline" set="null" line="328" static="1"><f a="ratio:ratioSoft">
+	<x path="Float"/>
+	<x path="Float"/>
+	<x path="pallette.utils.ColorInt"/>
+</f></yellowSoftRatio>
+		<magentaSoftPercent public="1" get="inline" set="null" line="332" static="1"><f a="percent:percentSoft">
+	<x path="Int"/>
+	<x path="Int"/>
+	<x path="pallette.utils.ColorInt"/>
+</f></magentaSoftPercent>
+		<magentaSoftRatio public="1" get="inline" set="null" line="336" static="1"><f a="ratio:ratioSoft">
+	<x path="Float"/>
+	<x path="Float"/>
+	<x path="pallette.utils.ColorInt"/>
+</f></magentaSoftRatio>
+		<cyanSoftPercent public="1" get="inline" set="null" line="340" static="1"><f a="percent:percentSoft">
+	<x path="Int"/>
+	<x path="Int"/>
+	<x path="pallette.utils.ColorInt"/>
+</f></cyanSoftPercent>
+		<cyanSoftRatio public="1" get="inline" set="null" line="344" static="1"><f a="ratio:ratioSoft">
+	<x path="Float"/>
+	<x path="Float"/>
+	<x path="pallette.utils.ColorInt"/>
+</f></cyanSoftRatio>
 	</class>
 	<class path="pallette.utils.RGB" params="" file="src/pallette/utils/RGB.hx">
 		<r public="1" expr="0.">

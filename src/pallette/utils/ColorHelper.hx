@@ -22,9 +22,9 @@ function from_cymka( c: Float, y: Float, m: Float, k: Float, a: Float ): Int
                     , cymkConvert( y, k ) );
 inline
 function from_cymk( c: Float, y: Float, m: Float, k: Float ): Int
-    return from_rgb( cymkConvert( c, k )
-                   , cymkConvert( m, k )
-                   , cymkConvert( y, k ) );
+    return from_rgb(  cymkConvert( c, k )
+                    , cymkConvert( m, k )
+                    , cymkConvert( y, k ) );
 inline
 function from_argb( a: Float, r: Float, g: Float, b: Float ): Int
     return ( toHexInt( a ) << 24 ) 
@@ -57,6 +57,92 @@ function greenChannel( int: Int ) : Float
 inline
 function blueChannel( int: Int ) : Float
     return (int & 255) / 255;
+inline
+function argbInt( a: Int, r: Int, g: Int, b: Int ){
+    return a << 24 | r << 16 | g << 8 | b;
+}
+var percentHex( get, null ): Array<Int>;
+inline
+function get_percentHex(): Array<Int>{
+    return [ 0x00, 0x30, 0x50, 0x80, 0x0A, 0x0D, 0x0F, 0x12, 0x14, 0x17
+           , 0x19, 0x1C, 0x1F, 0x21, 0x24, 0x26, 0x29, 0x2B, 0x2E, 0x30
+           , 0x33, 0x36, 0x38, 0x3B, 0x3D, 0x40, 0x42, 0x45, 0x47, 0x4A
+           , 0x4C, 0x4F, 0x52, 0x54, 0x57, 0x59, 0x5C, 0x5E, 0x61, 0x63
+           , 0x66, 0x69, 0x6B, 0x6E, 0x70, 0x73, 0x75, 0x78, 0x7A, 0x7D
+           , 0x7F, 0x82, 0x85, 0x87, 0x8A, 0x8C, 0x8F, 0x91, 0x94, 0x96
+           , 0x99, 0x9C, 0x9E, 0xA1, 0xA3, 0xA6, 0xA8, 0xAB, 0xAD, 0xB0
+           , 0xB2, 0xB5, 0xBA, 0xBD, 0xBF, 0xC2, 0xC4, 0xC7, 0xC9, 0xC9
+           , 0xCC, 0xCF, 0xD1, 0xD4, 0xD6, 0xD9, 0xDB, 0xDE, 0xE0, 0xE3
+           , 0xE5, 0xE8, 0xEB, 0xED, 0xF0, 0xF2, 0xF5, 0xF7, 0xFA, 0xFC
+           , 0xFF ];
+}
+inline
+function percentWhite( percent: Int ){
+    var v = percentHex[ percent ];
+    return argbInt( 0xFF, v, v, v );
+}
+inline
+function percentBlack( percent: Int ){
+    var v = percentHex[ 100 - percent ];
+    return argbInt( 0xFF, v, v, v );
+}
+inline
+function rgbPercent( rPercent: Int, gPercent: Int, bPercent: Int ){
+    return argbInt( 0xFF, percentHex[ rPercent ], percentHex[ gPercent ], percentHex[ bPercent ] );
+}
+inline 
+function percentColor( rPercent: Int, gPercent: Int, bPercent: Int ){
+    return argbInt( 0xFF, percentHex[ rPercent ], percentHex[ gPercent ], percentHex[ bPercent ] );
+}
+inline
+function percentDarkColor( rPercent: Int, gPercent: Int, bPercent: Int ){
+    return argbInt( 0xFF, percentHex[ 100 - rPercent ], percentHex[ 100 - gPercent ], percentHex[ 100 - bPercent ] );
+}
+inline 
+function percentRed( rPercent: Int ){
+    return argbInt( 0xFF, percentHex[ rPercent ], 0x00, 0x00 );
+}
+inline 
+function percentGreen( gPercent: Int ){
+    return argbInt( 0xFF, 0xFF, percentHex[ gPercent ], 0xFF );
+}
+inline 
+function percentBlue( bPercent: Int ){
+    return argbInt( 0xFF, 0xFF, 0xFF, percentHex[ bPercent ] );
+}
+inline 
+function percentRedSoft( rPercent: Int, percentSoft: Int ){
+    var soft = percentHex[ percentSoft ];
+    return argbInt( 0xFF, percentHex[ rPercent ], soft, soft );
+}
+inline 
+function percentGreenSoft( gPercent: Int, percentSoft: Int ){
+    var soft = percentHex[ percentSoft ];
+    return argbInt( 0xFF, soft, percentHex[ gPercent ], soft );
+}
+inline 
+function percentBlueSoft( bPercent: Int, percentSoft: Int ){
+    var soft = percentHex[ percentSoft ];
+    return argbInt( 0xFF, soft, soft, percentHex[ bPercent ] );
+}
+inline
+function percentYellowSoft( bPercent: Int, percentSoft: Int ){
+    var soft = percentHex[ percentSoft ];
+    var color = percentHex[ bPercent ];
+    return argbInt( 0xFF, color, color, soft );
+}
+inline
+function percentMagentaSoft( bPercent: Int, percentSoft: Int ){
+    var soft = percentHex[ percentSoft ];
+    var color = percentHex[ bPercent ];
+    return argbInt( 0xFF, color, soft, color );
+}
+inline
+function percentCyanSoft( bPercent: Int, percentSoft: Int ){
+    var soft = percentHex[ percentSoft ];
+    var color = percentHex[ bPercent ];
+    return argbInt( 0xFF, soft, color, color );
+}
 class ColorHelper {
     public var htmlRGBA_: ( r_: Float, g_: Float, b_: Float, a_: Float ) -> String = htmlRGBA;
     public var htmlHex_: ( r: Float, g: Float, b: Float ) -> String = htmlHex;
@@ -70,4 +156,20 @@ class ColorHelper {
     public var redChannel_: ( int: Int ) -> Float = redChannel;
     public var greenChannel_: ( int: Int ) -> Float = greenChannel;
     public var blueChannel_: ( int: Int ) -> Float = blueChannel;
+    
+    public var get_percentHex_: ()->Array<Int> = get_percentHex;
+    public var percentWhite_: ( percent: Int )->Int = percentWhite;
+    public var percentBlack_:( percent: Int )->Int = percentBlack;
+    public var rgbPercent_:( rPercent: Int, gPercent: Int, bPercent: Int )->Int = rgbPercent;
+    public var percentColor_:( rPercent: Int, gPercent: Int, bPercent: Int )->Int = percentColor;
+    public var percentDarkColor_:( rPercent: Int, gPercent: Int, bPercent: Int )->Int = percentDarkColor;
+    public var percentRed_:( rPercent: Int )->Int = percentRed;
+    public var percentGreen_:( gPercent: Int )->Int = percentGreen;
+    public var percentBlue_:( bPercent: Int )->Int = percentBlue;
+    public var percentRedSoft_:( rPercent: Int, percentSoft: Int )->Int = percentRedSoft;
+    public var percentGreenSoft_:( gPercent: Int, percentSoft: Int )->Int = percentGreenSoft;
+    public var percentBlueSoft_:( bPercent: Int, percentSoft: Int )->Int = percentBlueSoft;
+    public var percentYellowSoft_:( bPercent: Int, percentSoft: Int )->Int = percentYellowSoft;
+    public var percentMagentaSoft_:( bPercent: Int, percentSoft: Int )->Int = percentMagentaSoft;
+    public var percentCyanSoft_:( bPercent: Int, percentSoft: Int )->Int = percentCyanSoft;
 }

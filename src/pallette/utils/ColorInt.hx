@@ -168,6 +168,20 @@ abstract ColorInt( Int ) to Int from Int {
                                        , Std.parseFloat( arr[2] )
                                        , Std.parseFloat( arr[3] ), alpha ) );
     }
+    // String CYMK typically created by ilustrator or eps export from flash
+    static public inline
+    function aiARGB( arr: Array<String>, alpha: Float = 1.0 ): ColorInt {
+        return new ColorInt( from_argb( alpha
+                                       , Std.parseFloat( arr[0] )
+                                       , Std.parseFloat( arr[1] )
+                                       , Std.parseFloat( arr[2] ) ) );
+    }
+    // String CYMK typically created by ilustrator or eps export from flash
+    static public inline
+    function aiGreyA( s: String, alpha: Float = 1.0 ): ColorInt {
+        var v = Std.parseFloat( s );
+        return new ColorInt( from_argb( alpha, v, v, v ) );
+    }
     // not strictly part of this class, but kind of useful rather than going through Int
     // because has structures prefer not in colorHelper?
     static public inline
@@ -226,5 +240,109 @@ abstract ColorInt( Int ) to Int from Int {
     inline 
     function smootherStep( t: Float ): Float {
       return t * t * t * (t * (t * 6.0 - 15.0) + 10.0);
+    }
+    static public inline
+    function whitePercent( percent: Int ): ColorInt {
+        return new ColorInt( percentWhite( percent ) );
+    }
+    static public inline
+    function whiteRatio( ratio: Float ): ColorInt {
+        return whitePercent( Math.round( ratio*100 ) );
+    }
+    static public inline
+    function blackPercent( percent: Int ): ColorInt {
+        return new ColorInt( percentBlack( percent ) );
+    }
+    static public inline
+    function blackRatio( ratio: Float ): ColorInt {
+        return blackPercent( Math.round( ratio*100 ) );
+    }
+    static public inline
+    function colorPercent( rPercent: Int, gPercent: Int, bPercent: Int ): ColorInt {
+        return new ColorInt( percentColor( rPercent, gPercent, bPercent ) );
+    }
+    static public inline
+    function colorRatio( rRatio: Float, gRatio: Float, bRatio: Float ): ColorInt {
+        return colorPercent( Math.round( rRatio*100 ), Math.round( gRatio*100 ), Math.round( bRatio*100 ) );
+    }
+    static public inline
+    function darkColorPercent( rPercent: Int, gPercent: Int, bPercent: Int ): ColorInt {
+        return new ColorInt( percentDarkColor( rPercent, gPercent, bPercent ) );
+    }
+    static public inline
+    function darkColorRatio( rRatio: Float, gRatio: Float, bRatio: Float ): ColorInt {
+        return darkColorPercent( Math.round( rRatio*100 ), Math.round( gRatio*100 ), Math.round( bRatio*100 ) );
+    }
+    static public inline
+    function redPercent( percent: Int ): ColorInt {
+        return new ColorInt( percentRed( percent ) );
+    }
+    static public inline
+    function redRatio( ratio: Float ): ColorInt {
+        return redPercent( Math.round( ratio*100 ) );
+    }
+    static public inline 
+    function greenPercent( percent: Int ): ColorInt {
+        return new ColorInt( percentGreen( percent ) );
+    }
+    static public inline
+    function greenRatio( ratio: Float ): ColorInt {
+        return greenPercent( Math.round( ratio*100 ) );
+    }
+    static public inline
+    function bluePercent( percent: Int ): ColorInt {
+        return new ColorInt( percentBlue( percent ) );
+    }
+    static public inline
+    function blueRatio( ratio: Float ): ColorInt {
+        return bluePercent( Math.round( ratio*100 ) );
+    }
+    static public inline
+    function redSoftPercent( percent: Int, percentSoft: Int ): ColorInt {
+        return new ColorInt( percentRedSoft( percent, percentSoft ) );
+    }
+    static public inline
+    function redSoftRatio( ratio: Float, ratioSoft: Float ): ColorInt {
+        return redSoftPercent( Math.round( ratio*100 ), Math.round( ratioSoft*100 ) );
+    }
+    static public inline
+    function greenSoftPercent( percent: Int, percentSoft: Int ): ColorInt {
+        return new ColorInt( percentGreenSoft( percent, percentSoft ) );
+    }
+    static public inline
+    function greenSoftRatio( ratio: Float, ratioSoft: Float ): ColorInt {
+        return greenSoftPercent( Math.round( ratio*100 ), Math.round( ratioSoft*100 ) );
+    }
+    static public inline
+    function blueSoftPercent( percent: Int, percentSoft: Int ): ColorInt {
+        return new ColorInt( percentBlueSoft( percent, percentSoft ) );
+    }
+    static public inline
+    function blueSoftRatio( ratio: Float, ratioSoft: Float ): ColorInt {
+        return blueSoftPercent( Math.round( ratio*100 ), Math.round( ratioSoft*100 ) );
+    }
+    static public inline
+    function yellowSoftPercent( percent: Int, percentSoft: Int ): ColorInt {
+        return new ColorInt( percentYellowSoft( percent, percentSoft ) );
+    }
+    static public inline
+    function yellowSoftRatio( ratio: Float, ratioSoft: Float ): ColorInt {
+        return yellowSoftPercent( Math.round( ratio*100 ), Math.round( ratioSoft*100 ) );
+    }
+    static public inline
+    function magentaSoftPercent( percent: Int, percentSoft: Int ): ColorInt {
+        return new ColorInt( percentMagentaSoft( percent, percentSoft ) );
+    }
+    static public inline
+    function magentaSoftRatio( ratio: Float, ratioSoft: Float ): ColorInt {
+        return magentaSoftPercent( Math.round( ratio*100 ), Math.round( ratioSoft*100 ) );
+    }
+    static public inline
+    function cyanSoftPercent( percent: Int, percentSoft: Int ): ColorInt {
+        return new ColorInt( percentCyanSoft( percent, percentSoft ) );
+    }
+    static public inline
+    function cyanSoftRatio( ratio: Float, ratioSoft: Float ): ColorInt {
+        return cyanSoftPercent( Math.round( ratio*100 ), Math.round( ratioSoft*100 ) );
     }
 }
