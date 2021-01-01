@@ -178,6 +178,8 @@ class ColorHelper {
     public var htmlRGBA_: ( r_: Float, g_: Float, b_: Float, a_: Float ) -> String = htmlRGBA;
     public var htmlHex_: ( r: Float, g: Float, b: Float ) -> String = htmlHex;
     public var getBlack_: ( r: Float, g: Float, b: Float ) -> Float = getBlack; 
+    public var from_oklab_:( L: Float, a: Float, b: Float, alpha: Float ): Int = from_oklab;
+    public var to_oklab_:( v: Int ): OKLAB = to_oklab;
     public var from_cymka_: ( c: Float, y: Float, m: Float, k: Float, a: Float ) -> Int = from_cymka;
     public var from_argb_: ( a: Float, r: Float, g: Float, b: Float ) -> Int = from_argb;
     public var toHexInt_: ( c: Float ) -> Int = toHexInt;
