@@ -842,6 +842,11 @@
 	<x path="Float"/>
 	<x path="Float"/>
 </f></max>
+		<pow public="1" set="method" static="1"><f a="v:exp">
+	<x path="Float"/>
+	<x path="Float"/>
+	<x path="Float"/>
+</f></pow>
 		<random public="1" set="method" static="1"><f a=""><x path="Float"/></f></random>
 		<round public="1" set="method" static="1"><f a="v">
 	<x path="Float"/>
@@ -1029,7 +1034,7 @@
 		</meta>
 	</class>
 	<class path="Std" params="" file="/usr/local/lib/haxe/std/js/_std/Std.hx">
-		<string public="1" set="method" line="46" static="1">
+		<string public="1" set="method" line="47" static="1">
 			<f a="s">
 				<d/>
 				<c path="String"/>
@@ -9307,32 +9312,43 @@
 			</f>
 			<meta><m n=":value"><e>percentCyanSoft</e></m></meta>
 		</percentCyanSoft_>
-		<new public="1" set="method" line="146">
+		<new public="1" set="method" line="177">
 			<f a=""><x path="Void"/></f>
 			<meta><m n=":compilerGenerated"/></meta>
 		</new>
 	</class>
 	<class path="pallette.utils._ColorHelper.ColorHelper_Fields_" params="" file="src/pallette/utils/ColorHelper.hx" private="1" module="pallette.utils.ColorHelper" final="1">
-		<htmlRGBA public="1" get="inline" set="null" line="3" static="1"><f a="r_:g_:b_:a_">
+		<htmlRGBA public="1" get="inline" set="null" line="4" static="1"><f a="r_:g_:b_:a_">
 	<x path="Float"/>
 	<x path="Float"/>
 	<x path="Float"/>
 	<x path="Float"/>
 	<c path="String"/>
 </f></htmlRGBA>
-		<htmlHex public="1" get="inline" set="null" line="11" static="1"><f a="r:g:b">
+		<htmlHex public="1" get="inline" set="null" line="12" static="1"><f a="r:g:b">
 	<x path="Float"/>
 	<x path="Float"/>
 	<x path="Float"/>
 	<c path="String"/>
 </f></htmlHex>
-		<getBlack public="1" get="inline" set="null" line="14" static="1"><f a="r:g:b">
+		<getBlack public="1" get="inline" set="null" line="15" static="1"><f a="r:g:b">
 	<x path="Float"/>
 	<x path="Float"/>
 	<x path="Float"/>
 	<x path="Float"/>
 </f></getBlack>
-		<from_cymka public="1" get="inline" set="null" line="18" static="1"><f a="c:y:m:k:a">
+		<from_oklab public="1" get="inline" set="null" line="19" static="1"><f a="L:a:b:alpha">
+	<x path="Float"/>
+	<x path="Float"/>
+	<x path="Float"/>
+	<x path="Float"/>
+	<x path="Int"/>
+</f></from_oklab>
+		<to_oklab public="1" get="inline" set="null" line="32" static="1"><f a="v">
+	<x path="Int"/>
+	<c path="pallette.utils.OKLAB"/>
+</f></to_oklab>
+		<from_cymka public="1" get="inline" set="null" line="49" static="1"><f a="c:y:m:k:a">
 	<x path="Float"/>
 	<x path="Float"/>
 	<x path="Float"/>
@@ -9340,57 +9356,57 @@
 	<x path="Float"/>
 	<x path="Int"/>
 </f></from_cymka>
-		<from_cymk public="1" get="inline" set="null" line="24" static="1"><f a="c:y:m:k">
+		<from_cymk public="1" get="inline" set="null" line="55" static="1"><f a="c:y:m:k">
 	<x path="Float"/>
 	<x path="Float"/>
 	<x path="Float"/>
 	<x path="Float"/>
 	<x path="Int"/>
 </f></from_cymk>
-		<from_argb public="1" get="inline" set="null" line="29" static="1"><f a="a:r:g:b">
+		<from_argb public="1" get="inline" set="null" line="60" static="1"><f a="a:r:g:b">
 	<x path="Float"/>
 	<x path="Float"/>
 	<x path="Float"/>
 	<x path="Float"/>
 	<x path="Int"/>
 </f></from_argb>
-		<from_rgb public="1" get="inline" set="null" line="35" static="1"><f a="r:g:b">
+		<from_rgb public="1" get="inline" set="null" line="66" static="1"><f a="r:g:b">
 	<x path="Float"/>
 	<x path="Float"/>
 	<x path="Float"/>
 	<x path="Int"/>
 </f></from_rgb>
-		<toHexInt public="1" get="inline" set="null" line="40" static="1"><f a="c">
+		<toHexInt public="1" get="inline" set="null" line="71" static="1"><f a="c">
 	<x path="Float"/>
 	<x path="Int"/>
 </f></toHexInt>
-		<rgbConvert public="1" get="inline" set="null" line="43" static="1"><f a="color:k">
+		<rgbConvert public="1" get="inline" set="null" line="74" static="1"><f a="color:k">
 	<x path="Float"/>
 	<x path="Float"/>
 	<x path="Float"/>
 </f></rgbConvert>
-		<cymkConvert public="1" get="inline" set="null" line="46" static="1"><f a="color:black">
+		<cymkConvert public="1" get="inline" set="null" line="77" static="1"><f a="color:black">
 	<x path="Float"/>
 	<x path="Float"/>
 	<x path="Float"/>
 </f></cymkConvert>
-		<alphaChannel public="1" get="inline" set="null" line="49" static="1"><f a="int">
+		<alphaChannel public="1" get="inline" set="null" line="80" static="1"><f a="int">
 	<x path="Int"/>
 	<x path="Float"/>
 </f></alphaChannel>
-		<redChannel public="1" get="inline" set="null" line="52" static="1"><f a="int">
+		<redChannel public="1" get="inline" set="null" line="83" static="1"><f a="int">
 	<x path="Int"/>
 	<x path="Float"/>
 </f></redChannel>
-		<greenChannel public="1" get="inline" set="null" line="55" static="1"><f a="int">
+		<greenChannel public="1" get="inline" set="null" line="86" static="1"><f a="int">
 	<x path="Int"/>
 	<x path="Float"/>
 </f></greenChannel>
-		<blueChannel public="1" get="inline" set="null" line="58" static="1"><f a="int">
+		<blueChannel public="1" get="inline" set="null" line="89" static="1"><f a="int">
 	<x path="Int"/>
 	<x path="Float"/>
 </f></blueChannel>
-		<argbInt public="1" get="inline" set="null" line="61" static="1"><f a="a:r:g:b">
+		<argbInt public="1" get="inline" set="null" line="92" static="1"><f a="a:r:g:b">
 	<x path="Int"/>
 	<x path="Int"/>
 	<x path="Int"/>
@@ -9398,71 +9414,71 @@
 	<x path="Int"/>
 </f></argbInt>
 		<percentHex public="1" get="accessor" set="null" static="1"><c path="Array"><x path="Int"/></c></percentHex>
-		<get_percentHex public="1" get="inline" set="null" line="66" static="1"><f a=""><c path="Array"><x path="Int"/></c></f></get_percentHex>
-		<percentWhite public="1" get="inline" set="null" line="80" static="1"><f a="percent">
+		<get_percentHex public="1" get="inline" set="null" line="97" static="1"><f a=""><c path="Array"><x path="Int"/></c></f></get_percentHex>
+		<percentWhite public="1" get="inline" set="null" line="111" static="1"><f a="percent">
 	<x path="Int"/>
 	<x path="Int"/>
 </f></percentWhite>
-		<percentBlack public="1" get="inline" set="null" line="85" static="1"><f a="percent">
+		<percentBlack public="1" get="inline" set="null" line="116" static="1"><f a="percent">
 	<x path="Int"/>
 	<x path="Int"/>
 </f></percentBlack>
-		<rgbPercent public="1" get="inline" set="null" line="90" static="1"><f a="rPercent:gPercent:bPercent">
+		<rgbPercent public="1" get="inline" set="null" line="121" static="1"><f a="rPercent:gPercent:bPercent">
 	<x path="Int"/>
 	<x path="Int"/>
 	<x path="Int"/>
 	<x path="Int"/>
 </f></rgbPercent>
-		<percentColor public="1" get="inline" set="null" line="94" static="1"><f a="rPercent:gPercent:bPercent">
+		<percentColor public="1" get="inline" set="null" line="125" static="1"><f a="rPercent:gPercent:bPercent">
 	<x path="Int"/>
 	<x path="Int"/>
 	<x path="Int"/>
 	<x path="Int"/>
 </f></percentColor>
-		<percentDarkColor public="1" get="inline" set="null" line="98" static="1"><f a="rPercent:gPercent:bPercent">
+		<percentDarkColor public="1" get="inline" set="null" line="129" static="1"><f a="rPercent:gPercent:bPercent">
 	<x path="Int"/>
 	<x path="Int"/>
 	<x path="Int"/>
 	<x path="Int"/>
 </f></percentDarkColor>
-		<percentRed public="1" get="inline" set="null" line="102" static="1"><f a="rPercent">
+		<percentRed public="1" get="inline" set="null" line="133" static="1"><f a="rPercent">
 	<x path="Int"/>
 	<x path="Int"/>
 </f></percentRed>
-		<percentGreen public="1" get="inline" set="null" line="106" static="1"><f a="gPercent">
+		<percentGreen public="1" get="inline" set="null" line="137" static="1"><f a="gPercent">
 	<x path="Int"/>
 	<x path="Int"/>
 </f></percentGreen>
-		<percentBlue public="1" get="inline" set="null" line="110" static="1"><f a="bPercent">
+		<percentBlue public="1" get="inline" set="null" line="141" static="1"><f a="bPercent">
 	<x path="Int"/>
 	<x path="Int"/>
 </f></percentBlue>
-		<percentRedSoft public="1" get="inline" set="null" line="114" static="1"><f a="rPercent:percentSoft">
+		<percentRedSoft public="1" get="inline" set="null" line="145" static="1"><f a="rPercent:percentSoft">
 	<x path="Int"/>
 	<x path="Int"/>
 	<x path="Int"/>
 </f></percentRedSoft>
-		<percentGreenSoft public="1" get="inline" set="null" line="119" static="1"><f a="gPercent:percentSoft">
+		<percentGreenSoft public="1" get="inline" set="null" line="150" static="1"><f a="gPercent:percentSoft">
 	<x path="Int"/>
 	<x path="Int"/>
 	<x path="Int"/>
 </f></percentGreenSoft>
-		<percentBlueSoft public="1" get="inline" set="null" line="124" static="1"><f a="bPercent:percentSoft">
+		<percentBlueSoft public="1" get="inline" set="null" line="155" static="1"><f a="bPercent:percentSoft">
 	<x path="Int"/>
 	<x path="Int"/>
 	<x path="Int"/>
 </f></percentBlueSoft>
-		<percentYellowSoft public="1" get="inline" set="null" line="129" static="1"><f a="bPercent:percentSoft">
+		<percentYellowSoft public="1" get="inline" set="null" line="160" static="1"><f a="bPercent:percentSoft">
 	<x path="Int"/>
 	<x path="Int"/>
 	<x path="Int"/>
 </f></percentYellowSoft>
-		<percentMagentaSoft public="1" get="inline" set="null" line="135" static="1"><f a="bPercent:percentSoft">
+		<percentMagentaSoft public="1" get="inline" set="null" line="166" static="1"><f a="bPercent:percentSoft">
 	<x path="Int"/>
 	<x path="Int"/>
 	<x path="Int"/>
 </f></percentMagentaSoft>
-		<percentCyanSoft public="1" get="inline" set="null" line="141" static="1"><f a="bPercent:percentSoft">
+		<percentCyanSoft public="1" get="inline" set="null" line="172" static="1"><f a="bPercent:percentSoft">
 	<x path="Int"/>
 	<x path="Int"/>
 	<x path="Int"/>
@@ -9476,6 +9492,7 @@
 			<icast field="fromRGB"><c path="pallette.utils.RGB"/></icast>
 			<icast field="fromCYMKA"><c path="pallette.utils.CYMKA"/></icast>
 			<icast field="fromCYMK"><c path="pallette.utils.CYMK"/></icast>
+			<icast field="fromOKLAB"><c path="pallette.utils.OKLAB"/></icast>
 		</from>
 		<this><x path="Int"/></this>
 		<to>
@@ -9484,6 +9501,7 @@
 			<icast field="htmlStyleHex"><c path="String"/></icast>
 			<icast field="toARGB"><c path="pallette.utils.ARGB"/></icast>
 			<icast field="toRGB"><c path="pallette.utils.RGB"/></icast>
+			<icast field="toOKLAB"><c path="pallette.utils.OKLAB"/></icast>
 			<icast field="toCYMKA"><c path="pallette.utils.CYMKA"/></icast>
 			<icast field="toCYMK"><c path="pallette.utils.CYMK"/></icast>
 		</to>
@@ -9552,21 +9570,38 @@
 			<m n=":to"/>
 		</meta>
 	</toRGB>
-	<fromCYMKA public="1" get="inline" set="null" line="45" static="1">
+	<toOKLAB public="1" get="inline" set="null" line="45" static="1">
+		<f a="this">
+			<x path="Int"/>
+			<c path="pallette.utils.OKLAB"/>
+		</f>
+		<meta>
+			<m n=":impl"/>
+			<m n=":to"/>
+		</meta>
+	</toOKLAB>
+	<fromCYMKA public="1" get="inline" set="null" line="51" static="1">
 		<f a="c">
 			<c path="pallette.utils.CYMKA"/>
 			<x path="pallette.utils.ColorInt"/>
 		</f>
 		<meta><m n=":from"/></meta>
 	</fromCYMKA>
-	<fromCYMK public="1" get="inline" set="null" line="50" static="1">
+	<fromCYMK public="1" get="inline" set="null" line="56" static="1">
 		<f a="c">
 			<c path="pallette.utils.CYMK"/>
 			<x path="pallette.utils.ColorInt"/>
 		</f>
 		<meta><m n=":from"/></meta>
 	</fromCYMK>
-	<toCYMKA public="1" get="inline" set="null" line="55" static="1">
+	<fromOKLAB public="1" get="inline" set="null" line="61" static="1">
+		<f a="c">
+			<c path="pallette.utils.OKLAB"/>
+			<x path="pallette.utils.ColorInt"/>
+		</f>
+		<meta><m n=":from"/></meta>
+	</fromOKLAB>
+	<toCYMKA public="1" get="inline" set="null" line="66" static="1">
 		<f a="this">
 			<x path="Int"/>
 			<c path="pallette.utils.CYMKA"/>
@@ -9576,7 +9611,7 @@
 			<m n=":to"/>
 		</meta>
 	</toCYMKA>
-	<toCYMK public="1" get="inline" set="null" line="64" static="1">
+	<toCYMK public="1" get="inline" set="null" line="75" static="1">
 		<f a="this">
 			<x path="Int"/>
 			<c path="pallette.utils.CYMK"/>
@@ -9590,14 +9625,14 @@
 		<x path="Float"/>
 		<meta><m n=":impl"/></meta>
 	</cyan>
-	<get_cyan get="inline" set="null" line="73" static="1">
+	<get_cyan get="inline" set="null" line="84" static="1">
 		<f a="this">
 			<x path="Int"/>
 			<x path="Float"/>
 		</f>
 		<meta><m n=":impl"/></meta>
 	</get_cyan>
-	<set_cyan get="inline" set="null" line="77" static="1">
+	<set_cyan get="inline" set="null" line="88" static="1">
 		<f a="this:v">
 			<x path="Int"/>
 			<x path="Float"/>
@@ -9609,14 +9644,14 @@
 		<x path="Float"/>
 		<meta><m n=":impl"/></meta>
 	</yellow>
-	<get_yellow get="inline" set="null" line="86" static="1">
+	<get_yellow get="inline" set="null" line="97" static="1">
 		<f a="this">
 			<x path="Int"/>
 			<x path="Float"/>
 		</f>
 		<meta><m n=":impl"/></meta>
 	</get_yellow>
-	<set_yellow get="inline" set="null" line="90" static="1">
+	<set_yellow get="inline" set="null" line="101" static="1">
 		<f a="this:v">
 			<x path="Int"/>
 			<x path="Float"/>
@@ -9628,14 +9663,14 @@
 		<x path="Float"/>
 		<meta><m n=":impl"/></meta>
 	</magenta>
-	<get_magenta get="inline" set="null" line="99" static="1">
+	<get_magenta get="inline" set="null" line="110" static="1">
 		<f a="this">
 			<x path="Int"/>
 			<x path="Float"/>
 		</f>
 		<meta><m n=":impl"/></meta>
 	</get_magenta>
-	<set_magenta get="inline" set="null" line="103" static="1">
+	<set_magenta get="inline" set="null" line="114" static="1">
 		<f a="this:v">
 			<x path="Int"/>
 			<x path="Float"/>
@@ -9647,14 +9682,14 @@
 		<x path="Float"/>
 		<meta><m n=":impl"/></meta>
 	</black>
-	<get_black get="inline" set="null" line="112" static="1">
+	<get_black get="inline" set="null" line="123" static="1">
 		<f a="this">
 			<x path="Int"/>
 			<x path="Float"/>
 		</f>
 		<meta><m n=":impl"/></meta>
 	</get_black>
-	<set_black get="inline" set="null" line="115" static="1">
+	<set_black get="inline" set="null" line="126" static="1">
 		<f a="this:v">
 			<x path="Int"/>
 			<x path="Float"/>
@@ -9666,14 +9701,14 @@
 		<x path="Float"/>
 		<meta><m n=":impl"/></meta>
 	</alpha>
-	<get_alpha get="inline" set="null" line="124" static="1">
+	<get_alpha get="inline" set="null" line="135" static="1">
 		<f a="this">
 			<x path="Int"/>
 			<x path="Float"/>
 		</f>
 		<meta><m n=":impl"/></meta>
 	</get_alpha>
-	<set_alpha get="inline" set="null" line="128" static="1">
+	<set_alpha get="inline" set="null" line="139" static="1">
 		<f a="this:v">
 			<x path="Int"/>
 			<x path="Float"/>
@@ -9685,14 +9720,14 @@
 		<x path="Float"/>
 		<meta><m n=":impl"/></meta>
 	</red>
-	<get_red get="inline" set="null" line="134" static="1">
+	<get_red get="inline" set="null" line="145" static="1">
 		<f a="this">
 			<x path="Int"/>
 			<x path="Float"/>
 		</f>
 		<meta><m n=":impl"/></meta>
 	</get_red>
-	<set_red get="inline" set="null" line="138" static="1">
+	<set_red get="inline" set="null" line="149" static="1">
 		<f a="this:v">
 			<x path="Int"/>
 			<x path="Float"/>
@@ -9704,14 +9739,14 @@
 		<x path="Float"/>
 		<meta><m n=":impl"/></meta>
 	</green>
-	<get_green get="inline" set="null" line="144" static="1">
+	<get_green get="inline" set="null" line="155" static="1">
 		<f a="this">
 			<x path="Int"/>
 			<x path="Float"/>
 		</f>
 		<meta><m n=":impl"/></meta>
 	</get_green>
-	<set_green get="inline" set="null" line="148" static="1">
+	<set_green get="inline" set="null" line="159" static="1">
 		<f a="this:v">
 			<x path="Int"/>
 			<x path="Float"/>
@@ -9723,14 +9758,14 @@
 		<x path="Float"/>
 		<meta><m n=":impl"/></meta>
 	</blue>
-	<get_blue get="inline" set="null" line="154" static="1">
+	<get_blue get="inline" set="null" line="165" static="1">
 		<f a="this">
 			<x path="Int"/>
 			<x path="Float"/>
 		</f>
 		<meta><m n=":impl"/></meta>
 	</get_blue>
-	<set_blue get="inline" set="null" line="158" static="1">
+	<set_blue get="inline" set="null" line="169" static="1">
 		<f a="this:v">
 			<x path="Int"/>
 			<x path="Float"/>
@@ -9738,7 +9773,7 @@
 		</f>
 		<meta><m n=":impl"/></meta>
 	</set_blue>
-	<aiCYMKA public="1" get="inline" set="null" line="164" static="1">
+	<aiCYMKA public="1" get="inline" set="null" line="175" static="1">
 		<f a="arr:?alpha" v=":1.0">
 			<c path="Array"><c path="String"/></c>
 			<x path="Float"/>
@@ -9746,7 +9781,7 @@
 		</f>
 		<meta><m n=":value"><e>{ alpha : 1.0 }</e></m></meta>
 	</aiCYMKA>
-	<aiARGB public="1" get="inline" set="null" line="172" static="1">
+	<aiARGB public="1" get="inline" set="null" line="183" static="1">
 		<f a="arr:?alpha" v=":1.0">
 			<c path="Array"><c path="String"/></c>
 			<x path="Float"/>
@@ -9754,7 +9789,7 @@
 		</f>
 		<meta><m n=":value"><e>{ alpha : 1.0 }</e></m></meta>
 	</aiARGB>
-	<aiGreyA public="1" get="inline" set="null" line="180" static="1">
+	<aiGreyA public="1" get="inline" set="null" line="191" static="1">
 		<f a="s:?alpha" v=":1.0">
 			<c path="String"/>
 			<x path="Float"/>
@@ -9762,15 +9797,15 @@
 		</f>
 		<meta><m n=":value"><e>{ alpha : 1.0 }</e></m></meta>
 	</aiGreyA>
-	<ARGB_CYMKA public="1" get="inline" set="null" line="187" static="1"><f a="v">
+	<ARGB_CYMKA public="1" get="inline" set="null" line="198" static="1"><f a="v">
 	<c path="pallette.utils.ARGB"/>
 	<c path="pallette.utils.CYMKA"/>
 </f></ARGB_CYMKA>
-	<CYMKA_ARGB public="1" get="inline" set="null" line="197" static="1"><f a="v">
+	<CYMKA_ARGB public="1" get="inline" set="null" line="208" static="1"><f a="v">
 	<c path="pallette.utils.CYMKA"/>
 	<c path="pallette.utils.ARGB"/>
 </f></CYMKA_ARGB>
-	<luminosityGrey public="1" get="inline" set="null" line="204" static="1">
+	<luminosityGrey public="1" get="inline" set="null" line="215" static="1">
 		<f a="this:?scale" v=":1.">
 			<x path="Int"/>
 			<x path="Float"/>
@@ -9781,25 +9816,46 @@
 			<m n=":impl"/>
 		</meta>
 	</luminosityGrey>
-	<blendARGB public="1" get="inline" set="null" line="208" static="1">
-		<f a="this:colB:t">
+	<blendARGB public="1" get="inline" set="null" line="219" static="1">
+		<f a="this:colB:t:?smooth" v=":::true">
 			<x path="Int"/>
 			<x path="pallette.utils.ColorInt"/>
 			<x path="Float"/>
+			<x path="Bool"/>
 			<x path="Int"/>
 		</f>
-		<meta><m n=":impl"/></meta>
+		<meta>
+			<m n=":value"><e>{ smooth : true }</e></m>
+			<m n=":impl"/>
+		</meta>
 	</blendARGB>
-	<blendRGB public="1" get="inline" set="null" line="222" static="1">
-		<f a="this:colB:t">
+	<blendRGB public="1" get="inline" set="null" line="233" static="1">
+		<f a="this:colB:t:?smooth" v=":::true">
 			<x path="Int"/>
 			<x path="pallette.utils.ColorInt"/>
 			<x path="Float"/>
+			<x path="Bool"/>
 			<x path="Int"/>
 		</f>
-		<meta><m n=":impl"/></meta>
+		<meta>
+			<m n=":value"><e>{ smooth : true }</e></m>
+			<m n=":impl"/>
+		</meta>
 	</blendRGB>
-	<blend get="inline" set="null" line="235" static="1">
+	<blendOKLAB public="1" get="inline" set="null" line="246" static="1">
+		<f a="this:colB:t:?smooth" v=":::true">
+			<x path="Int"/>
+			<x path="pallette.utils.ColorInt"/>
+			<x path="Float"/>
+			<x path="Bool"/>
+			<x path="Int"/>
+		</f>
+		<meta>
+			<m n=":value"><e>{ smooth : true }</e></m>
+			<m n=":impl"/>
+		</meta>
+	</blendOKLAB>
+	<blend get="inline" set="null" line="263" static="1">
 		<f a="this:a:b:t">
 			<x path="Int"/>
 			<x path="Float"/>
@@ -9809,7 +9865,7 @@
 		</f>
 		<meta><m n=":impl"/></meta>
 	</blend>
-	<smootherStep get="inline" set="null" line="240" static="1">
+	<smootherStep get="inline" set="null" line="268" static="1">
 		<f a="this:t">
 			<x path="Int"/>
 			<x path="Float"/>
@@ -9817,126 +9873,126 @@
 		</f>
 		<meta><m n=":impl"/></meta>
 	</smootherStep>
-	<whitePercent public="1" get="inline" set="null" line="244" static="1"><f a="percent">
+	<whitePercent public="1" get="inline" set="null" line="272" static="1"><f a="percent">
 	<x path="Int"/>
 	<x path="pallette.utils.ColorInt"/>
 </f></whitePercent>
-	<whiteRatio public="1" get="inline" set="null" line="248" static="1"><f a="ratio">
+	<whiteRatio public="1" get="inline" set="null" line="276" static="1"><f a="ratio">
 	<x path="Float"/>
 	<x path="pallette.utils.ColorInt"/>
 </f></whiteRatio>
-	<blackPercent public="1" get="inline" set="null" line="252" static="1"><f a="percent">
+	<blackPercent public="1" get="inline" set="null" line="280" static="1"><f a="percent">
 	<x path="Int"/>
 	<x path="pallette.utils.ColorInt"/>
 </f></blackPercent>
-	<blackRatio public="1" get="inline" set="null" line="256" static="1"><f a="ratio">
+	<blackRatio public="1" get="inline" set="null" line="284" static="1"><f a="ratio">
 	<x path="Float"/>
 	<x path="pallette.utils.ColorInt"/>
 </f></blackRatio>
-	<colorPercent public="1" get="inline" set="null" line="260" static="1"><f a="rPercent:gPercent:bPercent">
+	<colorPercent public="1" get="inline" set="null" line="288" static="1"><f a="rPercent:gPercent:bPercent">
 	<x path="Int"/>
 	<x path="Int"/>
 	<x path="Int"/>
 	<x path="pallette.utils.ColorInt"/>
 </f></colorPercent>
-	<colorRatio public="1" get="inline" set="null" line="264" static="1"><f a="rRatio:gRatio:bRatio">
+	<colorRatio public="1" get="inline" set="null" line="292" static="1"><f a="rRatio:gRatio:bRatio">
 	<x path="Float"/>
 	<x path="Float"/>
 	<x path="Float"/>
 	<x path="pallette.utils.ColorInt"/>
 </f></colorRatio>
-	<darkColorPercent public="1" get="inline" set="null" line="268" static="1"><f a="rPercent:gPercent:bPercent">
+	<darkColorPercent public="1" get="inline" set="null" line="296" static="1"><f a="rPercent:gPercent:bPercent">
 	<x path="Int"/>
 	<x path="Int"/>
 	<x path="Int"/>
 	<x path="pallette.utils.ColorInt"/>
 </f></darkColorPercent>
-	<darkColorRatio public="1" get="inline" set="null" line="272" static="1"><f a="rRatio:gRatio:bRatio">
+	<darkColorRatio public="1" get="inline" set="null" line="300" static="1"><f a="rRatio:gRatio:bRatio">
 	<x path="Float"/>
 	<x path="Float"/>
 	<x path="Float"/>
 	<x path="pallette.utils.ColorInt"/>
 </f></darkColorRatio>
-	<redPercent public="1" get="inline" set="null" line="276" static="1"><f a="percent">
+	<redPercent public="1" get="inline" set="null" line="304" static="1"><f a="percent">
 	<x path="Int"/>
 	<x path="pallette.utils.ColorInt"/>
 </f></redPercent>
-	<redRatio public="1" get="inline" set="null" line="280" static="1"><f a="ratio">
+	<redRatio public="1" get="inline" set="null" line="308" static="1"><f a="ratio">
 	<x path="Float"/>
 	<x path="pallette.utils.ColorInt"/>
 </f></redRatio>
-	<greenPercent public="1" get="inline" set="null" line="284" static="1"><f a="percent">
+	<greenPercent public="1" get="inline" set="null" line="312" static="1"><f a="percent">
 	<x path="Int"/>
 	<x path="pallette.utils.ColorInt"/>
 </f></greenPercent>
-	<greenRatio public="1" get="inline" set="null" line="288" static="1"><f a="ratio">
+	<greenRatio public="1" get="inline" set="null" line="316" static="1"><f a="ratio">
 	<x path="Float"/>
 	<x path="pallette.utils.ColorInt"/>
 </f></greenRatio>
-	<bluePercent public="1" get="inline" set="null" line="292" static="1"><f a="percent">
+	<bluePercent public="1" get="inline" set="null" line="320" static="1"><f a="percent">
 	<x path="Int"/>
 	<x path="pallette.utils.ColorInt"/>
 </f></bluePercent>
-	<blueRatio public="1" get="inline" set="null" line="296" static="1"><f a="ratio">
+	<blueRatio public="1" get="inline" set="null" line="324" static="1"><f a="ratio">
 	<x path="Float"/>
 	<x path="pallette.utils.ColorInt"/>
 </f></blueRatio>
-	<redSoftPercent public="1" get="inline" set="null" line="300" static="1"><f a="percent:percentSoft">
+	<redSoftPercent public="1" get="inline" set="null" line="328" static="1"><f a="percent:percentSoft">
 	<x path="Int"/>
 	<x path="Int"/>
 	<x path="pallette.utils.ColorInt"/>
 </f></redSoftPercent>
-	<redSoftRatio public="1" get="inline" set="null" line="304" static="1"><f a="ratio:ratioSoft">
+	<redSoftRatio public="1" get="inline" set="null" line="332" static="1"><f a="ratio:ratioSoft">
 	<x path="Float"/>
 	<x path="Float"/>
 	<x path="pallette.utils.ColorInt"/>
 </f></redSoftRatio>
-	<greenSoftPercent public="1" get="inline" set="null" line="308" static="1"><f a="percent:percentSoft">
+	<greenSoftPercent public="1" get="inline" set="null" line="336" static="1"><f a="percent:percentSoft">
 	<x path="Int"/>
 	<x path="Int"/>
 	<x path="pallette.utils.ColorInt"/>
 </f></greenSoftPercent>
-	<greenSoftRatio public="1" get="inline" set="null" line="312" static="1"><f a="ratio:ratioSoft">
+	<greenSoftRatio public="1" get="inline" set="null" line="340" static="1"><f a="ratio:ratioSoft">
 	<x path="Float"/>
 	<x path="Float"/>
 	<x path="pallette.utils.ColorInt"/>
 </f></greenSoftRatio>
-	<blueSoftPercent public="1" get="inline" set="null" line="316" static="1"><f a="percent:percentSoft">
+	<blueSoftPercent public="1" get="inline" set="null" line="344" static="1"><f a="percent:percentSoft">
 	<x path="Int"/>
 	<x path="Int"/>
 	<x path="pallette.utils.ColorInt"/>
 </f></blueSoftPercent>
-	<blueSoftRatio public="1" get="inline" set="null" line="320" static="1"><f a="ratio:ratioSoft">
+	<blueSoftRatio public="1" get="inline" set="null" line="348" static="1"><f a="ratio:ratioSoft">
 	<x path="Float"/>
 	<x path="Float"/>
 	<x path="pallette.utils.ColorInt"/>
 </f></blueSoftRatio>
-	<yellowSoftPercent public="1" get="inline" set="null" line="324" static="1"><f a="percent:percentSoft">
+	<yellowSoftPercent public="1" get="inline" set="null" line="352" static="1"><f a="percent:percentSoft">
 	<x path="Int"/>
 	<x path="Int"/>
 	<x path="pallette.utils.ColorInt"/>
 </f></yellowSoftPercent>
-	<yellowSoftRatio public="1" get="inline" set="null" line="328" static="1"><f a="ratio:ratioSoft">
+	<yellowSoftRatio public="1" get="inline" set="null" line="356" static="1"><f a="ratio:ratioSoft">
 	<x path="Float"/>
 	<x path="Float"/>
 	<x path="pallette.utils.ColorInt"/>
 </f></yellowSoftRatio>
-	<magentaSoftPercent public="1" get="inline" set="null" line="332" static="1"><f a="percent:percentSoft">
+	<magentaSoftPercent public="1" get="inline" set="null" line="360" static="1"><f a="percent:percentSoft">
 	<x path="Int"/>
 	<x path="Int"/>
 	<x path="pallette.utils.ColorInt"/>
 </f></magentaSoftPercent>
-	<magentaSoftRatio public="1" get="inline" set="null" line="336" static="1"><f a="ratio:ratioSoft">
+	<magentaSoftRatio public="1" get="inline" set="null" line="364" static="1"><f a="ratio:ratioSoft">
 	<x path="Float"/>
 	<x path="Float"/>
 	<x path="pallette.utils.ColorInt"/>
 </f></magentaSoftRatio>
-	<cyanSoftPercent public="1" get="inline" set="null" line="340" static="1"><f a="percent:percentSoft">
+	<cyanSoftPercent public="1" get="inline" set="null" line="368" static="1"><f a="percent:percentSoft">
 	<x path="Int"/>
 	<x path="Int"/>
 	<x path="pallette.utils.ColorInt"/>
 </f></cyanSoftPercent>
-	<cyanSoftRatio public="1" get="inline" set="null" line="344" static="1"><f a="ratio:ratioSoft">
+	<cyanSoftRatio public="1" get="inline" set="null" line="372" static="1"><f a="ratio:ratioSoft">
 	<x path="Float"/>
 	<x path="Float"/>
 	<x path="pallette.utils.ColorInt"/>
@@ -10008,21 +10064,38 @@
 				<m n=":to"/>
 			</meta>
 		</toRGB>
-		<fromCYMKA public="1" get="inline" set="null" line="45" static="1">
+		<toOKLAB public="1" get="inline" set="null" line="45" static="1">
+			<f a="this">
+				<x path="Int"/>
+				<c path="pallette.utils.OKLAB"/>
+			</f>
+			<meta>
+				<m n=":impl"/>
+				<m n=":to"/>
+			</meta>
+		</toOKLAB>
+		<fromCYMKA public="1" get="inline" set="null" line="51" static="1">
 			<f a="c">
 				<c path="pallette.utils.CYMKA"/>
 				<x path="pallette.utils.ColorInt"/>
 			</f>
 			<meta><m n=":from"/></meta>
 		</fromCYMKA>
-		<fromCYMK public="1" get="inline" set="null" line="50" static="1">
+		<fromCYMK public="1" get="inline" set="null" line="56" static="1">
 			<f a="c">
 				<c path="pallette.utils.CYMK"/>
 				<x path="pallette.utils.ColorInt"/>
 			</f>
 			<meta><m n=":from"/></meta>
 		</fromCYMK>
-		<toCYMKA public="1" get="inline" set="null" line="55" static="1">
+		<fromOKLAB public="1" get="inline" set="null" line="61" static="1">
+			<f a="c">
+				<c path="pallette.utils.OKLAB"/>
+				<x path="pallette.utils.ColorInt"/>
+			</f>
+			<meta><m n=":from"/></meta>
+		</fromOKLAB>
+		<toCYMKA public="1" get="inline" set="null" line="66" static="1">
 			<f a="this">
 				<x path="Int"/>
 				<c path="pallette.utils.CYMKA"/>
@@ -10032,7 +10105,7 @@
 				<m n=":to"/>
 			</meta>
 		</toCYMKA>
-		<toCYMK public="1" get="inline" set="null" line="64" static="1">
+		<toCYMK public="1" get="inline" set="null" line="75" static="1">
 			<f a="this">
 				<x path="Int"/>
 				<c path="pallette.utils.CYMK"/>
@@ -10046,14 +10119,14 @@
 			<x path="Float"/>
 			<meta><m n=":impl"/></meta>
 		</cyan>
-		<get_cyan get="inline" set="null" line="73" static="1">
+		<get_cyan get="inline" set="null" line="84" static="1">
 			<f a="this">
 				<x path="Int"/>
 				<x path="Float"/>
 			</f>
 			<meta><m n=":impl"/></meta>
 		</get_cyan>
-		<set_cyan get="inline" set="null" line="77" static="1">
+		<set_cyan get="inline" set="null" line="88" static="1">
 			<f a="this:v">
 				<x path="Int"/>
 				<x path="Float"/>
@@ -10065,14 +10138,14 @@
 			<x path="Float"/>
 			<meta><m n=":impl"/></meta>
 		</yellow>
-		<get_yellow get="inline" set="null" line="86" static="1">
+		<get_yellow get="inline" set="null" line="97" static="1">
 			<f a="this">
 				<x path="Int"/>
 				<x path="Float"/>
 			</f>
 			<meta><m n=":impl"/></meta>
 		</get_yellow>
-		<set_yellow get="inline" set="null" line="90" static="1">
+		<set_yellow get="inline" set="null" line="101" static="1">
 			<f a="this:v">
 				<x path="Int"/>
 				<x path="Float"/>
@@ -10084,14 +10157,14 @@
 			<x path="Float"/>
 			<meta><m n=":impl"/></meta>
 		</magenta>
-		<get_magenta get="inline" set="null" line="99" static="1">
+		<get_magenta get="inline" set="null" line="110" static="1">
 			<f a="this">
 				<x path="Int"/>
 				<x path="Float"/>
 			</f>
 			<meta><m n=":impl"/></meta>
 		</get_magenta>
-		<set_magenta get="inline" set="null" line="103" static="1">
+		<set_magenta get="inline" set="null" line="114" static="1">
 			<f a="this:v">
 				<x path="Int"/>
 				<x path="Float"/>
@@ -10103,14 +10176,14 @@
 			<x path="Float"/>
 			<meta><m n=":impl"/></meta>
 		</black>
-		<get_black get="inline" set="null" line="112" static="1">
+		<get_black get="inline" set="null" line="123" static="1">
 			<f a="this">
 				<x path="Int"/>
 				<x path="Float"/>
 			</f>
 			<meta><m n=":impl"/></meta>
 		</get_black>
-		<set_black get="inline" set="null" line="115" static="1">
+		<set_black get="inline" set="null" line="126" static="1">
 			<f a="this:v">
 				<x path="Int"/>
 				<x path="Float"/>
@@ -10122,14 +10195,14 @@
 			<x path="Float"/>
 			<meta><m n=":impl"/></meta>
 		</alpha>
-		<get_alpha get="inline" set="null" line="124" static="1">
+		<get_alpha get="inline" set="null" line="135" static="1">
 			<f a="this">
 				<x path="Int"/>
 				<x path="Float"/>
 			</f>
 			<meta><m n=":impl"/></meta>
 		</get_alpha>
-		<set_alpha get="inline" set="null" line="128" static="1">
+		<set_alpha get="inline" set="null" line="139" static="1">
 			<f a="this:v">
 				<x path="Int"/>
 				<x path="Float"/>
@@ -10141,14 +10214,14 @@
 			<x path="Float"/>
 			<meta><m n=":impl"/></meta>
 		</red>
-		<get_red get="inline" set="null" line="134" static="1">
+		<get_red get="inline" set="null" line="145" static="1">
 			<f a="this">
 				<x path="Int"/>
 				<x path="Float"/>
 			</f>
 			<meta><m n=":impl"/></meta>
 		</get_red>
-		<set_red get="inline" set="null" line="138" static="1">
+		<set_red get="inline" set="null" line="149" static="1">
 			<f a="this:v">
 				<x path="Int"/>
 				<x path="Float"/>
@@ -10160,14 +10233,14 @@
 			<x path="Float"/>
 			<meta><m n=":impl"/></meta>
 		</green>
-		<get_green get="inline" set="null" line="144" static="1">
+		<get_green get="inline" set="null" line="155" static="1">
 			<f a="this">
 				<x path="Int"/>
 				<x path="Float"/>
 			</f>
 			<meta><m n=":impl"/></meta>
 		</get_green>
-		<set_green get="inline" set="null" line="148" static="1">
+		<set_green get="inline" set="null" line="159" static="1">
 			<f a="this:v">
 				<x path="Int"/>
 				<x path="Float"/>
@@ -10179,14 +10252,14 @@
 			<x path="Float"/>
 			<meta><m n=":impl"/></meta>
 		</blue>
-		<get_blue get="inline" set="null" line="154" static="1">
+		<get_blue get="inline" set="null" line="165" static="1">
 			<f a="this">
 				<x path="Int"/>
 				<x path="Float"/>
 			</f>
 			<meta><m n=":impl"/></meta>
 		</get_blue>
-		<set_blue get="inline" set="null" line="158" static="1">
+		<set_blue get="inline" set="null" line="169" static="1">
 			<f a="this:v">
 				<x path="Int"/>
 				<x path="Float"/>
@@ -10194,7 +10267,7 @@
 			</f>
 			<meta><m n=":impl"/></meta>
 		</set_blue>
-		<aiCYMKA public="1" get="inline" set="null" line="164" static="1">
+		<aiCYMKA public="1" get="inline" set="null" line="175" static="1">
 			<f a="arr:?alpha" v=":1.0">
 				<c path="Array"><c path="String"/></c>
 				<x path="Float"/>
@@ -10202,7 +10275,7 @@
 			</f>
 			<meta><m n=":value"><e>{ alpha : 1.0 }</e></m></meta>
 		</aiCYMKA>
-		<aiARGB public="1" get="inline" set="null" line="172" static="1">
+		<aiARGB public="1" get="inline" set="null" line="183" static="1">
 			<f a="arr:?alpha" v=":1.0">
 				<c path="Array"><c path="String"/></c>
 				<x path="Float"/>
@@ -10210,7 +10283,7 @@
 			</f>
 			<meta><m n=":value"><e>{ alpha : 1.0 }</e></m></meta>
 		</aiARGB>
-		<aiGreyA public="1" get="inline" set="null" line="180" static="1">
+		<aiGreyA public="1" get="inline" set="null" line="191" static="1">
 			<f a="s:?alpha" v=":1.0">
 				<c path="String"/>
 				<x path="Float"/>
@@ -10218,15 +10291,15 @@
 			</f>
 			<meta><m n=":value"><e>{ alpha : 1.0 }</e></m></meta>
 		</aiGreyA>
-		<ARGB_CYMKA public="1" get="inline" set="null" line="187" static="1"><f a="v">
+		<ARGB_CYMKA public="1" get="inline" set="null" line="198" static="1"><f a="v">
 	<c path="pallette.utils.ARGB"/>
 	<c path="pallette.utils.CYMKA"/>
 </f></ARGB_CYMKA>
-		<CYMKA_ARGB public="1" get="inline" set="null" line="197" static="1"><f a="v">
+		<CYMKA_ARGB public="1" get="inline" set="null" line="208" static="1"><f a="v">
 	<c path="pallette.utils.CYMKA"/>
 	<c path="pallette.utils.ARGB"/>
 </f></CYMKA_ARGB>
-		<luminosityGrey public="1" get="inline" set="null" line="204" static="1">
+		<luminosityGrey public="1" get="inline" set="null" line="215" static="1">
 			<f a="this:?scale" v=":1.">
 				<x path="Int"/>
 				<x path="Float"/>
@@ -10237,25 +10310,46 @@
 				<m n=":impl"/>
 			</meta>
 		</luminosityGrey>
-		<blendARGB public="1" get="inline" set="null" line="208" static="1">
-			<f a="this:colB:t">
+		<blendARGB public="1" get="inline" set="null" line="219" static="1">
+			<f a="this:colB:t:?smooth" v=":::true">
 				<x path="Int"/>
 				<x path="pallette.utils.ColorInt"/>
 				<x path="Float"/>
+				<x path="Bool"/>
 				<x path="Int"/>
 			</f>
-			<meta><m n=":impl"/></meta>
+			<meta>
+				<m n=":value"><e>{ smooth : true }</e></m>
+				<m n=":impl"/>
+			</meta>
 		</blendARGB>
-		<blendRGB public="1" get="inline" set="null" line="222" static="1">
-			<f a="this:colB:t">
+		<blendRGB public="1" get="inline" set="null" line="233" static="1">
+			<f a="this:colB:t:?smooth" v=":::true">
 				<x path="Int"/>
 				<x path="pallette.utils.ColorInt"/>
 				<x path="Float"/>
+				<x path="Bool"/>
 				<x path="Int"/>
 			</f>
-			<meta><m n=":impl"/></meta>
+			<meta>
+				<m n=":value"><e>{ smooth : true }</e></m>
+				<m n=":impl"/>
+			</meta>
 		</blendRGB>
-		<blend get="inline" set="null" line="235" static="1">
+		<blendOKLAB public="1" get="inline" set="null" line="246" static="1">
+			<f a="this:colB:t:?smooth" v=":::true">
+				<x path="Int"/>
+				<x path="pallette.utils.ColorInt"/>
+				<x path="Float"/>
+				<x path="Bool"/>
+				<x path="Int"/>
+			</f>
+			<meta>
+				<m n=":value"><e>{ smooth : true }</e></m>
+				<m n=":impl"/>
+			</meta>
+		</blendOKLAB>
+		<blend get="inline" set="null" line="263" static="1">
 			<f a="this:a:b:t">
 				<x path="Int"/>
 				<x path="Float"/>
@@ -10265,7 +10359,7 @@
 			</f>
 			<meta><m n=":impl"/></meta>
 		</blend>
-		<smootherStep get="inline" set="null" line="240" static="1">
+		<smootherStep get="inline" set="null" line="268" static="1">
 			<f a="this:t">
 				<x path="Int"/>
 				<x path="Float"/>
@@ -10273,130 +10367,161 @@
 			</f>
 			<meta><m n=":impl"/></meta>
 		</smootherStep>
-		<whitePercent public="1" get="inline" set="null" line="244" static="1"><f a="percent">
+		<whitePercent public="1" get="inline" set="null" line="272" static="1"><f a="percent">
 	<x path="Int"/>
 	<x path="pallette.utils.ColorInt"/>
 </f></whitePercent>
-		<whiteRatio public="1" get="inline" set="null" line="248" static="1"><f a="ratio">
+		<whiteRatio public="1" get="inline" set="null" line="276" static="1"><f a="ratio">
 	<x path="Float"/>
 	<x path="pallette.utils.ColorInt"/>
 </f></whiteRatio>
-		<blackPercent public="1" get="inline" set="null" line="252" static="1"><f a="percent">
+		<blackPercent public="1" get="inline" set="null" line="280" static="1"><f a="percent">
 	<x path="Int"/>
 	<x path="pallette.utils.ColorInt"/>
 </f></blackPercent>
-		<blackRatio public="1" get="inline" set="null" line="256" static="1"><f a="ratio">
+		<blackRatio public="1" get="inline" set="null" line="284" static="1"><f a="ratio">
 	<x path="Float"/>
 	<x path="pallette.utils.ColorInt"/>
 </f></blackRatio>
-		<colorPercent public="1" get="inline" set="null" line="260" static="1"><f a="rPercent:gPercent:bPercent">
+		<colorPercent public="1" get="inline" set="null" line="288" static="1"><f a="rPercent:gPercent:bPercent">
 	<x path="Int"/>
 	<x path="Int"/>
 	<x path="Int"/>
 	<x path="pallette.utils.ColorInt"/>
 </f></colorPercent>
-		<colorRatio public="1" get="inline" set="null" line="264" static="1"><f a="rRatio:gRatio:bRatio">
+		<colorRatio public="1" get="inline" set="null" line="292" static="1"><f a="rRatio:gRatio:bRatio">
 	<x path="Float"/>
 	<x path="Float"/>
 	<x path="Float"/>
 	<x path="pallette.utils.ColorInt"/>
 </f></colorRatio>
-		<darkColorPercent public="1" get="inline" set="null" line="268" static="1"><f a="rPercent:gPercent:bPercent">
+		<darkColorPercent public="1" get="inline" set="null" line="296" static="1"><f a="rPercent:gPercent:bPercent">
 	<x path="Int"/>
 	<x path="Int"/>
 	<x path="Int"/>
 	<x path="pallette.utils.ColorInt"/>
 </f></darkColorPercent>
-		<darkColorRatio public="1" get="inline" set="null" line="272" static="1"><f a="rRatio:gRatio:bRatio">
+		<darkColorRatio public="1" get="inline" set="null" line="300" static="1"><f a="rRatio:gRatio:bRatio">
 	<x path="Float"/>
 	<x path="Float"/>
 	<x path="Float"/>
 	<x path="pallette.utils.ColorInt"/>
 </f></darkColorRatio>
-		<redPercent public="1" get="inline" set="null" line="276" static="1"><f a="percent">
+		<redPercent public="1" get="inline" set="null" line="304" static="1"><f a="percent">
 	<x path="Int"/>
 	<x path="pallette.utils.ColorInt"/>
 </f></redPercent>
-		<redRatio public="1" get="inline" set="null" line="280" static="1"><f a="ratio">
+		<redRatio public="1" get="inline" set="null" line="308" static="1"><f a="ratio">
 	<x path="Float"/>
 	<x path="pallette.utils.ColorInt"/>
 </f></redRatio>
-		<greenPercent public="1" get="inline" set="null" line="284" static="1"><f a="percent">
+		<greenPercent public="1" get="inline" set="null" line="312" static="1"><f a="percent">
 	<x path="Int"/>
 	<x path="pallette.utils.ColorInt"/>
 </f></greenPercent>
-		<greenRatio public="1" get="inline" set="null" line="288" static="1"><f a="ratio">
+		<greenRatio public="1" get="inline" set="null" line="316" static="1"><f a="ratio">
 	<x path="Float"/>
 	<x path="pallette.utils.ColorInt"/>
 </f></greenRatio>
-		<bluePercent public="1" get="inline" set="null" line="292" static="1"><f a="percent">
+		<bluePercent public="1" get="inline" set="null" line="320" static="1"><f a="percent">
 	<x path="Int"/>
 	<x path="pallette.utils.ColorInt"/>
 </f></bluePercent>
-		<blueRatio public="1" get="inline" set="null" line="296" static="1"><f a="ratio">
+		<blueRatio public="1" get="inline" set="null" line="324" static="1"><f a="ratio">
 	<x path="Float"/>
 	<x path="pallette.utils.ColorInt"/>
 </f></blueRatio>
-		<redSoftPercent public="1" get="inline" set="null" line="300" static="1"><f a="percent:percentSoft">
+		<redSoftPercent public="1" get="inline" set="null" line="328" static="1"><f a="percent:percentSoft">
 	<x path="Int"/>
 	<x path="Int"/>
 	<x path="pallette.utils.ColorInt"/>
 </f></redSoftPercent>
-		<redSoftRatio public="1" get="inline" set="null" line="304" static="1"><f a="ratio:ratioSoft">
+		<redSoftRatio public="1" get="inline" set="null" line="332" static="1"><f a="ratio:ratioSoft">
 	<x path="Float"/>
 	<x path="Float"/>
 	<x path="pallette.utils.ColorInt"/>
 </f></redSoftRatio>
-		<greenSoftPercent public="1" get="inline" set="null" line="308" static="1"><f a="percent:percentSoft">
+		<greenSoftPercent public="1" get="inline" set="null" line="336" static="1"><f a="percent:percentSoft">
 	<x path="Int"/>
 	<x path="Int"/>
 	<x path="pallette.utils.ColorInt"/>
 </f></greenSoftPercent>
-		<greenSoftRatio public="1" get="inline" set="null" line="312" static="1"><f a="ratio:ratioSoft">
+		<greenSoftRatio public="1" get="inline" set="null" line="340" static="1"><f a="ratio:ratioSoft">
 	<x path="Float"/>
 	<x path="Float"/>
 	<x path="pallette.utils.ColorInt"/>
 </f></greenSoftRatio>
-		<blueSoftPercent public="1" get="inline" set="null" line="316" static="1"><f a="percent:percentSoft">
+		<blueSoftPercent public="1" get="inline" set="null" line="344" static="1"><f a="percent:percentSoft">
 	<x path="Int"/>
 	<x path="Int"/>
 	<x path="pallette.utils.ColorInt"/>
 </f></blueSoftPercent>
-		<blueSoftRatio public="1" get="inline" set="null" line="320" static="1"><f a="ratio:ratioSoft">
+		<blueSoftRatio public="1" get="inline" set="null" line="348" static="1"><f a="ratio:ratioSoft">
 	<x path="Float"/>
 	<x path="Float"/>
 	<x path="pallette.utils.ColorInt"/>
 </f></blueSoftRatio>
-		<yellowSoftPercent public="1" get="inline" set="null" line="324" static="1"><f a="percent:percentSoft">
+		<yellowSoftPercent public="1" get="inline" set="null" line="352" static="1"><f a="percent:percentSoft">
 	<x path="Int"/>
 	<x path="Int"/>
 	<x path="pallette.utils.ColorInt"/>
 </f></yellowSoftPercent>
-		<yellowSoftRatio public="1" get="inline" set="null" line="328" static="1"><f a="ratio:ratioSoft">
+		<yellowSoftRatio public="1" get="inline" set="null" line="356" static="1"><f a="ratio:ratioSoft">
 	<x path="Float"/>
 	<x path="Float"/>
 	<x path="pallette.utils.ColorInt"/>
 </f></yellowSoftRatio>
-		<magentaSoftPercent public="1" get="inline" set="null" line="332" static="1"><f a="percent:percentSoft">
+		<magentaSoftPercent public="1" get="inline" set="null" line="360" static="1"><f a="percent:percentSoft">
 	<x path="Int"/>
 	<x path="Int"/>
 	<x path="pallette.utils.ColorInt"/>
 </f></magentaSoftPercent>
-		<magentaSoftRatio public="1" get="inline" set="null" line="336" static="1"><f a="ratio:ratioSoft">
+		<magentaSoftRatio public="1" get="inline" set="null" line="364" static="1"><f a="ratio:ratioSoft">
 	<x path="Float"/>
 	<x path="Float"/>
 	<x path="pallette.utils.ColorInt"/>
 </f></magentaSoftRatio>
-		<cyanSoftPercent public="1" get="inline" set="null" line="340" static="1"><f a="percent:percentSoft">
+		<cyanSoftPercent public="1" get="inline" set="null" line="368" static="1"><f a="percent:percentSoft">
 	<x path="Int"/>
 	<x path="Int"/>
 	<x path="pallette.utils.ColorInt"/>
 </f></cyanSoftPercent>
-		<cyanSoftRatio public="1" get="inline" set="null" line="344" static="1"><f a="ratio:ratioSoft">
+		<cyanSoftRatio public="1" get="inline" set="null" line="372" static="1"><f a="ratio:ratioSoft">
 	<x path="Float"/>
 	<x path="Float"/>
 	<x path="pallette.utils.ColorInt"/>
 </f></cyanSoftRatio>
+	</class>
+	<class path="pallette.utils.OKLAB" params="" file="src/pallette/utils/OKLAB.hx">
+		<L public="1" expr="0.">
+			<x path="Float"/>
+			<meta><m n=":value"><e>0.</e></m></meta>
+		</L>
+		<a public="1" expr="0.">
+			<x path="Float"/>
+			<meta><m n=":value"><e>0.</e></m></meta>
+		</a>
+		<b public="1" expr="0.">
+			<x path="Float"/>
+			<meta><m n=":value"><e>0.</e></m></meta>
+		</b>
+		<alpha public="1" expr="0.">
+			<x path="Float"/>
+			<meta><m n=":value"><e>0.</e></m></meta>
+		</alpha>
+		<new public="1" set="method" line="12"><f a="L:a:b:alpha">
+	<x path="Float"/>
+	<x path="Float"/>
+	<x path="Float"/>
+	<x path="Float"/>
+	<x path="Void"/>
+</f></new>
+		<haxe_doc>{ l, a, b, alpha }
+   , L – perceived lightness, a – how green/red the color is, b – how blue/yellow the color is, alpha -alpha</haxe_doc>
+		<meta>
+			<m n=":directlyUsed"/>
+			<m n=":structInit"/>
+		</meta>
 	</class>
 	<class path="pallette.utils.RGB" params="" file="src/pallette/utils/RGB.hx">
 		<r public="1" expr="0.">

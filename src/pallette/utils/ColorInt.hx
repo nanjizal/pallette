@@ -41,6 +41,12 @@ abstract ColorInt( Int ) to Int from Int {
     function toRGB(): RGB {
         return new RGB( red, green, blue );
     }
+    @:to
+    public inline
+    function toOKLAB(): OKLAB {
+        var v: Int = this;
+        return to_oklab( v );
+    }
     @:from
     static public inline
     function fromCYMKA( c: CYMKA ):ColorInt {
@@ -50,6 +56,11 @@ abstract ColorInt( Int ) to Int from Int {
     static public inline
     function fromCYMK( c: CYMK ):ColorInt {
         return new ColorInt( from_cymk( c.c, c.y, c.m, c.k ) );
+    }
+    @:from
+    static public inline
+    function fromOKLAB( c: OKLAB ): ColorInt {
+        return new ColorInt( from_oklab( c.L, c.a, c.b, c.alpha ) );
     }
     @:to
     public inline
@@ -206,9 +217,9 @@ abstract ColorInt( Int ) to Int from Int {
         return alpha*( 0.21*red + 0.72*green + 0.07*blue ) * scale;
     }
     public inline
-    function blendARGB( colB: ColorInt, t: Float ): Int {
+    function blendARGB( colB: ColorInt, t: Float, smooth: Bool = true ): Int {
         // blend each channel colors
-        var v = smootherStep( t );
+        var v = ( smooth )? smootherStep( t ): t;
         var r = blend( red,   colB.red,   v );
         var g = blend( green, colB.green, v );
         var b = blend( blue,  colB.blue,  v );
@@ -220,15 +231,32 @@ abstract ColorInt( Int ) to Int from Int {
         return c;
     }
     public inline
-    function blendRGB( colB: ColorInt, t: Float ): Int {
+    function blendRGB( colB: ColorInt, t: Float, smooth: Bool = true ): Int {
         // blend each channel colors
-        var v = smootherStep( t );
+        var v = ( smooth )? smootherStep( t ): t;
         var r = blend( red,   colB.red,   v );
         var g = blend( green, colB.green, v );
         var b = blend( blue,  colB.blue,  v );
         // put together
         var argb: ARGB = { a: 1., r: r, g: g, b: b };
         var colInt: ColorInt = argb;
+        var c: Int = colInt;
+        return c;
+    }
+    public inline
+    function blendOKLAB( colB: ColorInt, t: Float, smooth: Bool = true ): Int {
+        // blend each channel colors
+        var v = ( smooth )? smootherStep( t ): t;
+        var val: ColorInt = this;
+        var okA: OKLAB = val;
+        var okB: OKLAB = colB;
+        var L = blend( okA.L, okB.L, v );
+        var a = blend( okA.a, okB.a, v );
+        var b = blend( okA.b, okB.b, v );
+        var alpha = blend( okA.alpha, okB.alpha, v );
+        // put together
+        var oklab: OKLAB = { L: L, a: a, b: b, alpha: alpha };
+        var colInt: ColorInt = oklab;
         var c: Int = colInt;
         return c;
     }

@@ -1,4 +1,5 @@
 package pallette.utils;
+import pallette.utils.OKLAB;
 inline
 function htmlRGBA( r_: Float, g_: Float, b_: Float, a_: Float ): String {
     var r = r_;
@@ -13,6 +14,36 @@ function htmlHex( r: Float, g: Float, b: Float ): String
 inline
 function getBlack( r: Float, g: Float, b: Float ): Float {
     return 1. - Math.max( Math.max( r, b ), g );
+}
+inline
+function from_oklab( L: Float, a: Float, b: Float, alpha: Float ): Int {
+    var l_ = L + 0.3963377774 * a + 0.2158037573 * b;
+    var m_ = L - 0.1055613458 * a - 0.0638541728 * b;
+    var s_ = L - 0.0894841775 * a - 1.2914855480 * b;
+    var l = l_*l_*l_;
+    var m = m_*m_*m_;
+    var s = s_*s_*s_;
+    var red   = 4.0767245293*l - 3.3072168827*m + 0.2307590544*s;
+    var green = - 1.2681437731*l + 2.6093323231*m - 0.3411344290*s;
+    var blue  = - 0.0041119885*l - 0.7034763098*m + 1.7068625689*s;
+    return from_argb( alpha, red, green, blue );
+}
+inline
+function to_oklab( v: Int ):OKLAB {
+    var r = redChannel( v );
+    var g = greenChannel( v );
+    var b = blueChannel( v );
+    var a = alphaChannel( v );
+    var l = 0.4121656120 * r + 0.5362752080 * g + 0.0514575653 * b;
+    var m = 0.2118591070 * r + 0.6807189584 * g + 0.1074065790 * b;
+    var s = 0.0883097947 * r + 0.2818474174 * g + 0.6302613616 * b;
+    var l_ = Math.pow( l, 0.3 );
+    var m_ = Math.pow( m, 0.3 );
+    var s_ = Math.pow( s, 0.3 );
+    return { L: 0.2104542553*l_ + 0.7936177850*m_ - 0.0040720468*s_
+           , a: 1.9779984951*l_ - 2.4285922050*m_ + 0.4505937099*s_
+           , b: 0.0259040371*l_ + 0.7827717662*m_ - 0.8086757660*s_
+           , alpha: a };
 }
 inline
 function from_cymka( c: Float, y: Float, m: Float, k: Float, a: Float ): Int
