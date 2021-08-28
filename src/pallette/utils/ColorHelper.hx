@@ -89,9 +89,8 @@ inline
 function blueChannel( int: Int ) : Float
     return (int & 255) / 255;
 inline
-function argbInt( a: Int, r: Int, g: Int, b: Int ){
+function argbInt( a: Int, r: Int, g: Int, b: Int ): Int
     return a << 24 | r << 16 | g << 8 | b;
-}
 inline 
 function alphaAvg( a: Int, b: Int  ): Float
     return Math.sqrt( alphaChannel( a ) * alphaChannel( b ) );
