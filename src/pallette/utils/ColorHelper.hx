@@ -208,6 +208,13 @@ class ColorHelper {
     public var greenChannel_: ( int: Int ) -> Float = greenChannel;
     public var blueChannel_: ( int: Int ) -> Float = blueChannel;
     
+    public var argbInt_:( a: Int, r: Int, g: Int, b: Int ) -> Int = argbInt;
+    public var alphaAvg_:( a: Int, b: Int  ) -> Float = alphaAvg;
+    public var redAvg_:( a: Int, b: Int  ) -> Float = redAvg;
+    public var greenAvg_:( a: Int, b: Int  ) -> Float = greenAvg;
+    public var blueAvg_:( a: Int, b: Int  ) -> Float = blueAvg;
+    public var argbIntAvg_:( c0: Int, c1: Int ) -> Int = argbIntAvg;
+    
     public var get_percentHex_: ()->Array<Int> = get_percentHex;
     public var percentWhite_: ( percent: Int )->Int = percentWhite;
     public var percentBlack_:( percent: Int )->Int = percentBlack;
