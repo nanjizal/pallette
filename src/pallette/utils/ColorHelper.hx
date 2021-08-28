@@ -92,6 +92,26 @@ inline
 function argbInt( a: Int, r: Int, g: Int, b: Int ){
     return a << 24 | r << 16 | g << 8 | b;
 }
+inline 
+function alphaAvg( a: Int, b: Int  ): Float
+    return Math.sqrt( alphaChannel( a ) * alphaChannel( b ) );
+inline 
+function redAvg( a: Int, b: Int  ): Float
+    return Math.sqrt( redChannel( a ) * redChannel( b ) );
+inline 
+function greenAvg( a: Int, b: Int  ): Float
+    return Math.sqrt( greenChannel( a ) * greenChannel( b ) );
+inline 
+function blueAvg( a: Int, b: Int  ): Float
+    return Math.sqrt( blueChannel( a ) * blueChannel( b ) );
+inline
+function argbIntAvg( c0: Int, c1: Int ): Int {
+    var a = alphaAvg( c0, c1 );
+    var r = redAvg(   c0, c1 );
+    var g = greenAvg( c0, c1 );
+    var b = blueAvg(  c0, c1 );
+    return from_argb( a, r, g, b );
+}
 var percentHex( get, null ): Array<Int>;
 inline
 function get_percentHex(): Array<Int>{
