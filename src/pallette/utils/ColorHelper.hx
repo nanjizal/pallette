@@ -89,8 +89,27 @@ inline
 function blueChannel( int: Int ) : Float
     return (int & 255) / 255;
 inline
-function argbInt( a: Int, r: Int, g: Int, b: Int ){
+function argbInt( a: Int, r: Int, g: Int, b: Int ): Int
     return a << 24 | r << 16 | g << 8 | b;
+inline 
+function alphaAvg( a: Int, b: Int  ): Float
+    return Math.sqrt( alphaChannel( a ) * alphaChannel( b ) );
+inline 
+function redAvg( a: Int, b: Int  ): Float
+    return Math.sqrt( redChannel( a ) * redChannel( b ) );
+inline 
+function greenAvg( a: Int, b: Int  ): Float
+    return Math.sqrt( greenChannel( a ) * greenChannel( b ) );
+inline 
+function blueAvg( a: Int, b: Int  ): Float
+    return Math.sqrt( blueChannel( a ) * blueChannel( b ) );
+inline
+function argbIntAvg( c0: Int, c1: Int ): Int {
+    var a = alphaAvg( c0, c1 );
+    var r = redAvg(   c0, c1 );
+    var g = greenAvg( c0, c1 );
+    var b = blueAvg(  c0, c1 );
+    return from_argb( a, r, g, b );
 }
 var percentHex( get, null ): Array<Int>;
 inline
@@ -189,6 +208,13 @@ class ColorHelper {
     public var redChannel_: ( int: Int ) -> Float = redChannel;
     public var greenChannel_: ( int: Int ) -> Float = greenChannel;
     public var blueChannel_: ( int: Int ) -> Float = blueChannel;
+    
+    public var argbInt_:( a: Int, r: Int, g: Int, b: Int ) -> Int = argbInt;
+    public var alphaAvg_:( a: Int, b: Int  ) -> Float = alphaAvg;
+    public var redAvg_:( a: Int, b: Int  ) -> Float = redAvg;
+    public var greenAvg_:( a: Int, b: Int  ) -> Float = greenAvg;
+    public var blueAvg_:( a: Int, b: Int  ) -> Float = blueAvg;
+    public var argbIntAvg_:( c0: Int, c1: Int ) -> Int = argbIntAvg;
     
     public var get_percentHex_: ()->Array<Int> = get_percentHex;
     public var percentWhite_: ( percent: Int )->Int = percentWhite;
