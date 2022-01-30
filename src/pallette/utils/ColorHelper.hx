@@ -91,9 +91,10 @@ function toHexInt( c: Float ): Int
 inline
 function rgbInt( c: Int ): Int
     return ( c << 8 ) >> 8;
+// hack of -0.000000000000001; to make 0xFF alpha work in browser
 inline
 function getAlpha( c: Float ): Float
-    return ((Std.int(c) >> 24) & 255 )/255;
+    return ((Std.int(c) >> 24) & 255 )/255 - 0.000000000000001;
 inline
 function getColor( c: Float ): Int
     return rgbInt( Std.int( c ) );
