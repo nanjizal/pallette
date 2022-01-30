@@ -9,12 +9,30 @@ function htmlRGBA( r_: Float, g_: Float, b_: Float, a_: Float ): String {
     return 'rgba($r,$g,$b,$a)';
 }
 inline
+function stringColor( col: Int, ?alpha: Float ): String {
+    return if( alpha != null && alpha != 1.0 ){
+        var r = (col >> 16) & 0xFF;
+        var g = (col >> 8) & 0xFF;
+        var b = (col) & 0xFF;
+        'rgba($r,$g,$b,$alpha)';
+    } else {
+        '#' + StringTools.hex( col, 6 );
+    }
+}
+inline
+function stringHashARGB( col: Int ): String
+    return '#' + StringTools.hex( col, 8 );
+inline
 function htmlHex( r: Float, g: Float, b: Float ): String
     return '#' + StringTools.hex( from_rgb( r, g, b ), 6 );
 inline
 function getBlack( r: Float, g: Float, b: Float ): Float {
     return 1. - Math.max( Math.max( r, b ), g );
 }
+inline
+function between( a: Float, b: Float, t: Float = 0.5 ): Float 
+    return t*a + (1.-t)*b;
+    
 inline
 function from_oklab( L: Float, a: Float, b: Float, alpha: Float ): Int {
     var l_ = L + 0.3963377774 * a + 0.2158037573 * b;
@@ -88,6 +106,61 @@ function greenChannel( int: Int ) : Float
 inline
 function blueChannel( int: Int ) : Float
     return (int & 255) / 255;
+inline
+function alphaBetween( a: Int, b: Int, t: Float = 0.5 ): Float
+    return between( alphaChannel( a ), alphaChannel( b ), t );
+inline
+function redBetween( a: Int, b: Int, t: Float = 0.5 ): Float
+    return between( redChannel( a ), redChannel( b ), t );
+inline
+function greenBetween( a: Int, b: Int, t: Float = 0.5 ): Float
+    return between( greenChannel( a ), greenChannel( b ), t );
+inline
+function blueBetween( a: Int, b: Int, t: Float = 0.5 ): Float
+    return between( blueChannel( a ), blueChannel( b ), t );
+inline
+function colorDistance( a: Int, b: Int ): Float {
+    var da = alphaChannel( a ) - alphaChannel( b );
+    var dr = redChannel(   a ) - redChannel(   b );
+    var dg = greenChannel( a ) - greenChannel( b );
+    var db = blueChannel(  a ) - blueChannel(  b );
+    return Math.sqrt( da*da + dr*dr + dg*dg + db*db );
+}
+inline
+function colorDistanceArr( a: Int, bs: Array<Int> ): Array<Int>{
+    var ca = alphaChannel( a );
+    var cr = redChannel(   a );
+    var cg = greenChannel( a );
+    var cb = blueChannel(  a );
+    var dist2 = [];
+    // calculate distance from a using pythag
+    for( i in 0...bs.length ){
+        var b = bs[i];
+        var da = ca - alphaChannel( b );
+        var dr = cr - redChannel(   b );
+        var dg = cg - greenChannel( b );
+        var db = cb - blueChannel(  b );
+        dist2[ b ] = /*Math.sqrt(*/ da*da + dr*dr + dg*dg + db*db /*)*/; // squareing not needed for distances.
+    }
+    bs.sort( ( a: Int, b: Int ) -> {
+        if( dist2[ a ] < dist2[ b ] ) return -1;
+        else if( dist2[ a ] > dist2[ b ] ) return 1;
+        else return 0;
+    } );
+    return bs;
+}
+inline
+function alphaDistance( a: Int, b: Int ): Float
+    return Math.abs( alphaChannel( a ) - alphaChannel( b ) );
+inline
+function redDistance( a: Int, b: Int ): Float
+    return Math.abs(  redChannel( a ) - redChannel( b ) );
+inline
+function greenDistance( a: Int, b: Int ): Float
+    return Math.abs( greenChannel( a ) - greenChannel( b ) );
+inline
+function blueDistance( a: Int, b: Int ): Float
+    return Math.abs( blueChannel( a ) - blueChannel( b ) );
 inline
 function argbInt( a: Int, r: Int, g: Int, b: Int ): Int
     return a << 24 | r << 16 | g << 8 | b;
@@ -197,8 +270,8 @@ class ColorHelper {
     public var htmlRGBA_: ( r_: Float, g_: Float, b_: Float, a_: Float ) -> String = htmlRGBA;
     public var htmlHex_: ( r: Float, g: Float, b: Float ) -> String = htmlHex;
     public var getBlack_: ( r: Float, g: Float, b: Float ) -> Float = getBlack; 
-    public var from_oklab_:( L: Float, a: Float, b: Float, alpha: Float ): Int = from_oklab;
-    public var to_oklab_:( v: Int ): OKLAB = to_oklab;
+    public var from_oklab_:( L: Float, a: Float, b: Float, alpha: Float ) -> Int = from_oklab;
+    public var to_oklab_:( v: Int ) -> OKLAB = to_oklab;
     public var from_cymka_: ( c: Float, y: Float, m: Float, k: Float, a: Float ) -> Int = from_cymka;
     public var from_argb_: ( a: Float, r: Float, g: Float, b: Float ) -> Int = from_argb;
     public var toHexInt_: ( c: Float ) -> Int = toHexInt;
