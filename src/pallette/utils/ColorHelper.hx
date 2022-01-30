@@ -89,6 +89,25 @@ inline
 function toHexInt( c: Float ): Int
     return Math.round( c * 255 );
 inline
+function rgbInt( c: Int ): Int
+    return ( c << 8 ) >> 8;
+inline
+function getAlpha( c: Float ): Float
+    return ((Std.int(c) >> 24) & 255 )/255;
+inline
+function getColor( c: Float ): Int
+    return rgbInt( Std.int( c ) );
+// throws aways alpha on c and uses the new a value.
+inline
+function colorAlpha( color: Int, alpha: Float ): Int
+    return ( toHexInt( alpha ) << 24 ) | rgbInt( color );
+inline
+function AplusRGB( col: Int, alpha: Int ): Int
+    return alpha << 24 | col;
+inline
+function colorIntAlpha( color: Int, alpha: Int ): Int
+    return ( alpha << 24 ) | rgbInt( color );
+inline
 function rgbConvert( color: Float, k: Float ): Float
     return ( 1. - color - k )/( 1.-k );
 inline
@@ -118,6 +137,12 @@ function greenBetween( a: Int, b: Int, t: Float = 0.5 ): Float
 inline
 function blueBetween( a: Int, b: Int, t: Float = 0.5 ): Float
     return between( blueChannel( a ), blueChannel( b ), t );
+inline
+function argbIntBetween( a: Int, b: Int, t: Float = 0.5 ): Int
+     return from_argb( alphaBetween( a, b, t )
+                     , redBetween(   a, b, t )
+                     , greenBetween( a, b, t )
+                     , blueBetween(  a, b, t ) );
 inline
 function colorDistance( a: Int, b: Int ): Float {
     var da = alphaChannel( a ) - alphaChannel( b );
@@ -275,12 +300,23 @@ class ColorHelper {
     public var from_cymka_: ( c: Float, y: Float, m: Float, k: Float, a: Float ) -> Int = from_cymka;
     public var from_argb_: ( a: Float, r: Float, g: Float, b: Float ) -> Int = from_argb;
     public var toHexInt_: ( c: Float ) -> Int = toHexInt;
+    public var rgbInt_: ( c: Int ) -> Int = rgbInt;
+    public var getAlpha_: ( c: Float ) -> Float = getAlpha;
+    public var getColor_: ( c: Float ) -> Int = getColor;
+    public var colorAlpha_: ( color: Int, alpha: Float ) -> Int = colorAlpha;
+    public var AplusRGB_: ( col: Int, alpha: Int ) -> Int = AplusRGB;
+    public var colorIntAlpha_: ( color: Int, alpha: Int ) -> Int = colorIntAlpha;
     public var rgbConvert_: ( color: Float, k: Float ) -> Float = rgbConvert;
     public var cymkConvert_: ( color: Float, black: Float ) -> Float = cymkConvert;
     public var alphaChannel_: ( int: Int ) -> Float = alphaChannel;
     public var redChannel_: ( int: Int ) -> Float = redChannel;
     public var greenChannel_: ( int: Int ) -> Float = greenChannel;
     public var blueChannel_: ( int: Int ) -> Float = blueChannel;
+    public var alphaBetween_: (  a: Int, b: Int, t: Float ) -> Float = alphaBetween;
+    public var redBetween_: ( a: Int, b: Int, t: Float ) -> Float = redBetween;
+    public var greenBetween_: ( a: Int, b: Int, t: Float ) -> Float = greenBetween;
+    public var blueBetween_: ( a: Int, b: Int, t: Float ) -> Float = blueBetween;
+    public var argbIntBetween_: ( a: Int, b: Int, t: Float ) -> Int = argbIntBetween;
     
     public var argbInt_:( a: Int, r: Int, g: Int, b: Int ) -> Int = argbInt;
     public var alphaAvg_:( a: Int, b: Int  ) -> Float = alphaAvg;

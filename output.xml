@@ -11508,6 +11508,51 @@
 			</f>
 			<meta><m n=":value"><e>toHexInt</e></m></meta>
 		</toHexInt_>
+		<rgbInt_ public="1" expr="rgbInt">
+			<f a="c">
+				<x path="Int"/>
+				<x path="Int"/>
+			</f>
+			<meta><m n=":value"><e>rgbInt</e></m></meta>
+		</rgbInt_>
+		<getAlpha_ public="1" expr="getAlpha">
+			<f a="c">
+				<x path="Float"/>
+				<x path="Float"/>
+			</f>
+			<meta><m n=":value"><e>getAlpha</e></m></meta>
+		</getAlpha_>
+		<getColor_ public="1" expr="getColor">
+			<f a="c">
+				<x path="Float"/>
+				<x path="Int"/>
+			</f>
+			<meta><m n=":value"><e>getColor</e></m></meta>
+		</getColor_>
+		<colorAlpha_ public="1" expr="colorAlpha">
+			<f a="color:alpha">
+				<x path="Int"/>
+				<x path="Float"/>
+				<x path="Int"/>
+			</f>
+			<meta><m n=":value"><e>colorAlpha</e></m></meta>
+		</colorAlpha_>
+		<AplusRGB_ public="1" expr="AplusRGB">
+			<f a="col:alpha">
+				<x path="Int"/>
+				<x path="Int"/>
+				<x path="Int"/>
+			</f>
+			<meta><m n=":value"><e>AplusRGB</e></m></meta>
+		</AplusRGB_>
+		<colorIntAlpha_ public="1" expr="colorIntAlpha">
+			<f a="color:alpha">
+				<x path="Int"/>
+				<x path="Int"/>
+				<x path="Int"/>
+			</f>
+			<meta><m n=":value"><e>colorIntAlpha</e></m></meta>
+		</colorIntAlpha_>
 		<rgbConvert_ public="1" expr="rgbConvert">
 			<f a="color:k">
 				<x path="Float"/>
@@ -11552,6 +11597,51 @@
 			</f>
 			<meta><m n=":value"><e>blueChannel</e></m></meta>
 		</blueChannel_>
+		<alphaBetween_ public="1" expr="alphaBetween">
+			<f a="a:b:t">
+				<x path="Int"/>
+				<x path="Int"/>
+				<x path="Float"/>
+				<x path="Float"/>
+			</f>
+			<meta><m n=":value"><e>alphaBetween</e></m></meta>
+		</alphaBetween_>
+		<redBetween_ public="1" expr="redBetween">
+			<f a="a:b:t">
+				<x path="Int"/>
+				<x path="Int"/>
+				<x path="Float"/>
+				<x path="Float"/>
+			</f>
+			<meta><m n=":value"><e>redBetween</e></m></meta>
+		</redBetween_>
+		<greenBetween_ public="1" expr="greenBetween">
+			<f a="a:b:t">
+				<x path="Int"/>
+				<x path="Int"/>
+				<x path="Float"/>
+				<x path="Float"/>
+			</f>
+			<meta><m n=":value"><e>greenBetween</e></m></meta>
+		</greenBetween_>
+		<blueBetween_ public="1" expr="blueBetween">
+			<f a="a:b:t">
+				<x path="Int"/>
+				<x path="Int"/>
+				<x path="Float"/>
+				<x path="Float"/>
+			</f>
+			<meta><m n=":value"><e>blueBetween</e></m></meta>
+		</blueBetween_>
+		<argbIntBetween_ public="1" expr="argbIntBetween">
+			<f a="a:b:t">
+				<x path="Int"/>
+				<x path="Int"/>
+				<x path="Float"/>
+				<x path="Int"/>
+			</f>
+			<meta><m n=":value"><e>argbIntBetween</e></m></meta>
+		</argbIntBetween_>
 		<argbInt_ public="1" expr="argbInt">
 			<f a="a:r:g:b">
 				<x path="Int"/>
@@ -11716,7 +11806,7 @@
 			</f>
 			<meta><m n=":value"><e>percentCyanSoft</e></m></meta>
 		</percentCyanSoft_>
-		<new public="1" set="method" line="269">
+		<new public="1" set="method" line="294">
 			<f a=""><x path="Void"/></f>
 			<meta><m n=":compilerGenerated"/></meta>
 		</new>
@@ -11802,33 +11892,60 @@
 	<x path="Float"/>
 	<x path="Int"/>
 </f></toHexInt>
-		<rgbConvert public="1" get="inline" set="null" line="93" static="1"><f a="color:k">
+		<rgbInt public="1" get="inline" set="null" line="93" static="1"><f a="c">
+	<x path="Int"/>
+	<x path="Int"/>
+</f></rgbInt>
+		<getAlpha public="1" get="inline" set="null" line="96" static="1"><f a="c">
+	<x path="Float"/>
+	<x path="Float"/>
+</f></getAlpha>
+		<getColor public="1" get="inline" set="null" line="99" static="1"><f a="c">
+	<x path="Float"/>
+	<x path="Int"/>
+</f></getColor>
+		<colorAlpha public="1" get="inline" set="null" line="103" static="1"><f a="color:alpha">
+	<x path="Int"/>
+	<x path="Float"/>
+	<x path="Int"/>
+</f></colorAlpha>
+		<AplusRGB public="1" get="inline" set="null" line="106" static="1"><f a="col:alpha">
+	<x path="Int"/>
+	<x path="Int"/>
+	<x path="Int"/>
+</f></AplusRGB>
+		<colorIntAlpha public="1" get="inline" set="null" line="109" static="1"><f a="color:alpha">
+	<x path="Int"/>
+	<x path="Int"/>
+	<x path="Int"/>
+</f></colorIntAlpha>
+		<rgbConvert public="1" get="inline" set="null" line="112" static="1"><f a="color:k">
 	<x path="Float"/>
 	<x path="Float"/>
 	<x path="Float"/>
 </f></rgbConvert>
-		<cymkConvert public="1" get="inline" set="null" line="96" static="1"><f a="color:black">
+		<cymkConvert public="1" get="inline" set="null" line="115" static="1"><f a="color:black">
 	<x path="Float"/>
 	<x path="Float"/>
 	<x path="Float"/>
 </f></cymkConvert>
-		<alphaChannel public="1" get="inline" set="null" line="99" static="1"><f a="int">
+		<alphaChannel public="1" get="inline" set="null" line="118" static="1"><f a="int">
 	<x path="Int"/>
 	<x path="Float"/>
 </f></alphaChannel>
-		<redChannel public="1" get="inline" set="null" line="102" static="1"><f a="int">
+		<redChannel public="1" get="inline" set="null" line="121" static="1"><f a="int">
 	<x path="Int"/>
 	<x path="Float"/>
 </f></redChannel>
-		<greenChannel public="1" get="inline" set="null" line="105" static="1"><f a="int">
+		<greenChannel public="1" get="inline" set="null" line="124" static="1"><f a="int">
 	<x path="Int"/>
 	<x path="Float"/>
 </f></greenChannel>
-		<blueChannel public="1" get="inline" set="null" line="108" static="1"><f a="int">
+		<blueChannel public="1" get="inline" set="null" line="127" static="1"><f a="int">
 	<x path="Int"/>
 	<x path="Float"/>
 </f></blueChannel>
-		<alphaBetween public="1" get="inline" set="null" line="111" static="1">
+		<alphaBetween public="1" get="inline" set="null" line="130" static="1">
 			<f a="a:b:?t" v="::0.5">
 				<x path="Int"/>
 				<x path="Int"/>
@@ -11837,7 +11954,7 @@
 			</f>
 			<meta><m n=":value"><e>{ t : 0.5 }</e></m></meta>
 		</alphaBetween>
-		<redBetween public="1" get="inline" set="null" line="114" static="1">
+		<redBetween public="1" get="inline" set="null" line="133" static="1">
 			<f a="a:b:?t" v="::0.5">
 				<x path="Int"/>
 				<x path="Int"/>
@@ -11846,7 +11963,7 @@
 			</f>
 			<meta><m n=":value"><e>{ t : 0.5 }</e></m></meta>
 		</redBetween>
-		<greenBetween public="1" get="inline" set="null" line="117" static="1">
+		<greenBetween public="1" get="inline" set="null" line="136" static="1">
 			<f a="a:b:?t" v="::0.5">
 				<x path="Int"/>
 				<x path="Int"/>
@@ -11855,7 +11972,7 @@
 			</f>
 			<meta><m n=":value"><e>{ t : 0.5 }</e></m></meta>
 		</greenBetween>
-		<blueBetween public="1" get="inline" set="null" line="120" static="1">
+		<blueBetween public="1" get="inline" set="null" line="139" static="1">
 			<f a="a:b:?t" v="::0.5">
 				<x path="Int"/>
 				<x path="Int"/>
@@ -11864,134 +11981,143 @@
 			</f>
 			<meta><m n=":value"><e>{ t : 0.5 }</e></m></meta>
 		</blueBetween>
-		<colorDistance public="1" get="inline" set="null" line="122" static="1"><f a="a:b">
+		<argbIntBetween public="1" get="inline" set="null" line="142" static="1">
+			<f a="a:b:?t" v="::0.5">
+				<x path="Int"/>
+				<x path="Int"/>
+				<x path="Float"/>
+				<x path="Int"/>
+			</f>
+			<meta><m n=":value"><e>{ t : 0.5 }</e></m></meta>
+		</argbIntBetween>
+		<colorDistance public="1" get="inline" set="null" line="147" static="1"><f a="a:b">
 	<x path="Int"/>
 	<x path="Int"/>
 	<x path="Float"/>
 </f></colorDistance>
-		<colorDistanceArr public="1" get="inline" set="null" line="130" static="1"><f a="a:bs">
+		<colorDistanceArr public="1" get="inline" set="null" line="155" static="1"><f a="a:bs">
 	<x path="Int"/>
 	<c path="Array"><x path="Int"/></c>
 	<c path="Array"><x path="Int"/></c>
 </f></colorDistanceArr>
-		<alphaDistance public="1" get="inline" set="null" line="154" static="1"><f a="a:b">
+		<alphaDistance public="1" get="inline" set="null" line="179" static="1"><f a="a:b">
 	<x path="Int"/>
 	<x path="Int"/>
 	<x path="Float"/>
 </f></alphaDistance>
-		<redDistance public="1" get="inline" set="null" line="157" static="1"><f a="a:b">
+		<redDistance public="1" get="inline" set="null" line="182" static="1"><f a="a:b">
 	<x path="Int"/>
 	<x path="Int"/>
 	<x path="Float"/>
 </f></redDistance>
-		<greenDistance public="1" get="inline" set="null" line="160" static="1"><f a="a:b">
+		<greenDistance public="1" get="inline" set="null" line="185" static="1"><f a="a:b">
 	<x path="Int"/>
 	<x path="Int"/>
 	<x path="Float"/>
 </f></greenDistance>
-		<blueDistance public="1" get="inline" set="null" line="163" static="1"><f a="a:b">
+		<blueDistance public="1" get="inline" set="null" line="188" static="1"><f a="a:b">
 	<x path="Int"/>
 	<x path="Int"/>
 	<x path="Float"/>
 </f></blueDistance>
-		<argbInt public="1" get="inline" set="null" line="166" static="1"><f a="a:r:g:b">
+		<argbInt public="1" get="inline" set="null" line="191" static="1"><f a="a:r:g:b">
 	<x path="Int"/>
 	<x path="Int"/>
 	<x path="Int"/>
 	<x path="Int"/>
 	<x path="Int"/>
 </f></argbInt>
-		<alphaAvg public="1" get="inline" set="null" line="169" static="1"><f a="a:b">
+		<alphaAvg public="1" get="inline" set="null" line="194" static="1"><f a="a:b">
 	<x path="Int"/>
 	<x path="Int"/>
 	<x path="Float"/>
 </f></alphaAvg>
-		<redAvg public="1" get="inline" set="null" line="172" static="1"><f a="a:b">
+		<redAvg public="1" get="inline" set="null" line="197" static="1"><f a="a:b">
 	<x path="Int"/>
 	<x path="Int"/>
 	<x path="Float"/>
 </f></redAvg>
-		<greenAvg public="1" get="inline" set="null" line="175" static="1"><f a="a:b">
+		<greenAvg public="1" get="inline" set="null" line="200" static="1"><f a="a:b">
 	<x path="Int"/>
 	<x path="Int"/>
 	<x path="Float"/>
 </f></greenAvg>
-		<blueAvg public="1" get="inline" set="null" line="178" static="1"><f a="a:b">
+		<blueAvg public="1" get="inline" set="null" line="203" static="1"><f a="a:b">
 	<x path="Int"/>
 	<x path="Int"/>
 	<x path="Float"/>
 </f></blueAvg>
-		<argbIntAvg public="1" get="inline" set="null" line="180" static="1"><f a="c0:c1">
+		<argbIntAvg public="1" get="inline" set="null" line="205" static="1"><f a="c0:c1">
 	<x path="Int"/>
 	<x path="Int"/>
 	<x path="Int"/>
 </f></argbIntAvg>
 		<percentHex public="1" get="accessor" set="null" static="1"><c path="Array"><x path="Int"/></c></percentHex>
-		<get_percentHex public="1" get="inline" set="null" line="189" static="1"><f a=""><c path="Array"><x path="Int"/></c></f></get_percentHex>
-		<percentWhite public="1" get="inline" set="null" line="203" static="1"><f a="percent">
+		<get_percentHex public="1" get="inline" set="null" line="214" static="1"><f a=""><c path="Array"><x path="Int"/></c></f></get_percentHex>
+		<percentWhite public="1" get="inline" set="null" line="228" static="1"><f a="percent">
 	<x path="Int"/>
 	<x path="Int"/>
 </f></percentWhite>
-		<percentBlack public="1" get="inline" set="null" line="208" static="1"><f a="percent">
+		<percentBlack public="1" get="inline" set="null" line="233" static="1"><f a="percent">
 	<x path="Int"/>
 	<x path="Int"/>
 </f></percentBlack>
-		<rgbPercent public="1" get="inline" set="null" line="213" static="1"><f a="rPercent:gPercent:bPercent">
+		<rgbPercent public="1" get="inline" set="null" line="238" static="1"><f a="rPercent:gPercent:bPercent">
 	<x path="Int"/>
 	<x path="Int"/>
 	<x path="Int"/>
 	<x path="Int"/>
 </f></rgbPercent>
-		<percentColor public="1" get="inline" set="null" line="217" static="1"><f a="rPercent:gPercent:bPercent">
+		<percentColor public="1" get="inline" set="null" line="242" static="1"><f a="rPercent:gPercent:bPercent">
 	<x path="Int"/>
 	<x path="Int"/>
 	<x path="Int"/>
 	<x path="Int"/>
 </f></percentColor>
-		<percentDarkColor public="1" get="inline" set="null" line="221" static="1"><f a="rPercent:gPercent:bPercent">
+		<percentDarkColor public="1" get="inline" set="null" line="246" static="1"><f a="rPercent:gPercent:bPercent">
 	<x path="Int"/>
 	<x path="Int"/>
 	<x path="Int"/>
 	<x path="Int"/>
 </f></percentDarkColor>
-		<percentRed public="1" get="inline" set="null" line="225" static="1"><f a="rPercent">
+		<percentRed public="1" get="inline" set="null" line="250" static="1"><f a="rPercent">
 	<x path="Int"/>
 	<x path="Int"/>
 </f></percentRed>
-		<percentGreen public="1" get="inline" set="null" line="229" static="1"><f a="gPercent">
+		<percentGreen public="1" get="inline" set="null" line="254" static="1"><f a="gPercent">
 	<x path="Int"/>
 	<x path="Int"/>
 </f></percentGreen>
-		<percentBlue public="1" get="inline" set="null" line="233" static="1"><f a="bPercent">
+		<percentBlue public="1" get="inline" set="null" line="258" static="1"><f a="bPercent">
 	<x path="Int"/>
 	<x path="Int"/>
 </f></percentBlue>
-		<percentRedSoft public="1" get="inline" set="null" line="237" static="1"><f a="rPercent:percentSoft">
+		<percentRedSoft public="1" get="inline" set="null" line="262" static="1"><f a="rPercent:percentSoft">
 	<x path="Int"/>
 	<x path="Int"/>
 	<x path="Int"/>
 </f></percentRedSoft>
-		<percentGreenSoft public="1" get="inline" set="null" line="242" static="1"><f a="gPercent:percentSoft">
+		<percentGreenSoft public="1" get="inline" set="null" line="267" static="1"><f a="gPercent:percentSoft">
 	<x path="Int"/>
 	<x path="Int"/>
 	<x path="Int"/>
 </f></percentGreenSoft>
-		<percentBlueSoft public="1" get="inline" set="null" line="247" static="1"><f a="bPercent:percentSoft">
+		<percentBlueSoft public="1" get="inline" set="null" line="272" static="1"><f a="bPercent:percentSoft">
 	<x path="Int"/>
 	<x path="Int"/>
 	<x path="Int"/>
 </f></percentBlueSoft>
-		<percentYellowSoft public="1" get="inline" set="null" line="252" static="1"><f a="bPercent:percentSoft">
+		<percentYellowSoft public="1" get="inline" set="null" line="277" static="1"><f a="bPercent:percentSoft">
 	<x path="Int"/>
 	<x path="Int"/>
 	<x path="Int"/>
 </f></percentYellowSoft>
-		<percentMagentaSoft public="1" get="inline" set="null" line="258" static="1"><f a="bPercent:percentSoft">
+		<percentMagentaSoft public="1" get="inline" set="null" line="283" static="1"><f a="bPercent:percentSoft">
 	<x path="Int"/>
 	<x path="Int"/>
 	<x path="Int"/>
 </f></percentMagentaSoft>
-		<percentCyanSoft public="1" get="inline" set="null" line="264" static="1"><f a="bPercent:percentSoft">
+		<percentCyanSoft public="1" get="inline" set="null" line="289" static="1"><f a="bPercent:percentSoft">
 	<x path="Int"/>
 	<x path="Int"/>
 	<x path="Int"/>
