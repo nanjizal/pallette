@@ -377,7 +377,7 @@ function getIfGreyEmacsRGBi32( rgb: Int ): Int {
        } else if( r > 23 ){
          0x000000; // black
        } else {
-         grey[ r ];
+         greys[ r ];
        }
     };
 }
