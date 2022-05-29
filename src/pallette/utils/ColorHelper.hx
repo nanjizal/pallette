@@ -381,7 +381,51 @@ function getIfGreyEmacsRGBi32( rgb: Int ): Int {
        }
     };
 }
-
+/**
+ * check if rgb i32 is one of first 16 emacs index
+ */
+inline
+function eliminate16s( rgb: Int ): Int {
+	return switch ( rgb ) {
+			case 0x000000: 0;
+			case 0x800000: 1;
+			case 0x008000: 2;
+			case 0x808000: 3;
+			case 0x000080: 4;
+			case 0x800080: 5;
+			case 0x008080: 6;
+			case 0xc0c0c0: 7;
+			case 0x808080: 8;
+			case 0xff0000: 9;
+			case 0x00ff00: 10;
+			case 0xffff00: 11;
+			case 0x0000ff: 12;
+			case 0xff00ff: 13;
+			case 0x00ffff: 14;
+			case 0xffffff: 16;
+			case _: 17;
+		}
+}
+/**
+ * convert rgb i32 into emacs index
+ */
+inline
+function toEmacsIndex( rgb: Int ): Int {
+    // see if it is one of the first 16
+   var sixteen = eliminate16s(rgb);
+   if( sixteen != 17 ) {
+        return sixteen; // first 16
+   } else { // check if grey and then nearest emacs one
+        var aGrey = getIfGreyEmacsIndex( rgb );
+        if (aGrey != -1 ) {
+           return aGrey;
+        } else {
+           return 36*Math.floor( 6*redOfi32(   rgb ) /255 )
+                +  6*Math.floor( 6*greenOfi32( rgb ) /255 )
+                +    Math.round( 6*blueOfi32(  rgb ) /255 );
+        }
+    }
+}
 class ColorHelper {
     public var htmlRGBA_: ( r_: Float, g_: Float, b_: Float, a_: Float ) -> String = htmlRGBA;
     public var htmlHex_: ( r: Float, g: Float, b: Float ) -> String = htmlHex;
@@ -439,4 +483,6 @@ class ColorHelper {
     public var i8toString_:( v: Int ) -> String = i8toString;
     public var getIfGreyEmacsIndex_:( rgb: Int ) -> Int = getIfGreyEmacsIndex;
     public var getIfGreyEmacsRGBi32_:( rgb: Int ) -> Int = getIfGreyEmacsRGBi32;
+    public var eliminate16s_:( rgb: Int ) -> Int = eliminate16s;
+    public var toEmacsIndex_:( rgb: Int ) -> Int = toEmacsIndex;
 }
