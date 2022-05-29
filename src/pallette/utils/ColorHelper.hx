@@ -292,6 +292,53 @@ function percentCyanSoft( bPercent: Int, percentSoft: Int ){
     var color = percentHex[ bPercent ];
     return argbInt( 0xFF, soft, color, color );
 }
+/**
+ * rgb Int to red Int
+ * extract red channel
+ */
+inline
+function redOfi32( rgb: Int ): Int {
+	return (rgb >> 16) & 255;
+}
+/**
+ * rgb Int to green Int
+ * extract green channel
+ */	
+inline
+function greenOfi32( rgb: Int ): Int {
+	return (rgb >> 8) & 255;
+}
+/**
+ * rgb Int to blue Int
+ * extract blue channel
+ */
+inline
+function blueOfi32( rgb: Int ): Int {
+	return rgb & 255;
+}
+/**
+ * extract channel _i8 if rgb Int is grey.
+ */
+inline
+function i8ifGreyOfi32( rgb:Int ): Int {
+  var r8 = redOfi32( rgb );
+	return (( r8==greenOfi32(rgb)) && ( r8==blueOfi32(rgb)))? r8: -1;
+}
+/**
+ * rgb Int is grey.
+ */
+inline
+function isGreyOfi32( rgb:Int ): Bool {
+	return ( redOfi32(rgb) == greenOfi32(rgb) ) 
+      && ( redOfi32(rgb) == blueOfi32(rgb)  );
+}
+/**
+ * formats Int as Hex in form 0x00 to 0xFF
+ */
+inline
+function i8toString( v: Int ): String {
+	return '0x'+ StringTools.hex( v, 2 );
+}
 class ColorHelper {
     public var htmlRGBA_: ( r_: Float, g_: Float, b_: Float, a_: Float ) -> String = htmlRGBA;
     public var htmlHex_: ( r: Float, g: Float, b: Float ) -> String = htmlHex;
@@ -341,4 +388,10 @@ class ColorHelper {
     public var percentYellowSoft_:( bPercent: Int, percentSoft: Int )->Int = percentYellowSoft;
     public var percentMagentaSoft_:( bPercent: Int, percentSoft: Int )->Int = percentMagentaSoft;
     public var percentCyanSoft_:( bPercent: Int, percentSoft: Int )->Int = percentCyanSoft;
+    public var redOfi32_:( rgb: Int ) -> Int = redOfi32;
+    public var greenOfi32_:( rgb: Int ) -> Int = greenOfi32;
+    public var blueOfi32_:( rgb: Int ) -> Int = blueOfi32;
+    public var i8ifGreyOfi32_:( rgb: Int ) -> Int = i8ifGreyOfi32;
+    public var isGreyOfi32_:( rgb: Int ) -> Bool = isGreyOfi32;
+    public var i8toString_:( v: Int ) -> String = i8toString; 
 }
