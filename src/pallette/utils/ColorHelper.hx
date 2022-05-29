@@ -412,14 +412,14 @@ function eliminate16s( rgb: Int ): Int {
 inline
 function toEmacsIndex( rgb: Int ): Int {
     // see if it is one of the first 16
-   var sixteen = eliminate16s(rgb);
+   var sixteen = eliminate16s( rgb );
    if( sixteen != 17 ) {
         return sixteen; // first 16
    } else { // check if grey and then nearest emacs one
         var aGrey = getIfGreyEmacsIndex( rgb );
         if (aGrey != -1 ) {
            return aGrey;
-        } else {
+        } else { // find nearest emacs rgb color 
            return 36*Math.floor( 6*redOfi32(   rgb ) /255 )
                 +  6*Math.floor( 6*greenOfi32( rgb ) /255 )
                 +    Math.round( 6*blueOfi32(  rgb ) /255 )
