@@ -339,6 +339,49 @@ inline
 function i8toString( v: Int ): String {
 	return '0x'+ StringTools.hex( v, 2 );
 }
+inline
+function getIfGreyEmacsIndex( rgb: Int ): Int {
+   var i8Grey = i8ifGreyOfi32( rgb );
+   return 
+     if( i8Grey == -1 ){
+       -1;// not grey
+     } else {
+       var r = Math.round(( i8Grey - 8) / 10);
+       if( r < 0 ){
+         0; // white
+       } else if( r > 23 ){
+         15; // black
+       } else {
+         232 + r;
+       }
+    };
+}
+inline
+function getIfGreyEmacsRGBi32( rgb: Int ): Int {
+   var i8Grey = i8ifGreyOfi32( rgb );
+   var greys = [
+	   0x080808, 0x121212, 0x1c1c1c, 0x262626
+	 , 0x303030, 0x3a3a3a, 0x444444, 0x4e4e4e
+	 , 0x585858, 0x626262, 0x6c6c6c, 0x767676
+	 , 0x808080, 0x949494, 0x9e9e9e, 0xa8a8a8
+	 , 0xb2b2b2, 0xbcbcbc, 0xc6c6c6, 0xd0d0d0
+	 , 0xdadada, 0xe4e4e4, 0xeeeeee
+         ];
+   return 
+     if( i8Grey == -1 ){
+       -1;// not grey
+     } else {
+       var r = Math.round(( i8Grey - 8) / 10);
+       if( r < 0 ){
+         0xFFFFFF; // white
+       } else if( r > 23 ){
+         0x000000; // black
+       } else {
+         grey[ r ];
+       }
+    };
+}
+
 class ColorHelper {
     public var htmlRGBA_: ( r_: Float, g_: Float, b_: Float, a_: Float ) -> String = htmlRGBA;
     public var htmlHex_: ( r: Float, g: Float, b: Float ) -> String = htmlHex;
@@ -393,5 +436,7 @@ class ColorHelper {
     public var blueOfi32_:( rgb: Int ) -> Int = blueOfi32;
     public var i8ifGreyOfi32_:( rgb: Int ) -> Int = i8ifGreyOfi32;
     public var isGreyOfi32_:( rgb: Int ) -> Bool = isGreyOfi32;
-    public var i8toString_:( v: Int ) -> String = i8toString; 
+    public var i8toString_:( v: Int ) -> String = i8toString;
+    public var getIfGreyEmacsIndex_:( rgb: Int ) -> Int = getIfGreyEmacsIndex;
+    public var getIfGreyEmacsRGBi32_:( rgb: Int ) -> Int = getIfGreyEmacsRGBi32;
 }
