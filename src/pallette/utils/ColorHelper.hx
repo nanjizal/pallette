@@ -422,7 +422,8 @@ function toEmacsIndex( rgb: Int ): Int {
         } else {
            return 36*Math.floor( 6*redOfi32(   rgb ) /255 )
                 +  6*Math.floor( 6*greenOfi32( rgb ) /255 )
-                +    Math.round( 6*blueOfi32(  rgb ) /255 );
+                +    Math.round( 6*blueOfi32(  rgb ) /255 )
+		+ 16;
         }
     }
 }
