@@ -47,6 +47,12 @@ abstract ColorInt( Int ) to Int from Int {
         var v: Int = this;
         return to_oklab( v );
     }
+    @:to
+    public inline
+    function toOKLCH(): OKLCH {
+        var v: Int = this;
+        return to_oklch( v );
+    }
     @:from
     static public inline
     function fromCYMKA( c: CYMKA ):ColorInt {
@@ -62,7 +68,11 @@ abstract ColorInt( Int ) to Int from Int {
     function fromOKLAB( c: OKLAB ): ColorInt {
         return new ColorInt( from_oklab( c.L, c.a, c.b, c.alpha ) );
     }
-    @:to
+    @:from
+    static public inline
+    function fromOKLCH( c: OKLCH ): ColorInt {
+        return new ColorInt( from_oklch( c.L, c.c, c.h, c.alpha ) );
+    }
     public inline
     function toCYMKA(): CYMKA {
         var k = black;
