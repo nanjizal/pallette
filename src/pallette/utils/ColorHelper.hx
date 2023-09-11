@@ -1,5 +1,6 @@
 package pallette.utils;
 import pallette.utils.OKLAB;
+import pallette.utils.OKLCH;
 inline
 function htmlRGBA( r_: Float, g_: Float, b_: Float, a_: Float ): String {
     var r = r_;
@@ -62,6 +63,20 @@ function to_oklab( v: Int ):OKLAB {
            , a: 1.9779984951*l_ - 2.4285922050*m_ + 0.4505937099*s_
            , b: 0.0259040371*l_ + 0.7827717662*m_ - 0.8086757660*s_
            , alpha: a };
+}
+// https://www.w3.org/TR/css-color-4/#lab-to-lch
+// https://github.com/ajalt/colormath/blob/master/colormath/src/commonMain/kotlin/com/github/ajalt/colormath/internal/InternalMath.kt
+inline
+function from_oklch( L: Float, c: Float, h: Float, alpha: Float ): Int {
+   return from_oklab( L, c*Math.cos( h ), c*Math.sin( h ), alpha );
+}
+inline
+function to_oklch( v: Int ): OKLCH {
+   var oklab = to_oklab( v );
+   return { L: oklab.L
+	  , c: Math.sqrt( oklab.a*oklab.a + oklab.b*oklab.b )
+	  , h: Math.atan2( oklab.b, oklab.a )
+	  , alpha: oklab.alpha );
 }
 inline
 function from_cymka( c: Float, y: Float, m: Float, k: Float, a: Float ): Int
