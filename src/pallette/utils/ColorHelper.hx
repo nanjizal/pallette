@@ -76,7 +76,7 @@ function to_oklch( v: Int ): OKLCH {
    return { L: oklab.L
 	  , c: Math.sqrt( oklab.a*oklab.a + oklab.b*oklab.b )
 	  , h: Math.atan2( oklab.b, oklab.a )
-	  , alpha: oklab.alpha );
+	  , alpha: oklab.alpha };
 }
 inline
 function from_cymka( c: Float, y: Float, m: Float, k: Float, a: Float ): Int
