@@ -43,6 +43,12 @@ abstract ColorInt( Int ) to Int from Int {
     }
     @:to
     public inline
+    function toSRLAB2(): SRLAB2 {
+        var v: Int = this;
+        return to_srlab2( v );
+    }
+    @:to
+    public inline
     function toOKLAB(): OKLAB {
         var v: Int = this;
         return to_oklab( v );
@@ -62,6 +68,11 @@ abstract ColorInt( Int ) to Int from Int {
     static public inline
     function fromCYMK( c: CYMK ):ColorInt {
         return new ColorInt( from_cymk( c.c, c.y, c.m, c.k ) );
+    }
+    @:from
+    static public inline
+    function fromSRLAB2( c: SRLAB2 ): ColorInt {
+        return new ColorInt( form_srlab2( c.L, c.a, c.b, c.alpha );
     }
     @:from
     static public inline
