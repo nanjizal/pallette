@@ -4,6 +4,7 @@ import pallette.utils.ARGB;
 import pallette.utils.RGB;
 import pallette.utils.CYMKA;
 import pallette.utils.CYMK;
+import pallette.utils.*;
 import pallette.utils.ColorHelper;
 
 abstract ColorInt( Int ) to Int from Int {
@@ -49,6 +50,12 @@ abstract ColorInt( Int ) to Int from Int {
     }
     @:to
     public inline
+    function toSRLCH(): SRLAB2 {
+       var v: Int = this;
+        return to_srlch( v );
+    }
+    @:to
+    public inline
     function toOKLAB(): OKLAB {
         var v: Int = this;
         return to_oklab( v );
@@ -72,7 +79,12 @@ abstract ColorInt( Int ) to Int from Int {
     @:from
     static public inline
     function fromSRLAB2( c: SRLAB2 ): ColorInt {
-        return new ColorInt( form_srlab2( c.L, c.a, c.b, c.alpha );
+        return new ColorInt( form_srlab2( c.L, c.a, c.b, c.alpha ) );
+    }
+    @:from
+    static public inline
+    function fromSRLCH2( c: SRLCH2 ): ColorInt {
+        return new ColorInt( from_srlch2( c.L, c.a, c.b, c.alpha ) );
     }
     @:from
     static public inline
