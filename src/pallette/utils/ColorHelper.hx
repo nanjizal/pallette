@@ -118,6 +118,18 @@ function to_srlab2( v: Int ): SRLAB2 {
          , alpha: alpha };
 }
 inline
+function from_srlch2( L: Float, c: Float, h: Float, alpha: Float ): Int {
+   return from_srlab2( L, c*Math.cos( h ), c*Math.sin( h ), alpha );
+}
+inline
+function to_srlch2( v: Int ): SRLCH2 {
+   var srlab2 = to_srlab2( v );
+   return { L: srlab2.L
+	  , c: Math.sqrt( srlab2.a*srlab2.a + srlab2.b*srlab2.b )
+	  , h: Math.atan2( srlab2.b, srlab2.a )
+	  , alpha: srlab2.alpha };
+}
+inline
 function from_cymka( c: Float, y: Float, m: Float, k: Float, a: Float ): Int
     return from_argb( a
                     , cymkConvert( c, k )
