@@ -1,6 +1,8 @@
 package pallette.utils;
 import pallette.utils.OKLAB;
 import pallette.utils.OKLCH;
+import pallette.utils.LAB;
+import pallette.utils.SRLAB2;
 inline
 function htmlRGBA( r_: Float, g_: Float, b_: Float, a_: Float ): String {
     var r = r_;
@@ -77,6 +79,43 @@ function to_oklch( v: Int ): OKLCH {
 	  , c: Math.sqrt( oklab.a*oklab.a + oklab.b*oklab.b )
 	  , h: Math.atan2( oklab.b, oklab.a )
 	  , alpha: oklab.alpha };
+}
+inline
+function from_srlab2( v: SRLAB2 ): Int {
+   var x = 0.01 * v.L + 0.000904127 * v.a + 0.000456344 * v.b;
+   var y = 0.01 * v.L - 0.000533159 * v.a - 0.000269178 * v.b;
+   var z = 0.01 * v.L - 0.005800000 * v.b;
+   x = ( x <= 0.08 )? x*( 2700.0 / 24389.0 ): Math.pow( ( x + 0.16 ) / 1.16, 3.0 );
+   y = ( y <= 0.08 )? y*( 2700.0 / 24389.0 ): Math.pow( ( y + 0.16 ) / 1.16, 3.0 );
+   z = ( z <= 0.08 )? z*( 2700.0 / 24389.0 ): Math.pow( ( z + 0.16 ) / 1.16, 3.0 );
+   var red =  5.435679 * x - 4.599131 * y + 0.163593 * z;
+   var green = -1.168090 * x + 2.327977 * y - 0.159798 * z;
+   var blue =  0.037840 * x - 0.198564 * y + 1.160644 * z;
+   red   = ( red <= 0.00304 )?   red   * 12.92: 1.055 * Math.pow( red, 1.0/2.4   ) - 0.055;
+   green = ( green <= 0.00304 )? green * 12.92: 1.055 * Math.pow( green, 1.0/2.4 ) - 0.055;
+   blue  = ( blue <= 0.00304 )?  blue  * 12.92: 1.055 * Math.pow( blue, 1.0/2.4  ) - 0.055;
+   return from_argb( red, green, blue, alpha );
+}
+// https://www.magnetkern.de/srlab2.html
+inline
+function to_srlab2( v: Int ): SRLAB2 {
+  var red   = redChannel( v );
+  var green = greenChannel( v );
+  var blue  = blueChannel( v );
+  var alpha = alphaChannel( v );
+  red   = ( red   <= 0.03928 )? red/12.92:   Math.pow( ( red   + 0.055 ) / 1.055, 2.4);
+  green = ( green <= 0.03928 )? green/12.92: Math.pow( ( green + 0.055 ) / 1.055, 2.4);
+  blue  = ( blue  <= 0.03928 )? blue/12.92:  Math.pow( ( blue  + 0.055 ) / 1.055, 2.4);
+  var x = 0.320530 * red + 0.636920 * green + 0.042560 * blue;
+  var y = 0.161987 * red + 0.756636 * green + 0.081376 * blue;
+  var z = 0.017228 * red + 0.108660 * green + 0.874112 * blue;
+  x = ( x <= 216.0/24389.0 )? x*( 24389.0 / 2700.0 ): 1.16 * Math.pow( x, 1.0/3.0 ) - 0.16;
+  y = ( y <= 216.0/24389.0 )? y*( 24389.0 / 2700.0 ): 1.16 * Math.pow( y, 1.0/3.0 ) - 0.16;
+  z = ( z <= 216.0/24389.0 )? z*( 24389.0 / 2700.0 ): 1.16 * Math.pow( z, 1.0/3.0 ) - 0.16;
+  return { L: 37.0950 * x + 62.9054 * y - 0.0008 * z
+	     , a: 663.4684 * x - 750.5078 * y + 87.0328 * z
+	     , b: 63.9569 * x + 108.4576 * y - 172.4152 * z
+         , alpha: alpha };
 }
 inline
 function from_cymka( c: Float, y: Float, m: Float, k: Float, a: Float ): Int
