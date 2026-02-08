@@ -4,61 +4,64 @@ import pallette.wheel.MartianColors;
 
 /**
  * Named rotation steps for the 24-color Martian wheel.
- * 12 steps = 180° (Complement)
  */
 enum abstract MartianHarmony(Int) from Int to Int {
-    var Complement = 12;
-    var Triadic = 8;
-    var Square = 6;
-    var SplitComplement = 10;
-    var AnalogousPlus = 2;
+    var Complement = 12;      // 180°
+    var Triadic = 8;          // 120°
+    var Square = 6;           // 90°
+    var SplitComplement = 10; // 150°
+    var AnalogousPlus = 2;    // 30°
     var AnalogousMinus = -2;
 }
 
 /**
- * Discrete steps for brightness adjustment.
- * Positive = Lighter (Tints), Negative = Darker (Shades)
+ * Discrete steps for brightness adjustment (approx 5% per step).
  */
 enum abstract MartianStep(Int) from Int to Int {
-    var Subtle = 1;  // ~5%
-    var Mid = 2;     // ~10%
-    var Heavy = 4;    // ~20%
-    var Extreme = 8;  // ~40%
+    var Subtle = 1;  
+    var Mid = 2;     
+    var Heavy = 4;    
+    var Extreme = 8;  
 }
 
 /**
- * Fluent abstract for debugging spatial structures.
- * Mixes Martian wheel rotation with HSL-based brightness scaling.
+ * A fluent abstract wrapper for any color (0xRRGGBB).
+ * Provides artistic Martian transformations and debugging tools.
  */
 abstract MartianInt(Int) from Int to Int to Int {
+    
     public inline function new(i:Int) this = i;
 
-    /** Rotates hue via Martian wheel indices (0-23) */
+    /** 
+     * Rotates hue via Martian wheel indices. 
+     * If the color is not a native Martian color, it snaps to the nearest neighbor.
+     */
     public function getHarmony(harmony:MartianHarmony):MartianInt {
         var idx = MartianColors.getColorIndex(this);
+        if (idx == -1) idx = findNearestIndex(this);
+        
         var next = (idx + (cast harmony)) % 24;
         if (next < 0) next += 24;
         return MartianColors.getMartianColor(next);
     }
 
-    /** Quick stepped darkening (e.g. for grid lines or depth) */
-    public inline function darken(step:MartianStep = Mid):MartianInt {
-        return adjustBrightness((cast step) * -0.05);
-    }
-
-    /** Quick stepped lightening (e.g. for highlights) */
-    public inline function lighten(step:MartianStep = Mid):MartianInt {
-        return adjustBrightness((cast step) * 0.05);
-    }
-
-    /** Returns black or white based on perceptual luminance for labels */
+    /** Returns black or white based on perceptual luminance for debug labels */
     public inline function contrast():MartianInt {
         var r = (this >> 16 & 0xFF);
         var g = (this >> 8 & 0xFF);
         var b = (this & 0xFF);
-        // YIQ Luminance formula
         var yiq = ((r * 299) + (g * 587) + (b * 114)) / 1000;
         return (yiq >= 128) ? 0x000000 : 0xFFFFFF;
+    }
+
+    /** Quick stepped darkening */
+    public inline function darken(step:MartianStep = Mid):MartianInt {
+        return adjustBrightness((cast step) * -0.05);
+    }
+
+    /** Quick stepped lightening */
+    public inline function lighten(step:MartianStep = Mid):MartianInt {
+        return adjustBrightness((cast step) * 0.05);
     }
 
     /** Core HSL-based brightness adjustment */
@@ -98,6 +101,28 @@ abstract MartianInt(Int) from Int to Int to Int {
         var fg = Math.round(h2r(p, q, h) * 255);
         var fb = Math.round(h2r(p, q, h - 1/3) * 255);
         return (fr << 16) | (fg << 8) | fb;
+    }
+
+    /** Internal helper to find the closest Martian index for non-standard colors */
+    private static function findNearestIndex(color:Int):Int {
+        var r1 = (color >> 16) & 0xFF;
+        var g1 = (color >> 8) & 0xFF;
+        var b1 = color & 0xFF;
+        var minDistance:Float = 1e18; 
+        var closestIndex:Int = 0;
+
+        for (i in 0...24) {
+            var m = MartianColors.getMartianColor(i);
+            var dr = r1 - ((m >> 16) & 0xFF);
+            var dg = g1 - ((m >> 8) & 0xFF);
+            var db = b1 - (m & 0xFF);
+            var dist = (dr * dr) + (dg * dg) + (db * db);
+            if (dist < minDistance) {
+                minDistance = dist;
+                closestIndex = i;
+            }
+        }
+        return closestIndex;
     }
 
     public inline function toHex():String return "0x" + StringTools.hex(this, 6);
