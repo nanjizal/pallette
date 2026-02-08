@@ -42,7 +42,7 @@ abstract MartianInt(Int) from Int to Int to Int {
         
         var next = (idx + (cast harmony)) % 24;
         if (next < 0) next += 24;
-        return MartianColors.getMartianColor(next);
+         return new MartianInt(MartianColors.getMartianColor(next));
     }
 
     /** Returns black or white based on perceptual luminance for debug labels */
@@ -51,7 +51,7 @@ abstract MartianInt(Int) from Int to Int to Int {
         var g = (this >> 8 & 0xFF);
         var b = (this & 0xFF);
         var yiq = ((r * 299) + (g * 587) + (b * 114)) / 1000;
-        return (yiq >= 128) ? 0x000000 : 0xFFFFFF;
+        return new MartianInt(yiq >= 128 ? 0x000000 : 0xFFFFFF);
     }
 
     /** Quick stepped darkening */
