@@ -15,7 +15,7 @@ enum abstract MartianHarmony(Int) from Int to Int {
 }
 
 /**
- * Discrete steps for brightness adjustment (approx 5% per step).
+ * Discrete steps for brightness and saturation (approx 10% per step).
  */
 enum abstract MartianStep(Int) from Int to Int {
     var Subtle = 1;  
@@ -26,7 +26,7 @@ enum abstract MartianStep(Int) from Int to Int {
 
 /**
  * A fluent abstract wrapper for any color (0xRRGGBB).
- * Provides artistic Martian transformations and debugging tools.
+ * Provides artistic Martian transformations and perceptual debugging tools.
  */
 abstract MartianInt(Int) from Int to Int to Int {
     
@@ -75,11 +75,34 @@ abstract MartianInt(Int) from Int to Int to Int {
         return new MartianInt(MartianColors.getMartianColor(next));
     }
 
-    /** Returns black or white based on perceptual luminance for debug labels */
+    /** 
+     * Mutes the color by blending it with its 'Ideal' Perceptual Greyscale.
+     * Keeps the perceptual 'weight' of the color while receding it into the background.
+     */
+    public function mute(step:MartianStep = Mid):MartianInt {
+        var factor:Float = (cast step) * 0.1;
+        var grey:MartianInt = toIdealGrey();
+        
+        var r1 = (this >> 16 & 0xFF), g1 = (this >> 8 & 0xFF), b1 = (this & 0xFF);
+        var r2 = (grey >> 16 & 0xFF), g2 = (grey >> 8 & 0xFF), b2 = (grey & 0xFF);
+        
+        var r = Math.round(r1 + (r2 - r1) * factor);
+        var g = Math.round(g1 + (g2 - g1) * factor);
+        var b = Math.round(b1 + (b2 - b1) * factor);
+        
+        return new MartianInt((r << 16) | (g << 8) | b);
+    }
+
+    /** Converts color to a Luma-weighted 'Ideal' Greyscale. */
+    public function toIdealGrey():MartianInt {
+        var r = (this >> 16 & 0xFF), g = (this >> 8 & 0xFF), b = (this & 0xFF);
+        var luma = Math.round((r * 0.299) + (g * 0.587) + (b * 0.114));
+        return new MartianInt((luma << 16) | (luma << 8) | luma);
+    }
+
+    /** Perceptual contrast for text labels (Black/White). */
     public inline function contrast():MartianInt {
-        var r = (this >> 16 & 0xFF);
-        var g = (this >> 8 & 0xFF);
-        var b = (this & 0xFF);
+        var r = (this >> 16 & 0xFF), g = (this >> 8 & 0xFF), b = (this & 0xFF);
         var yiq = ((r * 299) + (g * 587) + (b * 114)) / 1000;
         return new MartianInt(yiq >= 128 ? 0x000000 : 0xFFFFFF);
     }
@@ -87,18 +110,14 @@ abstract MartianInt(Int) from Int to Int to Int {
     public inline function lighten(step:MartianStep = Mid):MartianInt return adjustBrightness((cast step) * 0.05);
     public inline function darken(step:MartianStep = Mid):MartianInt return adjustBrightness((cast step) * -0.05);
 
-    /** Calculates distance to a target color in 5% brightness increments */
     public function findNearestBrightStep(target:Int):Int {
         var l1 = getLuminance(this);
         var l2 = getLuminance(target);
         return Math.round((l2 - l1) / 0.05);
     }
 
-    /** Core HSL-based brightness adjustment */
     public function adjustBrightness(amount:Float):MartianInt {
-        var r = (this >> 16 & 0xFF) / 255.0;
-        var g = (this >> 8 & 0xFF) / 255.0;
-        var b = (this & 0xFF) / 255.0;
+        var r = (this >> 16 & 0xFF) / 255.0, g = (this >> 8 & 0xFF) / 255.0, b = (this & 0xFF) / 255.0;
         var max = Math.max(r, Math.max(g, b)), min = Math.min(r, Math.min(g, b));
         var h:Float, s:Float, l:Float = (max + min) / 2;
 
@@ -130,4 +149,5 @@ abstract MartianInt(Int) from Int to Int to Int {
 
     public inline function toHex():String return "0x" + StringTools.hex(this, 6);
 }
+
 
