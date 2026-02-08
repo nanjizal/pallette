@@ -27,7 +27,7 @@ enum abstract MartianStep(Int) from Int to Int {
 }
 
 /**
- * Fluent abstract for debugging spatial structures like Mortonhx.
+ * Fluent abstract for debugging spatial structures.
  * Mixes Martian wheel rotation with HSL-based brightness scaling.
  */
 abstract MartianInt(Int) from Int to Int to Int {
