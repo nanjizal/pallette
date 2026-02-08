@@ -53,13 +53,19 @@ abstract MartianInt(Int) from Int to Int to Int {
             this.darken(Mid).mute(Heavy) // Receding outer glow
         ];
     }
-
-    /** High Impact: Dark Red -> Light Green | Dark Blue -> Light Yellow */
-    public function getPowerPair():MartianInt {
+    
+    /** 
+     * Default Power Pair (180° rotation with auto-flip).
+     * If you want to force a direction, just chain .lighten() or .darken() instead.
+     */
+    public function getPowerPair(step:MartianStep = Heavy):MartianInt {
         var idx = MartianColors.getColorIndex(this);
         if (idx == -1) idx = MartianColors.getColorIndex(findNearest(this));
+        
         var impact = new MartianInt(MartianColors.getMartianColor((idx + 12) % 24));
-        return (getLuma(this) < 0.5) ? impact.lighten(Heavy) : impact.darken(Heavy);
+        
+        // Auto-logic: if base is dark, return lightened version of the opposite
+        return (getLuma(this) < 0.5) ? impact.lighten(step) : impact.darken(step);
     }
 
     /** CVD-Safe: avoids Red/Green axis and enforces 30% luminance gap. */
