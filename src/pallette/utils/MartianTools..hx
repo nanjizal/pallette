@@ -38,7 +38,11 @@ abstract MartianInt(Int) from Int to Int to Int {
      */
     public function getHarmony(harmony:MartianHarmony):MartianInt {
         var idx = MartianColors.getColorIndex(this);
-        if (idx == -1) idx = findNearestIndex(this);
+        if (idx == -1) {
+            var nearest:MartianInt = findNearest(this);
+            idx = MartianColors.getColorIndex(nearest);
+        }
+        //if (idx == -1) idx = findNearestIndex(this);
         
         var next = (idx + (cast harmony)) % 24;
         if (next < 0) next += 24;
@@ -104,7 +108,7 @@ abstract MartianInt(Int) from Int to Int to Int {
     }
 
     /** Internal helper to find the closest Martian index for non-standard colors */
-    private static function findNearestIndex(color:Int):Int {
+    public static function findNearestIndex(color:Int):Int {
         var r1 = (color >> 16) & 0xFF;
         var g1 = (color >> 8) & 0xFF;
         var b1 = color & 0xFF;
@@ -122,7 +126,8 @@ abstract MartianInt(Int) from Int to Int to Int {
                 closestIndex = i;
             }
         }
-        return closestIndex;
+        // Return as MartianInt to enable further transforms
+        return new MartianInt(MartianColors.getMartianColor(closestIndex));
     }
 
     public inline function toHex():String return "0x" + StringTools.hex(this, 6);
