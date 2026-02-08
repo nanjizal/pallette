@@ -100,7 +100,7 @@ abstract MartianInt(Int) from Int to Int to Int {
         var fr = Math.round(h2r(p, q, h + 1/3) * 255);
         var fg = Math.round(h2r(p, q, h) * 255);
         var fb = Math.round(h2r(p, q, h - 1/3) * 255);
-        return (fr << 16) | (fg << 8) | fb;
+        return new MartianInt((fr << 16) | (fg << 8) | fb);
     }
 
     /** Internal helper to find the closest Martian index for non-standard colors */
