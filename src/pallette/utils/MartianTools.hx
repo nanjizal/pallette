@@ -1,100 +1,74 @@
 package pallette.utils;
 
-import pallette.wheel.MartianColors;
-import pallette.wheel.ColorWheel24;
+import pallette.wheel.MartianColours;
 
-/**
- * Real-world color vision deficiency types for simulation.
- */
 enum abstract MartianCVD(Int) {
-    var Protanomaly = 0;   
-    var Protanopia = 1;    
-    var Deuteranomaly = 2; 
-    var Deuteranopia = 3;  
-    var Tritanopia = 4;    
-    var Achromatopsia = 5; 
+    var Protanomaly = 0; var Protanopia = 1; var Deuteranomaly = 2; 
+    var Deuteranopia = 3; var Tritanopia = 4; var Achromatopsia = 5;
 }
 
-/** Named rotation steps for the 24-color Martian wheel. */
-enum abstract MartianHarmony(Int) from Int to Int {
-    var Complement = 12;
-    var Triadic = 8;
-    var Square = 6;
-    var SplitComplement = 10;
-    var Analogous = 2;
+enum abstract MartianHarmony(Int) {
+    var Complement = 12; // 180 deg
+    var Triad1 = 8;      // 120 deg
+    var Triad2 = 16;     // 240 deg
+    var Analogous = 2;   // 30 deg
 }
 
-/** Discrete steps for brightness and saturation (approx 5% per step). */
-enum abstract MartianStep(Int) from Int to Int {
-    var Subtle = 1;  
-    var Mid = 2;     
-    var Heavy = 4;    
-    var Extreme = 8;  
-}
-
-/**
- * Fluent abstract for perceptual and artistic color transforms.
- * Optimized for spatial debugging (mortonhx).
+/** 
+ * Maps directly to your 5-item arrays in MartianColours.
  */
+enum abstract MartianStep(Float) from Float to Float {
+    var Pale = 0.1;   // Index 0
+    var Light = 0.3;  // Index 1
+    var Mid = 0.5;    // Index 2 (Pure)
+    var Deep = 0.7;   // Index 3
+    var Dark = 0.9;   // Index 4
+}
+
 abstract MartianInt(Int) from Int to Int to Int {
-    
     public inline function new(i:Int) this = i;
 
-    /** Snap any hex to nearest Martian Hue AND its nearest brightness step. */
-    public static function fromAny(color:Int):MartianInt {
-        var base = findNearest(color);
-        return base.adjustBrightness(base.findNearestBrightStep(color) * 0.05);
-    }
-
-    /** Returns the closest MartianInt from the 24-color wheel. */
-    public static function findNearest(color:Int):MartianInt {
-        return new MartianInt(ColorWheel24.getColor(findNearestIndex(color)));
-    }
-
-    /** Internal helper to find the index (0-23) of the closest Martian color. */
-    private static function findNearestIndex(color:Int):Int {
-        var r1 = (color >> 16) & 0xFF, g1 = (color >> 8) & 0xFF, b1 = color & 0xFF;
-        var min:Float = 1e18, idx:Int = 0;
+    /** 
+     * Finds the nearest 24-sector index for any color. 
+     */
+    public function getSection():Int {
+        var r1 = (this >> 16 & 0xFF), g1 = (this >> 8 & 0xFF), b1 = (this & 0xFF);
+        var min:Float = 1e18, best:Int = 0;
         for (i in 0...24) {
-            var m = ColorWheel24.getColor(i);
-            var dr = r1 - (m >> 16 & 0xFF), dg = g1 - (m >> 8 & 0xFF), db = b1 - (m & 0xFF);
-            var d = (dr * dr) + (dg * dg) + (db * db);
-            if (d < min) { min = d; idx = i; }
+            var m = MartianColours.getColor(i * (Math.PI / 12), 0.5);
+            var d = Math.pow(r1 - (m >> 16 & 0xFF), 2) + Math.pow(g1 - (m >> 8 & 0xFF), 2) + Math.pow(b1 - (m & 0xFF), 2);
+            if (d < min) { min = d; best = i; }
         }
-        return idx;
+        return best;
     }
 
-    /** Rotates hue via Martian wheel. Snaps foreign colors automatically. */
-    public function getHarmony(h:MartianHarmony):MartianInt {
-        var idx = findNearestIndex(this);
-        var next = (idx + (cast h)) % 24;
-        if (next < 0) next += 24;
-        return new MartianInt(ColorWheel24.getColor(next));
+    /** 
+     * Rotates hue and sets strength. 
+     * Example: base.getHarmony(Complement, Dark)
+     */
+    public function getHarmony(h:MartianHarmony, s:MartianStep = Mid):MartianInt {
+        var rad = (getSection() + (cast h)) * (Math.PI / 12);
+        return new MartianInt(MartianColours.getColor(rad, s));
     }
 
-    /** Returns an array for 'Neon' rendering: [Core, Glow, MutedOuter] */
-    public function getGlow():Array<MartianInt> {
-        return [this.lighten(Mid), this, this.darken(Mid).mute(Heavy)];
+    /** Returns current hue at a different depth level (0-4) */
+    public function atStrength(s:MartianStep):MartianInt {
+        return new MartianInt(MartianColours.getColor(getSection() * (Math.PI / 12), s));
     }
 
-    /** High Impact: Dark Red -> Light Green | Dark Blue -> Light Yellow */
-    public function getPowerPair(step:MartianStep = Heavy):MartianInt {
-        var impact = getHarmony(Complement);
-        return (getLuma(this) < 0.5) ? impact.lighten(step) : impact.darken(step);
+    /** High Impact: Dark Warm vs Light Cool */
+    public function getPowerPair():MartianInt {
+        return getHarmony(Complement, getLuma() < 0.5 ? Pale : Dark);
     }
 
-    /** CVD-Safe: avoids Red/Green axis and enforces 30% luminance gap. */
-    public function getSafeBridge(background:MartianInt):MartianInt {
-        var idx = findNearestIndex(this);
-        // Shift away from Red (0-2) and Green (6-10) zones
-        if ((idx >= 22 || idx <= 2) || (idx >= 6 && idx <= 10)) idx = (idx + 6) % 24;
-        
-        var safe = new MartianInt(ColorWheel24.getColor(idx));
-        var diff = getLuma(safe) - getLuma(background);
-        return (Math.abs(diff) < 0.3) ? (getLuma(background) < 0.5 ? safe.lighten(Heavy) : safe.darken(Heavy)) : safe;
+    /** CVD-Safe: shifts hue away from Red/Green danger zones. */
+    public function getSafeBridge(bg:MartianInt):MartianInt {
+        var sec = getSection();
+        if ((sec >= 22 || sec <= 2) || (sec >= 6 && sec <= 10)) sec = (sec + 6) % 24;
+        var safe = new MartianInt(MartianColours.getColor(sec * (Math.PI / 12), 0.5));
+        return (Math.abs(safe.getLuma() - bg.getLuma()) < 0.3) ? (bg.getLuma() < 0.5 ? safe.atStrength(Pale) : safe.atStrength(Dark)) : safe;
     }
 
-    /** Simulates real-world CVD using confusion matrices. */
     public function simulateCVD(type:MartianCVD):MartianInt {
         var r = (this >> 16 & 0xFF), g = (this >> 8 & 0xFF), b = (this & 0xFF);
         var nr:Float, ng:Float, nb:Float;
@@ -109,50 +83,18 @@ abstract MartianInt(Int) from Int to Int to Int {
         return new MartianInt((Math.round(Math.min(255, nr)) << 16) | (Math.round(Math.min(255, ng)) << 8) | Math.round(Math.min(255, nb)));
     }
 
-    public inline function lighten(s:MartianStep = Mid):MartianInt return adjustBrightness((cast s) * 0.05);
-    public inline function darken(s:MartianStep = Mid):MartianInt return adjustBrightness((cast s) * -0.05);
-
-    /** Perceptual mute: blends color with its Luma-weighted grey. */
-    public function mute(s:MartianStep = Mid):MartianInt {
-        var f = (cast s) * 0.1, g = toIdealGrey();
-        var r = Math.round((this >> 16 & 0xFF) + ((g >> 16 & 0xFF) - (this >> 16 & 0xFF)) * f);
-        var gr = Math.round((this >> 8 & 0xFF) + ((g >> 8 & 0xFF) - (this >> 8 & 0xFF)) * f);
-        var b = Math.round((this & 0xFF) + ((g & 0xFF) - (this & 0xFF)) * f);
-        return new MartianInt((r << 16) | (gr << 8) | b);
-    }
-
     public function toIdealGrey():MartianInt {
         var l = Math.round((this >> 16 & 0xFF) * 0.299 + (this >> 8 & 0xFF) * 0.587 + (this & 0xFF) * 0.114);
         return new MartianInt((l << 16) | (l << 8) | l);
     }
 
-    /** Contrast helper for text labels. */
     public inline function contrast():MartianInt {
-        var yiq = ((this >> 16 & 0xFF) * 299 + (this >> 8 & 0xFF) * 587 + (this & 0xFF) * 114) / 1000;
-        return new MartianInt(yiq >= 128 ? 0x000000 : 0xFFFFFF);
+        return (getLuma() >= 0.5) ? 0x000000 : 0xFFFFFF;
     }
 
-    public function findNearestBrightStep(t:Int):Int return Math.round((getLuma(t) - getLuma(this)) / 0.05);
-
-    public function adjustBrightness(amt:Float):MartianInt {
-        var r=(this >> 16 & 0xFF)/255, g=(this >> 8 & 0xFF)/255, b=(this & 0xFF)/255;
-        var max=Math.max(r, Math.max(g, b)), min=Math.min(r, Math.min(g, b));
-        var h:Float, s:Float, l:Float=(max+min)/2;
-        if(max==min) h=s=0; else {
-            var d=max-min; s=l>0.5?d/(2-max-min):d/(max+min);
-            if(max==r) h=(g-b)/d+(g<b?6:0); else if(max==g) h=(b-r)/d+2; else h=(r-g)/d+4;
-            h/=6;
-        }
-        l=Math.max(0, Math.min(1, l+amt));
-        function h2r(p:Float, q:Float, t:Float):Float {
-            if(t<0) t+=1; if(t>1) t-=1;
-            if(t<1/6) return p+(q-p)*6*t; if(t<1/2) return q; if(t<2/3) return p+(q-p)*(2/3-t)*6;
-            return p;
-        }
-        var q=l<0.5?l*(1+s):l+s-l*s, p=2*l-q;
-        return new MartianInt((Math.round(h2r(p,q,h+1/3)*255)<<16)|(Math.round(h2r(p,q,h)*255)<<8)|Math.round(h2r(p,q,h-1/3)*255));
+    public inline function getLuma():Float {
+        return ((this >> 16 & 0xFF) * 0.299 + (this >> 8 & 0xFF) * 0.587 + (this & 0xFF) * 0.114) / 255;
     }
 
-    static inline function getLuma(c:Int):Float return ((c >> 16 & 0xFF) * 0.299 + (c >> 8 & 0xFF) * 0.587 + (c & 0xFF) * 0.114) / 255;
     public inline function toHex():String return "0x" + StringTools.hex(this, 6);
 }
