@@ -1,6 +1,7 @@
+
 package pallette.utils;
 
-import pallette.wheel.MartianColours;
+import pallette.wheel.MartianColors;
 
 /** Real-world color vision deficiency simulation types. */
 enum abstract MartianCVD(Int) {
@@ -58,9 +59,9 @@ abstract MartianInt(Int) from Int to Int to Int {
     }
 
     /** Returns [Light, Pure, Dark] variations of the hue for neon/glow rendering effects. */
-    public function getGlow():Array<MartianInt> {
-        return [this.atStrength(Light), this, this.atStrength(Dark).mute(Heavy)];
-    }
+   //public function getGlow():Array<MartianInt> {
+    //    return [this.atStrength(Light), this, this.atStrength(Dark).mute(Heavy)];
+    //}
 
     /** Rotates hue across Martian sectors (1 section = PI/12 radians). */
     public function getHarmony(h:MartianHarmony, s:MartianStep = Mid):MartianInt {
@@ -69,7 +70,7 @@ abstract MartianInt(Int) from Int to Int to Int {
     }
 
     /** Returns the artistic opposite at high-contrast strength (Pale vs Dark). */
-    public function getPowerPair(s:MartianStep = Heavy):MartianInt {
+    public function getPowerPair(s:MartianStep = Dark):MartianInt {
         var oppRad = findNearestRadian() + Math.PI;
         var isDark = getLuma() < 0.5;
         return new MartianInt(MartianColours.getColor(oppRad, isDark ? 0.1 : 0.9));
@@ -166,4 +167,3 @@ abstract MartianInt(Int) from Int to Int to Int {
     static inline function getLumaFromInt(c:Int):Float return ((c >> 16 & 0xFF) * 0.299 + (c >> 8 & 0xFF) * 0.587 + (c & 0xFF) * 0.114) / 255;
     public inline function toHex():String return "0x" + StringTools.hex(this, 6);
 }
-
