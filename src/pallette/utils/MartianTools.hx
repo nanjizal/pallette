@@ -34,7 +34,7 @@ enum abstract MartianStep(Float) from Float to Float {
  * Fluent abstract for the 2D Martian Wheel (Radian/Strength).
  * Optimized for high-impact spatial debugging (mortonhx).
  */
-abstract MartianInt(Int) from Int to Int to Int {
+abstract MartianInt(Int) from Int to Int {
     public inline function new(i:Int) this = i;
 
     /** Maps any random hex to the closest Martian Hue and matching brightness step. */
